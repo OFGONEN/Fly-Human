@@ -375,7 +375,7 @@ PrefabInstance:
     - target: {fileID: -95358422839755879, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b8d5213886ca2f49814d73dbd28995a, type: 2}
+      objectReference: {fileID: 2100000, guid: d91f3b238d6755240b840da986c381c9, type: 2}
     - target: {fileID: 919132149155446097, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Name
       value: char_character_straight_curved_anim_v1_2
@@ -2146,7 +2146,7 @@ PrefabInstance:
     - target: {fileID: -95358422839755879, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b8d5213886ca2f49814d73dbd28995a, type: 2}
+      objectReference: {fileID: 2100000, guid: d91f3b238d6755240b840da986c381c9, type: 2}
     - target: {fileID: 919132149155446097, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Name
       value: char_character_straight_curved_anim_v1
@@ -4701,7 +4701,7 @@ PrefabInstance:
     - target: {fileID: -95358422839755879, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 81abac543651b3744a522838d4a98211, type: 2}
+      objectReference: {fileID: 2100000, guid: 89df8ce4322709041b43a011d4d2230a, type: 2}
     - target: {fileID: 919132149155446097, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Name
       value: char_character_straight_curved_anim_v1_2
@@ -5818,7 +5818,7 @@ PrefabInstance:
     - target: {fileID: -95358422839755879, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 81abac543651b3744a522838d4a98211, type: 2}
+      objectReference: {fileID: 2100000, guid: 89df8ce4322709041b43a011d4d2230a, type: 2}
     - target: {fileID: 919132149155446097, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Name
       value: char_character_straight_curved_anim_v1
@@ -6214,7 +6214,7 @@ PrefabInstance:
     - target: {fileID: -95358422839755879, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 81abac543651b3744a522838d4a98211, type: 2}
+      objectReference: {fileID: 2100000, guid: 89df8ce4322709041b43a011d4d2230a, type: 2}
     - target: {fileID: 919132149155446097, guid: 64c2c785495a85849a5ebfdb12dba994, type: 3}
       propertyPath: m_Name
       value: char_character_straight_curved_anim_v1_1
