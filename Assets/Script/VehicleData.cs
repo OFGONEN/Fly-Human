@@ -18,4 +18,18 @@ public class VehicleData : ScriptableObject
     {
 		return vehicle_data_array[ index ];
 	}
+
+#if UNITY_EDITOR
+    void OnValidate()
+    {
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+        {
+			vehicle_data_array[ i ].color = vehicle_data_array[ i ].color.SetAlpha( 1 );
+		}
+
+		UnityEditor.AssetDatabase.SaveAssetIfDirty( this );
+	}
+#endif
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using Sirenix.OdinInspector;
 
 [ CreateAssetMenu( fileName = "target_vehicle_data_", menuName = "FF/Game/Target Vehicle Data" ) ]
 public class TargetVehicleData : ScriptableObject
@@ -25,7 +26,8 @@ public class TargetVehicleData : ScriptableObject
 	}
 
 #if UNITY_EDITOR
-    public void CreateDataFromVehicleData( VehicleData vehicleData )
+	[ Button() ]
+    void CreateDataFromVehicleData( VehicleData vehicleData )
     {
 		UnityEditor.EditorUtility.SetDirty( this );
 
