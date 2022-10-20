@@ -20,9 +20,6 @@ namespace FFStudio
 #endregion
 
 #region Unity API
-        void Awake()
-        {
-        }
 #endregion
 
 #region API

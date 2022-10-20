@@ -13,6 +13,7 @@ namespace FFStudio
     [ Title( "Stickman" ) ]
 		[ LabelText( "Pose Duration" ) ] public float stickman_pose_duration;
 		[ LabelText( "Jump Power" ) ] public float stickman_jump_power;
+		[ LabelText( "Disable Duration" ) ] public float stickman_disableDuration;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
