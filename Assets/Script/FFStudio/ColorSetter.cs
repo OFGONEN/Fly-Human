@@ -2,18 +2,22 @@
 
 using UnityEngine;
 using Sirenix.OdinInspector;
+using DG.Tweening;
 
 namespace FFStudio
 {
 	public class ColorSetter : MonoBehaviour
 	{
 #region Fields
-		[ TitleGroup( "Setup" ), SerializeField ] Color color;
+	  [ Title( "Setup" ) ]
+		[ SerializeField ] Color color;
 
 		static int SHADER_ID_COLOR = Shader.PropertyToID( "_BaseColor" );
 
 		Renderer theRenderer;
 		MaterialPropertyBlock propertyBlock;
+		
+		public Color Color => color;
 #endregion
 
 #region Properties
@@ -22,8 +26,7 @@ namespace FFStudio
 #region Unity API
 		void Awake()
 		{
-			theRenderer = GetComponent< Renderer >();
-
+			theRenderer   = GetComponent< Renderer >();
 			propertyBlock = new MaterialPropertyBlock();
 		}
 #endregion
@@ -51,9 +54,23 @@ namespace FFStudio
 			propertyBlock.SetColor( SHADER_ID_COLOR, currentColor.SetAlpha( alpha ) );
 			theRenderer.SetPropertyBlock( propertyBlock );
 		}
+
+		public Tween LerpColor( Color endColor, float duration )
+		{
+			return DOTween.To( GetCurrentColor, SetCurrentColor, endColor, duration );
+		}
 #endregion
 
 #region Implementation
+		Color GetCurrentColor()
+		{
+			return color;
+		}
+
+		void SetCurrentColor( Color color )
+		{
+			this.color = color;
+		}
 #endregion
 
 #region Editor Only
