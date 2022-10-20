@@ -36,4 +36,14 @@ public class Stickman : MonoBehaviour
 		sequence.Join( colorTween );
 	}
 
+    public void ChangeToAnoterPart( VehiclePartData vehiclePartData )
+    {
+		_animator.SetTrigger( vehiclePartData.pose );
+		var colorTween = _colorSetter.LerpColor( vehiclePartData.color, GameSettings.Instance.stickman_pose_duration );
+
+		var sequence = recycledSequence.Recycle();
+		sequence.Append( transform.DOLocalMove( vehiclePartData.position, GameSettings.Instance.ui_PopUp_duration ) );
+		sequence.Join( transform.DOLocalRotate( vehiclePartData.rotation, GameSettings.Instance.stickman_pose_duration ) );
+		sequence.Join( colorTween );
+	}
 }
