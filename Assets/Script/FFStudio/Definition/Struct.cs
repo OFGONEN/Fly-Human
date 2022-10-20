@@ -156,4 +156,15 @@ namespace FFStudio
 		public Color color;
 		public string pose;
 	}
+
+	[ Serializable ]
+	public struct TargetVehiclePartData
+	{
+		public Vector3 position;
+		public Vector3 rotation;
+		public Color color_start;
+		public Color color_end;
+		public int count;
+		public string pose;
+	}
 }
