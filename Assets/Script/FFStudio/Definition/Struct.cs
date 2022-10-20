@@ -147,4 +147,13 @@ namespace FFStudio
 		[ Layer() ] public int collision_layer;
 		public UnityEvent<Collider> collision_event;
 	}
+
+	[ Serializable ]
+	public struct VehiclePartData
+	{
+		public Vector3 position;
+		public Vector3 rotation;
+		public Color color;
+		public string pose;
+	}
 }
