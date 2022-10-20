@@ -166,5 +166,15 @@ namespace FFStudio
 		public Color color_end;
 		public int count;
 		public string pose;
+
+		public TargetVehiclePartData( VehiclePartData data )
+		{
+			position    = data.position;
+			rotation    = data.rotation;
+			color_start = Color.white;
+			color_end   = data.color;
+			count       = 1;
+			pose        = data.pose;
+		}
 	}
 }
