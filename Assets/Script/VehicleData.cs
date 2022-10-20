@@ -10,7 +10,7 @@ public class VehicleData : ScriptableObject
     [ SerializeField ] string vehicle_name;
     [ SerializeField, Min( 1 ) ] int vehicle_count_min;
 
-	public string VehicleName => vehicle_name;
+	public string VehicleName  => vehicle_name;
 	public int VehicleCountMin => vehicle_count_min;
 	public int VehicleCountMax => vehicle_data_array.Length;
 
