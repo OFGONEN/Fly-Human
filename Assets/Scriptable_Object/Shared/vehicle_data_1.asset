@@ -15,7 +15,7 @@ MonoBehaviour:
   vehicle_data_array:
   - position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
     pose: 
   vehicle_name: vehicle_
   vehicle_count_min: 1
