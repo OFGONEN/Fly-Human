@@ -6,7 +6,7 @@ using FFStudio;
 [ CreateAssetMenu( fileName = "target_vehicle_data_", menuName = "FF/Game/Target Vehicle Data" ) ]
 public class TargetVehicleData : ScriptableObject
 {
-    [ SerializeField ] TargetVehicleData[] vehicle_data_array;
+    [ SerializeField ] TargetVehiclePartData[] vehicle_data_array;
     [ SerializeField ] string vehicle_name;
     [ SerializeField ] bool vehicle_is_unlocked;
 
