@@ -23,4 +23,22 @@ public class TargetVehicleData : ScriptableObject
 		vehicle_is_unlocked = true;
 		PlayerPrefsUtility.Instance.SetInt( vehicle_name, 1 );
 	}
+
+#if UNITY_EDITOR
+    public void CreateDataFromVehicleData( VehicleData vehicleData )
+    {
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_name       = vehicleData.VehicleName;
+		vehicle_data_array = new TargetVehiclePartData[ vehicleData.VehicleCountMax ];
+
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+		{
+			var data = vehicleData.VehiclePartAtIndex( i );
+			vehicle_data_array[ i ] = new TargetVehiclePartData( data );
+		}
+
+		UnityEditor.AssetDatabase.SaveAssetIfDirty( this );
+	}
+#endif
 }
