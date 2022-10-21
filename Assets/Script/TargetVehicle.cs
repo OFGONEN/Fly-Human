@@ -36,6 +36,11 @@ public class TargetVehicle : MonoBehaviour
 		}
 	}
 
+    public void IncreaseCount()
+    {
+		vehicle_stickman_count++;
+	}
+
     void SpawnStickmans()
     {
 		stickman_list = new List< TargetStickman >( vehicle_data.VehiclePartCount );
