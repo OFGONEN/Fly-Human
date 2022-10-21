@@ -16,6 +16,10 @@ public class TargetStickman : MonoBehaviour
 	TargetVehiclePartData stickman_data;
 	float stickman_count = 0;
 
+	public int StickmanCount    => Mathf.FloorToInt( stickman_count );
+	public int StickmanMaxCount => stickman_data.count;
+	public bool StickmanMaxed   => stickman_count == stickman_data.count;
+
 	public void OnLevelUnloadStart()
     {
 		pool_stickman_target.ReturnEntity( this );
