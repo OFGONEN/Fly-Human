@@ -14,6 +14,8 @@ namespace FFStudio
         [ SerializeField ] TransformData[] ragdoll_rigidbody_transformData_array;
         
         Rigidbody ragdollRigidbody_main;
+
+		public Rigidbody MainRigidbody => ragdollRigidbody_main;
 #endregion
 
 #region Properties
