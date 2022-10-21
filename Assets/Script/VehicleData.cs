@@ -22,6 +22,8 @@ public class VehicleData : ScriptableObject
 #if UNITY_EDITOR
     void OnValidate()
     {
+		if( vehicle_data_array == null ) return;
+
 		UnityEditor.EditorUtility.SetDirty( this );
 
 		for( var i = 0; i < vehicle_data_array.Length; i++ )
