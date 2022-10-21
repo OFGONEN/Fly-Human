@@ -29,5 +29,5 @@ MonoBehaviour:
     rotation: {x: 90, y: 0, z: 0}
     color: {r: 1, g: 0.40648973, b: 0, a: 1}
     pose: pose_straight_1
-  vehicle_name: 
+  vehicle_name: plane_1
   vehicle_count_min: 0
