@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264e9c9adb649c44b982535b454038fc, type: 3}
+  m_Name: tool_vehicle_data_extractor
+  m_EditorClassIdentifier: 
+  vehicle_data_target: {fileID: 11400000, guid: ea7ff680ccaa93549aa5112eabb85f84, type: 2}
+  stickman_pose_array:
+  - stickman_name: char_character_sitting_anim
+    stickman_pose: pose_sitting
+  - stickman_name: char_character_straight_1
+    stickman_pose: pose_straight_1
+  - stickman_name: char_character_straight_2
+    stickman_pose: pose_straight_2
+  - stickman_name: char_character_straight_curved
+    stickman_pose: pose_straight_curved
+  - stickman_name: char_character_straight_curved_feet_1
+    stickman_pose: pose_straight_curved_feet_1
+  - stickman_name: char_character_straight_curved_feet_2
+    stickman_pose: pose_straight_curved_feet_2
