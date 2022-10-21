@@ -169,6 +169,14 @@ namespace FFStudio
 		public Vector3 rotation;
 		public Color color;
 		public string pose;
+
+		public VehiclePartData( Transform transform, string pose )
+		{
+			position  = transform.localPosition;
+			rotation  = transform.localEulerAngles;
+			color     = transform.GetComponentInChildren< SkinnedMeshRenderer >().sharedMaterial.color;
+			this.pose = pose;
+		}
 	}
 
 	[ Serializable ]
