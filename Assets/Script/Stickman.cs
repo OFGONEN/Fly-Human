@@ -7,13 +7,19 @@ using DG.Tweening;
 
 public class Stickman : MonoBehaviour
 {
+  [ Title( "Events" ) ]
+	[ SerializeField ] GameEvent stickman_movement_start;
+	[ SerializeField ] GameEvent stickman_movement_end;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Animator _animator;
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] ToggleRagdoll _toggleRagdoll;
 
-	// Private 
+// Private 
+	TargetVehicle target_vehicle;
+	TargetStickman target_stickman;
+
 	RecycledSequence recycledSequence = new RecycledSequence();
 	RecycledTween    recycledTween    = new RecycledTween();
 
@@ -55,7 +61,36 @@ public class Stickman : MonoBehaviour
 		sequence.Join( colorTween );
 	}
 
-    public void DetachFromVehicle()
+    public void FallFromVehicle()
+    {
+		DetachFromVehicle();
+		DelayedDisable();
+	}
+
+    public void MoveTowardsTargetVehicle( TargetVehicle targetVehicle, TargetStickman stickman )
+	{
+		target_vehicle  = targetVehicle;
+		target_stickman = stickman;
+
+		DetachFromVehicle();
+
+		stickman_movement_start.Raise();
+
+		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( stickman.transform.position,
+			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ),OnMoveTowardsTargetComplete );
+	}
+
+	void OnMoveTowardsTargetComplete()
+	{
+		target_stickman.IncreaseCount();
+		target_vehicle.IncreaseCount();
+
+		stickman_movement_end.Raise();
+
+		gameObject.SetActive( false );
+	}
+
+	void DetachFromVehicle()
     {
 		transform.parent = null;
 
@@ -63,11 +98,12 @@ public class Stickman : MonoBehaviour
 
 		_toggleRagdoll.SwitchRagdoll( true );
 		_toggleRagdoll.ToggleCollider( true );
+	}
 
+	void DelayedDisable()
+	{
 		recycledTween.Recycle( DOVirtual.DelayedCall( GameSettings.Instance.stickman_disableDuration,
 			() => gameObject.SetActive( false )
         ) );
 	}
-
-    // public void MoveTowardsTargetVehicle( )
 }
