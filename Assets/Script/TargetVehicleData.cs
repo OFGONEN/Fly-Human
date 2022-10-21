@@ -10,10 +10,12 @@ public class TargetVehicleData : ScriptableObject
     [ SerializeField ] TargetVehiclePartData[] vehicle_data_array;
     [ SerializeField ] string vehicle_name;
     [ SerializeField ] bool vehicle_is_unlocked;
+	[ SerializeField, ReadOnly ] int vehicle_stickman_count;
 
-	public string VehicleName     => vehicle_name;
-	public int VehiclePartCount   => vehicle_data_array.Length;
-	public bool VehicleIsUnlocked => vehicle_is_unlocked;
+	public string VehicleName       => vehicle_name;
+	public int VehiclePartCount     => vehicle_data_array.Length;
+	public int VehicleStickmanCount => vehicle_stickman_count;
+	public bool VehicleIsUnlocked   => vehicle_is_unlocked;
 
 	public TargetVehiclePartData GetTargetVehiclePartData( int index )
 	{
@@ -45,8 +47,18 @@ public class TargetVehicleData : ScriptableObject
 			var data = vehicleData.VehiclePartAtIndex( i );
 			vehicle_data_array[ i ] = new TargetVehiclePartData( data );
 		}
+	}
 
-		UnityEditor.AssetDatabase.SaveAssetIfDirty( this );
+	void OnValidate()
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_stickman_count = 0;
+
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+		{
+			vehicle_stickman_count += vehicle_data_array[ i ].count;
+		}
 	}
 #endif
 }
