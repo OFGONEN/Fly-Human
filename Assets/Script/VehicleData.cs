@@ -30,8 +30,6 @@ public class VehicleData : ScriptableObject
         {
 			vehicle_data_array[ i ].color = vehicle_data_array[ i ].color.SetAlpha( 1 );
 		}
-
-		UnityEditor.AssetDatabase.SaveAssetIfDirty( this );
 	}
 #endif
 }
