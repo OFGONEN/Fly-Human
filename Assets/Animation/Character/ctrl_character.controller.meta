@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/Character/ctrl_character.controller.meta
+guid: 0df81f208a53849a68377509ad5cb11f
+NativeFormatImporter:
+========
+guid: 8e27c4a93e62747f4892a9ad8fbf2051
+PrefabImporter:
+>>>>>>>> parent of 9309d9b (Create stickman gfx and ragdoll prefab):Assets/Model/Character/char_character_ragdoll.prefab.meta
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

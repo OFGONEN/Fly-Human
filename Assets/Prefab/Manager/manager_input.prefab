@@ -145,9 +145,9 @@ MonoBehaviour:
   onFinger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 39ee496a3e8c44fa4a03943c9fc75985, type: 2}
+      - m_Target: {fileID: 11400000, guid: 731d01fddd908e340b30730286a6ed66, type: 2}
         m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
-        m_MethodName: Raise
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -189,9 +189,9 @@ MonoBehaviour:
   onFinger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 7d415d0d5a85a44beab9214056cd6972, type: 2}
+      - m_Target: {fileID: 11400000, guid: 0f2f62492f628664aa69a8ab1b081efa, type: 2}
         m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
-        m_MethodName: Raise
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

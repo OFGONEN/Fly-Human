@@ -20,16 +20,23 @@ public class VehicleData : ScriptableObject
 	}
 
 #if UNITY_EDITOR
+	public void SetVehicleDataArray( VehiclePartData[] array )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_data_array = array;
+	}
+
     void OnValidate()
     {
+		if( vehicle_data_array == null ) return;
+
 		UnityEditor.EditorUtility.SetDirty( this );
 
 		for( var i = 0; i < vehicle_data_array.Length; i++ )
         {
 			vehicle_data_array[ i ].color = vehicle_data_array[ i ].color.SetAlpha( 1 );
 		}
-
-		UnityEditor.AssetDatabase.SaveAssetIfDirty( this );
 	}
 #endif
 }
