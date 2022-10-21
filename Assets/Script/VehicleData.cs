@@ -20,6 +20,13 @@ public class VehicleData : ScriptableObject
 	}
 
 #if UNITY_EDITOR
+	public void SetVehicleDataArray( VehiclePartData[] array )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_data_array = array;
+	}
+
     void OnValidate()
     {
 		if( vehicle_data_array == null ) return;
