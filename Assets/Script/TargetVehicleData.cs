@@ -12,7 +12,13 @@ public class TargetVehicleData : ScriptableObject
     [ SerializeField ] bool vehicle_is_unlocked;
 
 	public string VehicleName     => vehicle_name;
+	public int VehiclePartCount   => vehicle_data_array.Length;
 	public bool VehicleIsUnlocked => vehicle_is_unlocked;
+
+	public TargetVehiclePartData GetTargetVehiclePartData( int index )
+	{
+		return vehicle_data_array[ index ];
+	}
 
     public void CheckIfUnLocked()
     {
