@@ -22,6 +22,10 @@ namespace FFStudio
 
 	[ Title( "Pool" ) ]
 		[ SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
+
+	[ Title( "Shared Variables" ) ]
+		[ SerializeField ] TargetVehicleData[] target_vehicle_data_array;
+
 #endregion
 
 #region UnityAPI
@@ -36,6 +40,9 @@ namespace FFStudio
 
 			pool_UIPopUpText.InitPool( transform, false );
 			onAwakeEvent.Invoke();
+
+			for( var i = 0; i < target_vehicle_data_array.Length; i++ )
+				target_vehicle_data_array[ i ].CheckIfUnLocked();
 		}
 
 		void Start()
