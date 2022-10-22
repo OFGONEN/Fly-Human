@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using FFStudio;
 using Sirenix.OdinInspector;
 
@@ -10,11 +11,13 @@ public class TargetVehicleData : ScriptableObject
     [ SerializeField ] TargetVehiclePartData[] vehicle_data_array;
     [ SerializeField ] string vehicle_name;
     [ SerializeField ] bool vehicle_is_unlocked;
+	[ LabelText( "Vehicle Stickman Move Position" ), SerializeField ] Vector3 vehicle_position;
 	[ SerializeField, ReadOnly ] int vehicle_stickman_count;
 
 	public string VehicleName       => vehicle_name;
 	public int VehiclePartCount     => vehicle_data_array.Length;
 	public int VehicleStickmanCount => vehicle_stickman_count;
+	public Vector3 VehiclePosition  => vehicle_position;
 	public bool VehicleIsUnlocked   => vehicle_is_unlocked;
 
 	public TargetVehiclePartData GetTargetVehiclePartData( int index )
