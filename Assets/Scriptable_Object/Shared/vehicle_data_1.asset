@@ -13,14 +13,6 @@ MonoBehaviour:
   m_Name: vehicle_data_1
   m_EditorClassIdentifier: 
   vehicle_data_array:
-  - position: {x: 0.148, y: -0.003, z: 1.262}
-    rotation: {x: -0.0000034150946, y: 38.658134, z: 270}
-    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
-    pose: pose_straight_curved
-  - position: {x: -2.103, y: -0.003, z: 0.27}
-    rotation: {x: -0.00000085377366, y: 344.76697, z: 270}
-    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
-    pose: pose_straight_curved
   - position: {x: -1.1289058, y: -0.003, z: 0.979}
     rotation: {x: -0.000002561321, y: 7.2905593, z: 270}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
@@ -29,5 +21,13 @@ MonoBehaviour:
     rotation: {x: 90, y: 0, z: 0}
     color: {r: 1, g: 0.40648973, b: 0, a: 1}
     pose: pose_straight_1
+  - position: {x: 0.148, y: -0.003, z: 1.262}
+    rotation: {x: -0.0000034150946, y: 38.658134, z: 270}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_curved
+  - position: {x: -2.103, y: -0.003, z: 0.27}
+    rotation: {x: -0.00000085377366, y: 344.76697, z: 270}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_curved
   vehicle_name: plane_1
-  vehicle_count_min: 0
+  vehicle_count_min: 2
