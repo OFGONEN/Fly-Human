@@ -25,6 +25,7 @@ namespace FFStudio
 
 	[ Title( "Shared Variables" ) ]
 		[ SerializeField ] TargetVehicleData[] target_vehicle_data_array;
+		[ SerializeField ] Set_TargetStickman set_target_stickman;
 
 #endregion
 
@@ -43,6 +44,8 @@ namespace FFStudio
 
 			for( var i = 0; i < target_vehicle_data_array.Length; i++ )
 				target_vehicle_data_array[ i ].CheckIfUnLocked();
+
+			set_target_stickman.InitSet();
 		}
 
 		void Start()

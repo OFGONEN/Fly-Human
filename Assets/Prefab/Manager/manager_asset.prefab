@@ -72,6 +72,7 @@ MonoBehaviour:
   target_vehicle_data_array:
   - {fileID: 11400000, guid: 70d367e404d614e59aa5f2b744ef3d75, type: 2}
   - {fileID: 11400000, guid: 310bd0d7f0f85444aaf5dfb4d9de6bb3, type: 2}
+  set_target_stickman: {fileID: 11400000, guid: 0995d5b1ae94eb44b8b2a2381e50e9d2, type: 2}
 --- !u!114 &7751064681048781016
 MonoBehaviour:
   m_ObjectHideFlags: 0
