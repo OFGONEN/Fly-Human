@@ -17,13 +17,13 @@ namespace FFStudio
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
 	[ Title( "Data Setup" ) ]
-		[ LabelText( "Vehicle Evolve List" ), SerializeField ] List< VehicleData > vehicle_data_array; 
-		[ LabelText( "Target Vehicle Data" ), SerializeField ] TargetVehicleData vehicle_target;
-		[ LabelText( "Last Level of Vehicle" ), SerializeField ] bool vehicle_level_last;
-		[ LabelText( "Replay Scene Indexes " ), SerializeField, ShowIf( "vehicle_level_last" ) ] int[] vehicle_level_replay;
-		[ LabelText( "Next Level of Vehicle" ), SerializeField, HideIf( "vehicle_level_last" ) ] int vehicle_level_next;
-		[ LabelText( "Start Vehicle Index" ), SerializeField ] int vehicle_start_index;
-		[ LabelText( "Start Vehicle Part Count" ), SerializeField ] int vehicle_start_count;
+		[ LabelText( "Vehicle Evolve List" ) ] public List< VehicleData > vehicle_data_array; 
+		[ LabelText( "Target Vehicle Data" ) ] public TargetVehicleData vehicle_target;
+		[ LabelText( "Last Level of Vehicle" ) ] public bool vehicle_level_last;
+		[ LabelText( "Replay Scene Indexes " ), ShowIf( "vehicle_level_last" ) ] public int[] vehicle_level_replay;
+		[ LabelText( "Next Level of Vehicle" ), HideIf( "vehicle_level_last" ) ] public int vehicle_level_next;
+		[ LabelText( "Start Vehicle Index" ) ] public int vehicle_start_index;
+		[ LabelText( "Start Vehicle Part Count" ) ] public int vehicle_start_count;
 
 #if UNITY_EDITOR
 		static IEnumerable SceneList()
@@ -36,6 +36,18 @@ namespace FFStudio
 				list.Add( Path.GetFileNameWithoutExtension( SceneUtility.GetScenePathByBuildIndex( i ) ) + $" ({i})", i );
 
 			return list;
+		}
+
+		private void OnValidate()
+		{
+			if( vehicle_level_next > GameSettings.Instance.maxLevelCount )
+			{
+				UnityEditor.EditorUtility.SetDirty( this );
+
+				FFLogger.LogError( "Next Vehicle level cannot be bigger than MaxLevelCount" );
+				FFLogger.LogError( "Create Level Data assets and go into Play mode to update MaxLevelCount value of GameSettings" );
+				vehicle_level_next = GameSettings.Instance.maxLevelCount;
+			}
 		}
 #endif
     }
