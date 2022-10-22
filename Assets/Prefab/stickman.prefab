@@ -62,6 +62,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gfx_character_ragdoll
       objectReference: {fileID: 0}
+    - target: {fileID: 4023300086861195608, guid: 20170d50e86fd9045bdc7cf20804feac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0df81f208a53849a68377509ad5cb11f, type: 2}
     - target: {fileID: 5695645929732960627, guid: 20170d50e86fd9045bdc7cf20804feac, type: 3}
       propertyPath: m_RootOrder
       value: 0
