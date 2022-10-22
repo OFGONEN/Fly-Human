@@ -6,17 +6,19 @@ using Sirenix.OdinInspector;
 
 public class TargetVehicle : MonoBehaviour
 {
-  [ Title( "Setup" ) ]
+  [ Title( "Shared" ) ]
     [ SerializeField ] Pool_TargetStickman pool_stickman;
+    [ SerializeField ] Set_TargetStickman set_stickman;
     [ SerializeField ] TargetVehicleData vehicle_data;
 
     int vehicle_stickman_count;
 
 // Private
-    List< TargetStickman > stickman_list;
 
     void Awake()
     {
+		set_stickman.ClearSet();
+
 		SpawnStickmans();
 
 		vehicle_stickman_count = PlayerPrefsUtility.Instance.GetInt( ExtensionMethods.Key_Plane_Count, 0 );
@@ -26,7 +28,7 @@ public class TargetVehicle : MonoBehaviour
 
         while( counter < vehicle_stickman_count )
         {
-			var stickman = stickman_list[ index ];
+			var stickman = set_stickman.GetFromList( index );
 			stickman.IncreaseCount();
 
 			counter++;
@@ -43,14 +45,12 @@ public class TargetVehicle : MonoBehaviour
 
     void SpawnStickmans()
     {
-		stickman_list = new List< TargetStickman >( vehicle_data.VehiclePartCount );
-
 		for( var i = 0; i < vehicle_data.VehiclePartCount; i++ )
         {
 			var stickman = pool_stickman.GetEntity();
 			stickman.SpawnIntoPart( transform, vehicle_data.GetTargetVehiclePartData( i ) );
 
-			stickman_list.Add( stickman );
+			set_stickman.AddList( stickman );
 		}
     }
 }
