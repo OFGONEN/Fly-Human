@@ -49,6 +49,15 @@ public class TargetVehicleData : ScriptableObject
 		}
 	}
 
+	[ Button() ]
+	void ChangeStartColors( Color color )
+	{
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+		{
+			vehicle_data_array[ i ].color_start = color;
+		}
+	}
+
 	void OnValidate()
 	{
 		UnityEditor.EditorUtility.SetDirty( this );
