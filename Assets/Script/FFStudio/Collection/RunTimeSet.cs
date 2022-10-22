@@ -14,6 +14,10 @@ namespace FFStudio
 		[ ShowInInspector, ReadOnly ] List< TValue > itemList;
 		[ ShowInInspector, ReadOnly ] Dictionary< TKey, TValue > itemDictionary;
 
+		public int ListCount            => itemList.Count;
+		public int DictionaryValueCount => itemDictionary.Values.Count;
+		public int DictionaryKeyCount   => itemDictionary.Values.Count;
+
 		public void InitSet()
 		{
 			itemList       = new List< TValue >( size_list );
