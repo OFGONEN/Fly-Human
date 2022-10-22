@@ -30,8 +30,8 @@ namespace FFStudio
         {
 			for( var i = 0; i < ragdoll_rigidbody_array.Length; i++ )
 			{
-				ragdoll_rigidbody_array [ i ].isKinematic = on;
-				ragdoll_rigidbody_array [ i ].useGravity  = !on;
+				ragdoll_rigidbody_array [ i ].isKinematic = !on;
+				ragdoll_rigidbody_array [ i ].useGravity  = on;
 			}
         }
 
