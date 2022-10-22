@@ -7,7 +7,8 @@ using DG.Tweening;
 
 public class Stickman : MonoBehaviour
 {
-  [ Title( "Events" ) ]
+  [ Title( "Setup" ) ]
+	[ SerializeField ] Pool_Stickman pool_stickman;
 	[ SerializeField ] GameEvent stickman_movement_start;
 	[ SerializeField ] GameEvent stickman_movement_end;
 
@@ -17,6 +18,8 @@ public class Stickman : MonoBehaviour
     [ SerializeField ] ToggleRagdoll _toggleRagdoll;
 
 // Private 
+	bool is_pooled;
+
 	TargetVehicle target_vehicle;
 	TargetStickman target_stickman;
 
@@ -26,6 +29,12 @@ public class Stickman : MonoBehaviour
     void OnDisable()
     {
 		recycledSequence.Kill();
+
+		if( is_pooled )
+		{
+			pool_stickman.ReturnEntity( this );
+			is_pooled = false;
+		}
 	}
 
     void Awake()
