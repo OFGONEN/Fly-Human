@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using FFStudio;
 using Sirenix.OdinInspector;
 
@@ -66,4 +67,12 @@ public class TargetVehicle : MonoBehaviour
 			set_stickman.AddList( stickman );
 		}
     }
+#if UNITY_EDITOR
+	void OnDrawGizmos()
+	{
+		var localPosition = transform.TransformPoint( vehicle_data.VehiclePosition );
+		Handles.DrawWireCube( localPosition, Vector3.one / 2f );
+		Handles.Label( localPosition, vehicle_data.VehicleName + " Position" );
+	}
+#endif
 }
