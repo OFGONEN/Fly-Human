@@ -20,11 +20,17 @@ namespace FFStudio
 #endregion
 
 #region API
-		public void LoadCurrentLevelData()
-		{
+        public void IncreaseLevelCount()
+        {
+			CurrentLevelData.Instance.currentLevel_Real++;
+			CurrentLevelData.Instance.currentLevel_Shown++;
+
 			if( currentLevel_Real > GameSettings.Instance.maxLevelCount )
 				currentLevel_Real = Random.Range( 1, GameSettings.Instance.maxLevelCount );
 
+        }
+		public void LoadCurrentLevelData()
+		{
 			levelData = Resources.Load< LevelData >( "level_data_" + currentLevel_Real );
 		}
 #endregion
