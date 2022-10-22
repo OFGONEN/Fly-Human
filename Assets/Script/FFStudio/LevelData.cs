@@ -19,7 +19,7 @@ namespace FFStudio
 	[ Title( "Data Setup" ) ]
 		[ LabelText( "Vehicle Evolve List" ) ] public List< VehicleData > vehicle_data_array; 
 		[ LabelText( "Target Vehicle Data" ) ] public TargetVehicleData vehicle_target;
-		[ LabelText( "Last Level of Vehicle" ) ] public bool vehicle_level_last;
+		[ LabelText( "Vehicle's Last Level" ) ] public bool vehicle_level_last;
 		[ LabelText( "Replay Scene Indexes " ), ShowIf( "vehicle_level_last" ) ] public int[] vehicle_level_replay;
 		[ LabelText( "Next Level of Vehicle" ), HideIf( "vehicle_level_last" ) ] public int vehicle_level_next;
 		[ LabelText( "Start Vehicle Index" ) ] public int vehicle_start_index;
