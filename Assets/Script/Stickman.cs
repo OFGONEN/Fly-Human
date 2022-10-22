@@ -80,6 +80,14 @@ public class Stickman : MonoBehaviour
 			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ),OnMoveTowardsTargetComplete );
 	}
 
+	public void MoveTowardsPosition ( Vector3 position )
+	{
+		DetachFromVehicle();
+		stickman_movement_start.Raise();
+		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( position,
+			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMoveTowardsTargetComplete );
+	}
+
 	void OnMoveTowardsTargetComplete()
 	{
 		target_stickman.IncreaseCount();
@@ -87,6 +95,12 @@ public class Stickman : MonoBehaviour
 
 		stickman_movement_end.Raise();
 
+		gameObject.SetActive( false );
+	}
+
+	void OnMovePositionComplete()
+	{
+		stickman_movement_end.Raise();
 		gameObject.SetActive( false );
 	}
 
