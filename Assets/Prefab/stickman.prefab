@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5becb1d61434541eb9e3a7dfa20a0240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pool_stickman: {fileID: 11400000, guid: 1a4560599a02b47cbb40989818643e3a, type: 2}
   stickman_movement_start: {fileID: 11400000, guid: 0fb9bc9cb30affa49b4bfb3d62afb234, type: 2}
   stickman_movement_end: {fileID: 11400000, guid: 945280de0208c2b40be115e8f01cd95a, type: 2}
   _animator: {fileID: 6780120202778769619}

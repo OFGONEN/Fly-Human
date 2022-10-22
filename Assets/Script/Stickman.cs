@@ -88,6 +88,23 @@ public class Stickman : MonoBehaviour
 			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMoveTowardsTargetComplete );
 	}
 
+	public void SpawnIntoVehicle( Transform transform, VehiclePartData data )
+	{
+		gameObject.SetActive( true );
+
+		is_pooled = true;
+
+		_toggleRagdoll.SwitchRagdoll( false );
+		_toggleRagdoll.ToggleCollider( true );
+
+		transform.parent           = transform;
+		transform.localPosition    = data.position;
+		transform.localEulerAngles = data.rotation;
+
+		_colorSetter.SetColor( data.color );
+		_animator.SetTrigger( data.pose );
+	}
+
 	void OnMoveTowardsTargetComplete()
 	{
 		target_stickman.IncreaseCount();
