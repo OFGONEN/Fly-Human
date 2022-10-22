@@ -8,11 +8,17 @@ namespace FFStudio
 {
     public abstract class RuntimeSet< TKey, TValue > : ScriptableObject
     {
-		public int setSize;
-		[ ShowInInspector ]
-		public List< TValue > itemList = new List< TValue >();
-		[ ShowInInspector ]
-		public Dictionary< TKey, TValue > itemDictionary = new Dictionary< TKey, TValue >();
+		[ SerializeField ] int size_list;
+		[ SerializeField ] int size_dictionary;
+
+		[ ShowInInspector, ReadOnly ] List< TValue > itemList;
+		[ ShowInInspector, ReadOnly ] Dictionary< TKey, TValue > itemDictionary;
+
+		public void InitSet()
+		{
+			itemList       = new List< TValue >( size_list );
+			itemDictionary = new Dictionary< TKey, TValue >( size_dictionary );
+		}
 
 		public void AddList( TValue value )
 		{
