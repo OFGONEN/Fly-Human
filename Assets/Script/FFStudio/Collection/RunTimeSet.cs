@@ -72,7 +72,21 @@ namespace FFStudio
 			itemList.Clear();
 			itemDictionary.Clear();
 		}
+
+		public TValue GetFromList( int index )
+		{
+			return itemList[ index ];
+		}
+
+		public TValue GetFromDictionary( TKey key )
+		{
+			TValue value;
+			itemDictionary.TryGetValue( key, out value );
+
+			return value;
+		}
         
+#if UNITY_EDITOR
 		[ Button ]
 		public void LogList()
 		{
@@ -87,4 +101,5 @@ namespace FFStudio
 				Debug.Log( item.ToString() );
 		}
     }
+#endif
 }
