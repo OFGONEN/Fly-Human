@@ -29,12 +29,6 @@ public class Stickman : MonoBehaviour
     void OnDisable()
     {
 		recycledSequence.Kill();
-
-		if( is_pooled )
-		{
-			pool_stickman.ReturnEntity( this );
-			is_pooled = false;
-		}
 	}
 
     void Awake()
@@ -97,7 +91,7 @@ public class Stickman : MonoBehaviour
 			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMoveTowardsTargetComplete );
 	}
 
-	public void SpawnIntoVehicle( Transform transform, VehiclePartData data )
+	public void SpawnIntoVehicle( Transform vehicle, VehiclePartData data )
 	{
 		gameObject.SetActive( true );
 
@@ -106,7 +100,7 @@ public class Stickman : MonoBehaviour
 		_toggleRagdoll.SwitchRagdoll( false );
 		_toggleRagdoll.ToggleCollider( true );
 
-		transform.parent           = transform;
+		transform.parent           = vehicle;
 		transform.localPosition    = data.position;
 		transform.localEulerAngles = data.rotation;
 
@@ -143,7 +137,18 @@ public class Stickman : MonoBehaviour
 	void DelayedDisable()
 	{
 		recycledTween.Recycle( DOVirtual.DelayedCall( GameSettings.Instance.stickman_disableDuration,
-			() => gameObject.SetActive( false )
+			OnDelayedDisableComplete
         ) );
+	}
+
+	void OnDelayedDisableComplete()
+	{
+		if( is_pooled )
+		{
+			is_pooled = false;
+			pool_stickman.ReturnEntity( this );
+		}
+		else
+			gameObject.SetActive( false );
 	}
 }
