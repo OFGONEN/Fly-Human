@@ -52,6 +52,8 @@ public class TargetVehicleData : ScriptableObject
 	[ Button() ]
 	void ChangeStartColors( Color color )
 	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
 		for( var i = 0; i < vehicle_data_array.Length; i++ )
 		{
 			vehicle_data_array[ i ].color_start = color;
