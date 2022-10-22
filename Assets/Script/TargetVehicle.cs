@@ -10,6 +10,8 @@ public class TargetVehicle : MonoBehaviour
     [ SerializeField ] Pool_TargetStickman pool_stickman;
     [ SerializeField ] Set_TargetStickman set_stickman;
     [ SerializeField ] TargetVehicleData vehicle_data;
+    [ SerializeField ] GameEvent event_vehicle_unlocked;
+    [ SerializeField ] GameEvent event_vehicle_progressed;
 
     int vehicle_stickman_count;
 
@@ -41,6 +43,17 @@ public class TargetVehicle : MonoBehaviour
     public void IncreaseCount()
     {
 		vehicle_stickman_count++;
+	}
+
+	public void OnStickmanMovementDone()
+	{
+		if( vehicle_stickman_count >= vehicle_data.VehicleStickmanCount )
+		{
+			vehicle_data.Unlock();
+			event_vehicle_unlocked.Raise();
+		}
+		else
+			event_vehicle_progressed.Raise();
 	}
 
     void SpawnStickmans()
