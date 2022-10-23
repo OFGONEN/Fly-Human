@@ -66,6 +66,9 @@ public class Stickman : MonoBehaviour
 
     public void FallFromVehicle()
     {
+		recycledSequence.Kill();
+		recycledTween.Kill();
+
 		DetachFromVehicle();
 		DelayedDisable();
 	}
@@ -106,6 +109,13 @@ public class Stickman : MonoBehaviour
 
 		_colorSetter.SetColor( data.color );
 		_animator.SetTrigger( data.pose );
+	}
+
+	public void TurnIntoCurrency()
+	{
+		//todo gain currency
+		//todo spawn particle effect - coin splash particle
+		OnDelayedDisableComplete();
 	}
 
 	void OnMoveTowardsTargetComplete()
