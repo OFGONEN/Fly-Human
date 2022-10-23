@@ -17,7 +17,7 @@ namespace FFStudio
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
 	[ Title( "Data Setup" ) ]
-		[ LabelText( "Vehicle Evolve List" ) ] public List< VehicleData > vehicle_data_array; 
+		[ LabelText( "Vehicle Evolve List" ) ] public VehicleData[] vehicle_data_array; 
 		[ LabelText( "Target Vehicle Data" ) ] public TargetVehicleData vehicle_target;
 		[ LabelText( "Vehicle's Last Level" ) ] public bool vehicle_level_last;
 		[ LabelText( "Replay Scene Indexes " ), ShowIf( "vehicle_level_last" ) ] public int[] vehicle_level_replay;
