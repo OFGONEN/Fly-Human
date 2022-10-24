@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicle_data_target: {fileID: 11400000, guid: ea7ff680ccaa93549aa5112eabb85f84, type: 2}
   stickman_pose_array:
-  - stickman_name: char_character_sitting_anim
+  - stickman_name: character_sitting
     stickman_pose: pose_sitting
-  - stickman_name: char_character_straight_1
+  - stickman_name: character_straight_1
     stickman_pose: pose_straight_1
-  - stickman_name: char_character_straight_2
+  - stickman_name: character_straight_2
     stickman_pose: pose_straight_2
-  - stickman_name: char_character_straight_curved
+  - stickman_name: character_straight_curved
     stickman_pose: pose_straight_curved
-  - stickman_name: char_character_straight_curved_feet_1
+  - stickman_name: character_straight_curved_feet_1
     stickman_pose: pose_straight_curved_feet_1
-  - stickman_name: char_character_straight_curved_feet_2
+  - stickman_name: character_straight_curved_feet_2
     stickman_pose: pose_straight_curved_feet_2
