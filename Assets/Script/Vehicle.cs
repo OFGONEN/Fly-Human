@@ -8,6 +8,7 @@ public class Vehicle : MonoBehaviour
 {
   [ Title( "Setup" ) ]
     [ SerializeField ] Pool_Stickman pool_stickman;
+    [ SerializeField ] SphereCollider vehicle_collider;
 
 // Private
     List< Stickman > vehicle_stickman = new List< Stickman >( 64 );
@@ -17,8 +18,7 @@ public class Vehicle : MonoBehaviour
 	void Awake()
     {
 		var levelData = CurrentLevelData.Instance.levelData;
-		vehicle_index = levelData.vehicle_start_index;
-		vehicle_data  = levelData.vehicle_data_array[ vehicle_index ];
+		ChangeVehicleData( levelData.vehicle_start_index );
 
 		SpawnStickman( levelData.vehicle_start_count );
 	}
@@ -72,8 +72,7 @@ public class Vehicle : MonoBehaviour
 
 	void Evolve( Stickman incomingStickman )
 	{
-		vehicle_index++;
-		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
+		ChangeVehicleData( vehicle_index + 1 );
 
 		ChangeAllStickmenToParts();
 
@@ -83,9 +82,7 @@ public class Vehicle : MonoBehaviour
 
 	void Devolve()
 	{
-		vehicle_index--;
-		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
-
+		ChangeVehicleData( vehicle_index - 1 );
 		ChangeAllStickmenToParts();
 	}
 
@@ -104,5 +101,16 @@ public class Vehicle : MonoBehaviour
 
 			stickman.SpawnIntoVehicle( transform, vehicle_data.VehiclePartAtIndex( i ) );
 		}
+	}
+
+	void ChangeVehicleData( int index )
+	{
+		vehicle_index = index;
+		vehicle_data  = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
+
+
+		var colliderData                             = vehicle_data.VehicleCollider;
+		    vehicle_collider.transform.localPosition = colliderData.position;
+		    vehicle_collider.radius                  = colliderData.size;
 	}
 }
