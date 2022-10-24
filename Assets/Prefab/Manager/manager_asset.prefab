@@ -74,6 +74,10 @@ MonoBehaviour:
   target_vehicle_data_array:
   - {fileID: 11400000, guid: 70d367e404d614e59aa5f2b744ef3d75, type: 2}
   - {fileID: 11400000, guid: 310bd0d7f0f85444aaf5dfb4d9de6bb3, type: 2}
+  - {fileID: 11400000, guid: cb21a7b1d1f8f8e4083242e4232a1477, type: 2}
+  - {fileID: 11400000, guid: 0a9f706021cd9164390ebe3a71847254, type: 2}
+  - {fileID: 11400000, guid: f84b2a8f2c7fc2c4f90d6035fb6b2181, type: 2}
+  - {fileID: 11400000, guid: 2327bd29dd3f89340a1b8c83a684f758, type: 2}
   set_target_stickman: {fileID: 11400000, guid: 0995d5b1ae94eb44b8b2a2381e50e9d2, type: 2}
 --- !u!114 &7751064681048781016
 MonoBehaviour:
