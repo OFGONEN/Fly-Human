@@ -48,7 +48,7 @@ public class Stickman : MonoBehaviour
 		sequence.Append( transform.DOLocalJump( vehiclePartData.position,
 			GameSettings.Instance.stickman_jump_power,
 			1,
-			GameSettings.Instance.ui_PopUp_duration ) );
+			GameSettings.Instance.stickman_pose_duration ) );
 		sequence.Join( transform.DOLocalRotate( vehiclePartData.rotation, GameSettings.Instance.stickman_pose_duration ) );
 		sequence.Join( colorTween );
 	}
@@ -59,7 +59,7 @@ public class Stickman : MonoBehaviour
 		var colorTween = _colorSetter.LerpColor( vehiclePartData.color, GameSettings.Instance.stickman_pose_duration );
 
 		var sequence = recycledSequence.Recycle();
-		sequence.Append( transform.DOLocalMove( vehiclePartData.position, GameSettings.Instance.ui_PopUp_duration ) );
+		sequence.Append( transform.DOLocalMove( vehiclePartData.position, GameSettings.Instance.stickman_pose_duration ) );
 		sequence.Join( transform.DOLocalRotate( vehiclePartData.rotation, GameSettings.Instance.stickman_pose_duration ) );
 		sequence.Join( colorTween );
 	}
