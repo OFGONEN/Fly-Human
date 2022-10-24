@@ -225,5 +225,5 @@ MonoBehaviour:
     pose: pose_straight_2
   vehicle_name: plane_5
   vehicle_is_unlocked: 0
-  vehicle_position: {x: 0, y: 0, z: 0}
+  vehicle_position: {x: 0, y: 3, z: -1.5}
   vehicle_stickman_count: 35
