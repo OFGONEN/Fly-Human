@@ -10,9 +10,19 @@ public class TargetVehicleData : ScriptableObject
     [ SerializeField ] TargetVehiclePartData[] vehicle_data_array;
     [ SerializeField ] string vehicle_name;
     [ SerializeField ] bool vehicle_is_unlocked;
+	[ LabelText( "Vehicle Stickman Move Position" ), SerializeField ] Vector3 vehicle_position;
+	[ SerializeField, ReadOnly ] int vehicle_stickman_count;
 
-	public string VehicleName     => vehicle_name;
-	public bool VehicleIsUnlocked => vehicle_is_unlocked;
+	public string VehicleName       => vehicle_name;
+	public int VehiclePartCount     => vehicle_data_array.Length;
+	public int VehicleStickmanCount => vehicle_stickman_count;
+	public Vector3 VehiclePosition  => vehicle_position;
+	public bool VehicleIsUnlocked   => vehicle_is_unlocked;
+
+	public TargetVehiclePartData GetTargetVehiclePartData( int index )
+	{
+		return vehicle_data_array[ index ];
+	}
 
     public void CheckIfUnLocked()
     {
@@ -39,8 +49,29 @@ public class TargetVehicleData : ScriptableObject
 			var data = vehicleData.VehiclePartAtIndex( i );
 			vehicle_data_array[ i ] = new TargetVehiclePartData( data );
 		}
+	}
 
-		UnityEditor.AssetDatabase.SaveAssetIfDirty( this );
+	[ Button() ]
+	void ChangeStartColors( Color color )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+		{
+			vehicle_data_array[ i ].color_start = color;
+		}
+	}
+
+	void OnValidate()
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_stickman_count = 0;
+
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+		{
+			vehicle_stickman_count += vehicle_data_array[ i ].count;
+		}
 	}
 #endif
 }

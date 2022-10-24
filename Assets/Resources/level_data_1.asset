@@ -14,3 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 1
   scene_overrideAsActiveScene: 0
+  vehicle_data_array:
+  - {fileID: 11400000, guid: ea7ff680ccaa93549aa5112eabb85f84, type: 2}
+  - {fileID: 11400000, guid: b7bc38c5eadb7e943a4c89eb88adc0e7, type: 2}
+  vehicle_target: {fileID: 0}
+  vehicle_level_last: 0
+  vehicle_level_replay: 
+  vehicle_level_next: 0
+  vehicle_start_index: 0
+  vehicle_start_count: 2

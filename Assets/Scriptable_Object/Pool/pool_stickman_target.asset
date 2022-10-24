@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99349d7c4977440e1875770753b53279, type: 3}
   m_Name: pool_stickman_target
   m_EditorClassIdentifier: 
-  stackSize: 32
-  pool_entity: {fileID: 0}
+  stackSize: 64
+  pool_entity: {fileID: 5688276173777442113, guid: a7317ed09cbd3484e9ac3c9c722b3e93, type: 3}
