@@ -40,6 +40,9 @@ namespace FFStudio
 
 		private void OnValidate()
 		{
+			// Can't be less than 1
+			vehicle_level_next = Mathf.Max( vehicle_level_next, 1 );
+
 			if( vehicle_level_next > GameSettings.Instance.maxLevelCount )
 			{
 				UnityEditor.EditorUtility.SetDirty( this );
