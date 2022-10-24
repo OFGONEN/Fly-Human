@@ -6,6 +6,7 @@ using UnityEngine;
 using FFStudio;
 using Sirenix.OdinInspector;
 using UnityEditor;
+using System.IO;
 
 [ CreateAssetMenu( fileName = "tool_vehicle_data_extractor", menuName = "FFEditor/Tool/Vehicle Data Extractor" ) ]
 public class VehicleDataExtractor : ScriptableObject
@@ -35,9 +36,11 @@ public class VehicleDataExtractor : ScriptableObject
         for( var i = 0; i < vehicle_data_array.Length; i++ )
         {
 			var child = planeGameObject.GetChild( i );
+			var prefab = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot( child.gameObject );
+			var prefabName = Path.GetFileNameWithoutExtension( prefab );
 			string pose;
 
-            if( !ReturnStickmanPose( child, out pose ) )
+            if( !ReturnStickmanPose( prefabName, out pose ) )
             {
                 FFLogger.LogError( "Stickman Pose didn't found: " + child.name, child );
 				return;
@@ -50,10 +53,8 @@ public class VehicleDataExtractor : ScriptableObject
 		vehicle_data_target.SetVehicleColliderData( planeGameObject.GetComponent< SphereCollider >() );
 	}
 
-    bool ReturnStickmanPose( Transform transform, out string pose )
+    bool ReturnStickmanPose( string name, out string pose )
     {
-		var name = transform.name;
-
 		for( var i = 0; i < stickman_pose_array.Length; i++ )
 		{
             if( name.Contains( stickman_pose_array[ i ].stickman_name ) )
