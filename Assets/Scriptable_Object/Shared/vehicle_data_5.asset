@@ -64,47 +64,47 @@ MonoBehaviour:
   - position: {x: -0.413, y: 2.596, z: -1.435}
     rotation: {x: -0, y: 180, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.02, y: 2.523, z: -1.435}
     rotation: {x: -0, y: 180, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.416, y: 2.595, z: -1.435}
     rotation: {x: -0, y: 180, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.368, y: 2.599, z: 0.001}
     rotation: {x: -0, y: 0.0003380943, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.03, y: 2.598, z: 0.001}
     rotation: {x: -0, y: 0.0003380943, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.467, y: 2.6, z: 0.001}
     rotation: {x: -0, y: 0.0003380943, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.412, y: 0.411, z: 0}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.014, y: 0.41, z: 0}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.412, y: 0.414, z: 0}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.372, y: 0.417, z: -1.435}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.448, y: 0.416, z: -1.435}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.091000006, y: 1.0297751, z: -3.135}
     rotation: {x: 344.9995, y: 89.999825, z: 90.00007}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}

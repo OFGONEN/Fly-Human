@@ -68,19 +68,19 @@ MonoBehaviour:
   - position: {x: 0.093, y: 0.251, z: -0.696}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.469, y: 0.251, z: -0.696}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.513, y: 0.24, z: 0.7199999}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.083, y: 0.247, z: 0.7199999}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.949, y: 1.747, z: -0.17}
     rotation: {x: 0.00016783114, y: 180, z: 89.99967}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
@@ -140,19 +140,19 @@ MonoBehaviour:
   - position: {x: 0.47, y: 0.251, z: -0.696}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: 0.46, y: 0.247, z: 0.7199999}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.89, y: 0.247, z: 0.7199999}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.88, y: 0.251, z: -0.696}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_2
   - position: {x: -0.20399892, y: 1.3801186, z: -1.06}
     rotation: {x: 90, y: 180.00032, z: 0}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}

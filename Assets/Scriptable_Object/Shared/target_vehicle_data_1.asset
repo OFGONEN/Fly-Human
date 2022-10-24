@@ -24,19 +24,19 @@ MonoBehaviour:
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_1
   - position: {x: 0.303, y: -0.003, z: 1.138}
     rotation: {x: -0.0000034150946, y: 38.658134, z: 270}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_1
   - position: {x: -1.906, y: -0.003, z: 0.324}
     rotation: {x: -0.00000085377366, y: 344.76697, z: 270}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_1
   vehicle_name: plane_1
   vehicle_is_unlocked: 0
   vehicle_position: {x: 0, y: 0.3, z: 0.5}

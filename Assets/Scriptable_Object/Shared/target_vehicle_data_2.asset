@@ -48,19 +48,19 @@ MonoBehaviour:
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_1
   - position: {x: -0.917, y: -0.003, z: 1.961}
     rotation: {x: -0.000002561321, y: 7.2905593, z: 270}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_1
   - position: {x: -1.897, y: -0.003, z: 1.335}
     rotation: {x: -0.00000085377366, y: 344.76697, z: 270}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
-    pose: pose_straight_curved
+    pose: pose_straight_curved_feet_1
   - position: {x: 0.787, y: -0.036, z: -2.37}
     rotation: {x: 90, y: 335, z: 0}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
