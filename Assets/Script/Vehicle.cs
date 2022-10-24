@@ -43,16 +43,56 @@ public class Vehicle : MonoBehaviour
 		}
 	}
 
+	public void OnLooseStickman( int count )
+	{
+		var stickmanCount   = vehicle_stickman.Count;
+		var surplusStickman = stickmanCount - vehicle_data.VehicleCountMin;
+		var looseCount      = Mathf.Min( surplusStickman, count );
+		var devolve         = stickmanCount - looseCount == vehicle_data.VehicleCountMin;
+	
+#if UNITY_EDITOR
+		if( stickmanCount - looseCount < vehicle_data.VehicleCountMin )
+		{
+			FFLogger.LogError( "This shouldn't happen!!" +
+				"Stickman Count: " + stickmanCount +
+				"Loose Count: " + count +
+				"Real Loose Count: " + looseCount );
+		}
+#endif
+
+		for( var i = stickmanCount; i > i - looseCount ; i-- )
+		{
+			vehicle_stickman[ i ].FallFromVehicle();
+			vehicle_stickman.RemoveAt( i );
+		}
+
+		if( devolve && vehicle_index > 0 )
+			Devolve();
+	}
+
 	void Evolve( Stickman incomingStickman )
 	{
 		vehicle_index++;
 		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
 
-		for( var i = 0; i < vehicle_stickman.Count; i++ )
-			vehicle_stickman[ i ].ChangeToAnoterPart( vehicle_data.VehiclePartAtIndex( i ) );
+		ChangeAllStickmenToParts();
 
 		incomingStickman.AttachToVehicle( transform, vehicle_data.VehiclePartAtIndex( vehicle_stickman.Count ) );
 		vehicle_stickman.Add( incomingStickman );
+	}
+
+	void Devolve()
+	{
+		vehicle_index--;
+		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
+
+		ChangeAllStickmenToParts();
+	}
+
+	void ChangeAllStickmenToParts()
+	{
+		for( var i = 0; i < vehicle_stickman.Count; i++ )
+			vehicle_stickman[ i ].ChangeToAnoterPart( vehicle_data.VehiclePartAtIndex( i ) );
 	}
 
     void SpawnStickman( int count )
