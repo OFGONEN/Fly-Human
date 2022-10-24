@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7664091956786105733}
   m_Layer: 0
-  m_Name: plane_10
+  m_Name: plane_6_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
