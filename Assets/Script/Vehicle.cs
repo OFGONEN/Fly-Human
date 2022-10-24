@@ -11,9 +11,9 @@ public class Vehicle : MonoBehaviour
     [ SerializeField ] SphereCollider vehicle_collider;
 
 // Private
-    List< Stickman > vehicle_stickman = new List< Stickman >( 64 );
-	VehicleData vehicle_data;
-	int vehicle_index;
+    [ ShowInInspector, ReadOnly ] List< Stickman > vehicle_stickman = new List< Stickman >( 64 );
+	[ ShowInInspector, ReadOnly ] VehicleData vehicle_data;
+	[ ShowInInspector, ReadOnly ] int vehicle_index;
 
 	void Awake()
     {
@@ -43,6 +43,7 @@ public class Vehicle : MonoBehaviour
 		}
 	}
 
+	[ Button() ]
 	public void OnLooseStickman( int count )
 	{
 		var stickmanCount   = vehicle_stickman.Count;
@@ -59,8 +60,9 @@ public class Vehicle : MonoBehaviour
 				"Real Loose Count: " + looseCount );
 		}
 #endif
+		int startIndex = stickmanCount - 1;
 
-		for( var i = stickmanCount; i > i - looseCount ; i-- )
+		for( var i = startIndex; i > startIndex - looseCount; i-- )
 		{
 			vehicle_stickman[ i ].FallFromVehicle();
 			vehicle_stickman.RemoveAt( i );
