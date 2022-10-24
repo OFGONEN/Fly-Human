@@ -57,7 +57,7 @@ public class VehicleDataExtractor : ScriptableObject
     {
 		for( var i = 0; i < stickman_pose_array.Length; i++ )
 		{
-            if( name.Contains( stickman_pose_array[ i ].stickman_name ) )
+            if( name.Equals( stickman_pose_array[ i ].stickman_name ) )
             {
 				pose = stickman_pose_array[ i ].stickman_pose;
 				return true;
