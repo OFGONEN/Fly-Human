@@ -38,14 +38,21 @@ public class Vehicle : MonoBehaviour
 		}
 		else
 		{
-			stickman.AttachToVehicle( transform, vehicle_data.VehiclePartAtIndex( stickman_count + 1 ) );
+			stickman.AttachToVehicle( transform, vehicle_data.VehiclePartAtIndex( stickman_count ) );
 			vehicle_stickman.Add( stickman );
 		}
 	}
 
 	void Evolve( Stickman incomingStickman )
 	{
+		vehicle_index++;
+		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
 
+		for( var i = 0; i < vehicle_stickman.Count; i++ )
+			vehicle_stickman[ i ].ChangeToAnoterPart( vehicle_data.VehiclePartAtIndex( i ) );
+
+		incomingStickman.AttachToVehicle( transform, vehicle_data.VehiclePartAtIndex( vehicle_stickman.Count ) );
+		vehicle_stickman.Add( incomingStickman );
 	}
 
     void SpawnStickman( int count )
