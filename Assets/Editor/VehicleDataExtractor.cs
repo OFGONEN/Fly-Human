@@ -47,6 +47,7 @@ public class VehicleDataExtractor : ScriptableObject
 		}
 
 		vehicle_data_target.SetVehicleDataArray( vehicle_data_array );
+		vehicle_data_target.SetVehicleColliderData( planeGameObject.GetComponent< SphereCollider >() );
 	}
 
     bool ReturnStickmanPose( Transform transform, out string pose )
