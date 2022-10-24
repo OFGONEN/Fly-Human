@@ -29,6 +29,14 @@ public class VehicleData : ScriptableObject
 		vehicle_data_array = array;
 	}
 
+	public void SetVehicleColliderData( SphereCollider collider )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_collider.position = collider.center;
+		vehicle_collider.size     = collider.radius;
+	}
+
     void OnValidate()
     {
 		if( vehicle_data_array == null ) return;
