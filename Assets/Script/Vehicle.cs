@@ -10,6 +10,7 @@ public class Vehicle : MonoBehaviour
     [ SerializeField ] Pool_Stickman pool_stickman;
     [ SerializeField ] Set_TargetStickman set_stickman_target;
     [ SerializeField ] SharedReferenceNotifier notif_vehicle_target;
+    [ SerializeField ] GameEvent event_vehicle_changed;
     [ SerializeField ] SphereCollider vehicle_collider;
 
 // Private
@@ -17,7 +18,7 @@ public class Vehicle : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] VehicleData vehicle_data;
 	[ ShowInInspector, ReadOnly ] int vehicle_index;
 
-	void Awake()
+	void Start()
     {
 		var levelData = CurrentLevelData.Instance.levelData;
 		ChangeVehicleData( levelData.vehicle_start_index );
