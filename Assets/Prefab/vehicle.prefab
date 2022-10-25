@@ -155,7 +155,7 @@ MonoBehaviour:
   pool_stickman: {fileID: 11400000, guid: 1a4560599a02b47cbb40989818643e3a, type: 2}
   set_stickman_target: {fileID: 11400000, guid: 0995d5b1ae94eb44b8b2a2381e50e9d2, type: 2}
   notif_vehicle_target: {fileID: 11400000, guid: 8168742b06830422984b6a6a71faf072, type: 2}
-  event_vehicle_changed: {fileID: 11400000, guid: 182cfa2632cfdba49bfaf3471d114d23, type: 2}
+  event_vehicle_changed: {fileID: 11400000, guid: f4d3f1ffdecdd354086a78ccc6226159, type: 2}
   vehicle_collider: {fileID: 7265406051457011835}
 --- !u!54 &3117028271706953928
 Rigidbody:
