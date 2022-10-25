@@ -25,6 +25,14 @@ namespace FFStudio
 #endregion
 
 #region API
+		public void BecomeMovableRagdoll()
+		{
+			SwitchRagdoll( true );
+
+			ragdollRigidbody_main.isKinematic = true;
+			ragdollRigidbody_main.useGravity  = false;
+		}
+
         [ Button() ]
         public void SwitchRagdoll( bool on )
         {
