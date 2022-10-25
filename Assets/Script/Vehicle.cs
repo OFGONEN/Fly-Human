@@ -10,7 +10,7 @@ public class Vehicle : MonoBehaviour
     [ SerializeField ] Pool_Stickman pool_stickman;
     [ SerializeField ] Set_TargetStickman set_stickman_target;
     [ SerializeField ] SharedReferenceNotifier notif_vehicle_target;
-    [ SerializeField ] GameEvent event_vehicle_changed;
+    [ SerializeField ] IntGameEvent event_vehicle_changed;
     [ SerializeField ] SphereCollider vehicle_collider;
 
 // Private
@@ -146,6 +146,7 @@ public class Vehicle : MonoBehaviour
 		vehicle_index = index;
 		vehicle_data  = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
 
+		event_vehicle_changed.Raise( vehicle_index );
 
 		var colliderData                             = vehicle_data.VehicleCollider;
 		    vehicle_collider.transform.localPosition = colliderData.position;
