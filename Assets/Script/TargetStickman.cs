@@ -13,8 +13,8 @@ public class TargetStickman : MonoBehaviour
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] Animator _animator;
 
-	TargetVehiclePartData stickman_data;
-	int stickman_count = 0;
+	[ ShowInInspector, ReadOnly ] TargetVehiclePartData stickman_data;
+	[ ShowInInspector, ReadOnly ] int stickman_count = 0;
 
 	public int StickmanCount      => stickman_count;
 	public int StickmanMaxCount   => stickman_data.count;
