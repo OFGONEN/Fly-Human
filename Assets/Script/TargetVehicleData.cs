@@ -37,7 +37,7 @@ public class TargetVehicleData : ScriptableObject
 
 #if UNITY_EDITOR
 	[ Button() ]
-    void CreateDataFromVehicleData( VehicleData vehicleData )
+    void CreateDataFromVehicleData( VehicleData vehicleData, Color startColor )
     {
 		UnityEditor.EditorUtility.SetDirty( this );
 
@@ -48,6 +48,7 @@ public class TargetVehicleData : ScriptableObject
 		{
 			var data = vehicleData.VehiclePartAtIndex( i );
 			vehicle_data_array[ i ] = new TargetVehiclePartData( data );
+			vehicle_data_array[ i ].color_start = startColor;
 		}
 	}
 
