@@ -52,6 +52,17 @@ public class TargetVehicleData : ScriptableObject
 	}
 
 	[ Button() ]
+	void GetPoseDataFromVehicleData( VehicleData vehicleData )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		for( var i = 0; i < vehicle_data_array.Length; i++ )
+		{
+			vehicle_data_array[ i ].pose = vehicleData.VehiclePartAtIndex( i ).pose;
+		}
+	}
+
+	[ Button() ]
 	void ChangeStartColors( Color color )
 	{
 		UnityEditor.EditorUtility.SetDirty( this );

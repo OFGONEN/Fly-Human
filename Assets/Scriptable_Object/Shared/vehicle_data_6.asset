@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605170217b2c3489085e0ee5326ffd28, type: 3}
+  m_Name: vehicle_data_6
+  m_EditorClassIdentifier: 
+  vehicle_data_array:
+  - position: {x: -1.745, y: 1.097, z: -3.956}
+    rotation: {x: 90, y: 29.999783, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: 1.296, y: 1.097, z: -3.9601}
+    rotation: {x: 90, y: 329.99988, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.643, y: 1.097, z: -2.5889997}
+    rotation: {x: 90, y: 270, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.3834, y: 1.6231186, z: -1.362}
+    rotation: {x: 90, y: 199.30733, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.8, y: 1.6231186, z: -1.4}
+    rotation: {x: 90, y: 155.73657, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.237, y: 0.885, z: -0.838}
+    rotation: {x: 284.5587, y: -0.0011615896, z: 10.693725}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.666, y: 0.892, z: -0.842}
+    rotation: {x: 284.55847, y: 5.1792517, z: 340.69394}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.21215516, y: 1.6152127, z: 0.192}
+    rotation: {x: 45.000004, y: 270, z: 90}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.20399892, y: 1.6231186, z: 0.1921}
+    rotation: {x: 90, y: 180.00032, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.5724961, y: 1.6067331, z: 0.1909}
+    rotation: {x: 60.71373, y: 90.00011, z: 269.9998}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.794, y: 1.6231186, z: 0.245}
+    rotation: {x: 90, y: 19.307001, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.21000001, y: 1.6231186, z: 0.0177}
+    rotation: {x: 90, y: 0, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.192, y: 1.6231186, z: 0.221}
+    rotation: {x: 90, y: 349.307, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.093, y: 0.251, z: -0.696}
+    rotation: {x: -0, y: 180.00034, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: -0.469, y: 0.251, z: -0.696}
+    rotation: {x: -0, y: 180.00034, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: -0.513, y: 0.24, z: 0.7199999}
+    rotation: {x: -0, y: 0, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: 0.083, y: 0.247, z: 0.7199999}
+    rotation: {x: -0, y: 0, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: 0.949, y: 1.747, z: -0.17}
+    rotation: {x: 0.00016783114, y: 180, z: 89.99967}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.9498, y: 1.7471, z: 0.16}
+    rotation: {x: 0.00016783114, y: 180, z: 89.99967}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.2986, y: 1.8, z: 0.1176}
+    rotation: {x: 90, y: 80.06648, z: 0}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.318, y: 1.8, z: -0.011}
+    rotation: {x: 90, y: 90.000336, z: 0}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.313, y: 1.8, z: -0.152}
+    rotation: {x: 90, y: 99.01965, z: 0}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.294, y: 1.8, z: 0.144}
+    rotation: {x: 90, y: 279.02, z: 0}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.283, y: 1.8, z: 0.003}
+    rotation: {x: 90, y: 270.00067, z: 0}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.298, y: 1.8, z: -0.125}
+    rotation: {x: 90, y: 260.0668, z: 0}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.548, y: 1.747, z: 0.162}
+    rotation: {x: 0.00016420982, y: 0.00032841729, z: 89.99967}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.549, y: 1.747, z: -0.168}
+    rotation: {x: 0.00016420982, y: 0.00032841729, z: 89.99967}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.102, y: 1.593, z: 1.97}
+    rotation: {x: 0.00016420982, y: 0.00032841729, z: 89.99967}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.089, y: 1.593, z: 1.97}
+    rotation: {x: 0.00016421085, y: 180.00066, z: 89.999664}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.102, y: 1.611, z: 1.97}
+    rotation: {x: -0, y: -0, z: 65}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.089, y: 1.611, z: 1.97}
+    rotation: {x: -0, y: 180.00099, z: 65}
+    color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.47, y: 0.251, z: -0.696}
+    rotation: {x: -0, y: 180.00034, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: 0.46, y: 0.247, z: 0.7199999}
+    rotation: {x: -0, y: 0, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: -0.89, y: 0.247, z: 0.7199999}
+    rotation: {x: -0, y: 0, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: -0.88, y: 0.251, z: -0.696}
+    rotation: {x: -0, y: 180.00034, z: 0}
+    color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    pose: pose_straight_curved_feet_2
+  - position: {x: -0.20399892, y: 1.3801186, z: -1.06}
+    rotation: {x: 90, y: 180.00032, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.5, y: 1.6152127, z: 0.192}
+    rotation: {x: 45.000004, y: 270, z: 90}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.92, y: 1.6067331, z: 0.1909}
+    rotation: {x: 60.71373, y: 90.00011, z: 269.9998}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: 0.45, y: 1.6231186, z: 0.221}
+    rotation: {x: 90, y: 349.307, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.062, y: 1.6231186, z: 0.245}
+    rotation: {x: 90, y: 19.307001, z: 0}
+    color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+    pose: pose_straight_2
+  - position: {x: -0.20399892, y: 1.3801186, z: -2.04}
+    rotation: {x: 90, y: 180.00032, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: 1.356, y: 1.025, z: -3.998}
+    rotation: {x: 76.60975, y: 270.00012, z: 345.00015}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.725, y: 1.0197, z: -4.033}
+    rotation: {x: 75.81942, y: 89.99999, z: 15.000298}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.145, y: 1.097, z: -2.79}
+    rotation: {x: 90, y: 90.000336, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.145, y: 1.097, z: -3.099}
+    rotation: {x: 90, y: 90.000336, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  - position: {x: -1.145, y: 1.097, z: -3.44}
+    rotation: {x: 90, y: 90.000336, z: 0}
+    color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
+    pose: pose_straight_2
+  vehicle_name: plane_6
+  vehicle_count_min: 35
+  vehicle_collider:
+    position: {x: 0, y: 0.5, z: 2.5}
+    size: 0.5

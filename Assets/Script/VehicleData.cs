@@ -9,10 +9,12 @@ public class VehicleData : ScriptableObject
     [ SerializeField ] VehiclePartData[] vehicle_data_array;
     [ SerializeField ] string vehicle_name;
     [ SerializeField, Min( 1 ) ] int vehicle_count_min;
+    [ SerializeField ] VehicleColliderData vehicle_collider;
 
-	public string VehicleName  => vehicle_name;
-	public int VehicleCountMin => vehicle_count_min;
-	public int VehicleCountMax => vehicle_data_array.Length;
+	public string VehicleName                  => vehicle_name;
+	public int VehicleCountMin                 => vehicle_count_min;
+	public int VehicleCountMax                 => vehicle_data_array.Length;
+	public VehicleColliderData VehicleCollider => vehicle_collider;
 
     public VehiclePartData VehiclePartAtIndex( int index )
     {
@@ -25,6 +27,14 @@ public class VehicleData : ScriptableObject
 		UnityEditor.EditorUtility.SetDirty( this );
 
 		vehicle_data_array = array;
+	}
+
+	public void SetVehicleColliderData( SphereCollider collider )
+	{
+		UnityEditor.EditorUtility.SetDirty( this );
+
+		vehicle_collider.position = collider.center;
+		vehicle_collider.size     = collider.radius;
 	}
 
     void OnValidate()

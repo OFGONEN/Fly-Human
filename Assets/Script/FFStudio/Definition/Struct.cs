@@ -199,4 +199,11 @@ namespace FFStudio
 			pose        = data.pose;
 		}
 	}
+
+	[ Serializable ]
+	public struct VehicleColliderData
+	{
+		public Vector3 position;
+		public float size;
+	}
 }

@@ -13,8 +13,9 @@ namespace FFStudio
     [ Title( "Stickman" ) ]
 		[ LabelText( "Pose Duration" ) ] public float stickman_pose_duration;
 		[ LabelText( "Jump Power" ) ] public float stickman_jump_power;
+		[ LabelText( "Jump Duration" ) ] public float stickman_jump_duration;
 		[ LabelText( "Disable Duration" ) ] public float stickman_disableDuration;
-		[ LabelText( "Disable Duration" ) ] public Vector2 stickman_targetMove_duration;
+		[ LabelText( "Target Movement Duration" ) ] public Vector2 stickman_targetMove_duration;
 
     [ Title( "Stickman" ) ]
 		[ LabelText( "Target Vehicle Stickmand Start Color" ) ] public Color target_vehicle_stickman_color_start;
@@ -64,8 +65,23 @@ namespace FFStudio
 
         delegate GameSettings ReturnGameSettings();
         static ReturnGameSettings returnInstance = LoadInstance;
+#if UNITY_EDITOR
+		public static GameSettings Instance
+		{
+			get
+			{
+				if( Application.isPlaying )
+					return returnInstance();
+				else
+				{
+					return UnityEditor.AssetDatabase.LoadAssetAtPath< GameSettings >( "Assets/Resources/game_settings.asset" );
+				}
+			}
 
+		}
+#else 
 		public static GameSettings Instance => returnInstance();
+#endif
 #endregion
 
 #region Implementation

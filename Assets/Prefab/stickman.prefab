@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9204051376078865593}
   - component: {fileID: 511978037061145147}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: stickman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 5306842927416207983}
   - component: {fileID: 8060648162934427229}
   - component: {fileID: 8404323913936609896}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
