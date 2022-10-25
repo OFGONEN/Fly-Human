@@ -28,7 +28,11 @@ namespace FFStudio
 		public void BecomeMovableRagdoll()
 		{
 			SwitchRagdoll( true );
+			MakeMainRbMovable();
+		}
 
+		public void MakeMainRbMovable()
+		{
 			ragdollRigidbody_main.isKinematic = true;
 			ragdollRigidbody_main.useGravity  = false;
 		}
