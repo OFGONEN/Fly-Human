@@ -13,12 +13,13 @@ public class TargetStickman : MonoBehaviour
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] Animator _animator;
 
-	TargetVehiclePartData stickman_data;
-	float stickman_count = 0;
+	[ ShowInInspector, ReadOnly ] TargetVehiclePartData stickman_data;
+	[ ShowInInspector, ReadOnly ] int stickman_count = 0;
 
-	public int StickmanCount    => Mathf.FloorToInt( stickman_count );
-	public int StickmanMaxCount => stickman_data.count;
-	public bool StickmanMaxed   => stickman_count == stickman_data.count;
+	public int StickmanCount      => stickman_count;
+	public int StickmanMaxCount   => stickman_data.count;
+	public int StickmanDeficiency => stickman_data.count - stickman_count;
+	public bool StickmanMaxed     => stickman_count == stickman_data.count;
 
 	public void OnLevelUnloadStart()
     {
@@ -48,6 +49,6 @@ public class TargetStickman : MonoBehaviour
 
     Color ReturnLerpedColor()
     {
-		return Color.Lerp( stickman_data.color_start, stickman_data.color_end, stickman_count / stickman_data.count );
+		return Color.Lerp( stickman_data.color_start, stickman_data.color_end, (float) stickman_count / stickman_data.count );
 	}
 }

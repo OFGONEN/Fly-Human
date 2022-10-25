@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 846026465603583490}
   - component: {fileID: 7265406051457011835}
   m_Layer: 31
-  m_Name: collider
+  m_Name: collider_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,6 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool_stickman: {fileID: 11400000, guid: 1a4560599a02b47cbb40989818643e3a, type: 2}
+  set_stickman_target: {fileID: 11400000, guid: 0995d5b1ae94eb44b8b2a2381e50e9d2, type: 2}
+  notif_vehicle_target: {fileID: 11400000, guid: 8168742b06830422984b6a6a71faf072, type: 2}
   vehicle_collider: {fileID: 7265406051457011835}
 --- !u!54 &3117028271706953928
 Rigidbody:
@@ -168,6 +170,24 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: 18852f141e6b543a884f8be7f6006e9b, type: 2}
             m_ObjectArgumentAssemblyTypeName: StickmanGameEvent, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: d6870c4c590adb64dbff6d73023b384a, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6883730530862109171}
+          m_TargetAssemblyTypeName: Vehicle, Assembly-CSharp
+          m_MethodName: OnFinishLine
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
