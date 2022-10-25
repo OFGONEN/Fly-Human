@@ -72,6 +72,11 @@ public class Vehicle : MonoBehaviour
 			Devolve();
 	}
 
+	public void OnFinishLine()
+	{
+
+	}
+
 	void Evolve( Stickman incomingStickman )
 	{
 		ChangeVehicleData( vehicle_index + 1 );
