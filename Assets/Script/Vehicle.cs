@@ -45,6 +45,14 @@ public class Vehicle : MonoBehaviour
 		}
 	}
 
+	public void OnLooseStickman( float percentage )
+	{
+		var count = vehicle_stickman.Count * percentage / 100f;
+		count = Mathf.Max( 1, Mathf.FloorToInt( count ) );
+
+		OnLooseStickman( count );
+	}
+
 	[ Button() ]
 	public void OnLooseStickman( int count )
 	{
