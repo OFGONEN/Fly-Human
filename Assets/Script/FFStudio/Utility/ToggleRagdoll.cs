@@ -22,6 +22,10 @@ namespace FFStudio
 #endregion
 
 #region Unity API
+		private void Awake()
+		{
+			ragdollRigidbody_main = ragdoll_rigidbody_array[ 0 ];
+		}
 #endregion
 
 #region API
