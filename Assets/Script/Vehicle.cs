@@ -8,6 +8,8 @@ public class Vehicle : MonoBehaviour
 {
   [ Title( "Setup" ) ]
     [ SerializeField ] Pool_Stickman pool_stickman;
+    [ SerializeField ] Set_TargetStickman set_stickman_target;
+    [ SerializeField ] SharedReferenceNotifier notif_vehicle_target;
     [ SerializeField ] SphereCollider vehicle_collider;
 
 // Private
@@ -72,9 +74,29 @@ public class Vehicle : MonoBehaviour
 			Devolve();
 	}
 
+	[ Button() ]
 	public void OnFinishLine()
 	{
+		var targetVehicle = notif_vehicle_target.sharedValue as TargetVehicle;
+		var stickmanIndex = 0;
 
+		for( var i = 0; i < set_stickman_target.ListCount; i++ )
+		{
+			var targetStickman = set_stickman_target.GetFromList( i );
+			var vehicleIndexTarget = stickmanIndex + targetStickman.StickmanDeficiency;
+
+			for( ; stickmanIndex < vehicleIndexTarget && stickmanIndex < vehicle_stickman.Count; stickmanIndex++ )
+			{
+				vehicle_stickman[ stickmanIndex ].MoveTowardsTargetVehicle( targetVehicle, targetStickman );
+			}
+		}
+
+		var targetVehiclePosition = targetVehicle.TargetVehiclePosition;
+
+		for( var i = stickmanIndex; i < vehicle_stickman.Count; i++ )
+		{
+			vehicle_stickman[ i ].MoveTowardsPosition( targetVehiclePosition );
+		}
 	}
 
 	void Evolve( Stickman incomingStickman )
