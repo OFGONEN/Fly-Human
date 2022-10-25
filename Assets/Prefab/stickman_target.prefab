@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gfx_character
       objectReference: {fileID: 0}
+    - target: {fileID: 1556279775032116693, guid: e6e50b4ed7f25a24d8417cf36948bc87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27fa9828bfdda8b48830cf3886e30144, type: 2}
     - target: {fileID: 4205985577853633501, guid: e6e50b4ed7f25a24d8417cf36948bc87, type: 3}
       propertyPath: m_Controller
       value: 
