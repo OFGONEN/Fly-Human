@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2947494178947079426}
   - component: {fileID: 6883730530862109171}
+  - component: {fileID: 2245883669988855901}
   - component: {fileID: 3117028271706953928}
   m_Layer: 31
   m_Name: vehicle
@@ -138,6 +139,7 @@ Transform:
   - {fileID: 7792097959512192672}
   - {fileID: 846026465603583490}
   - {fileID: 7050082462791282828}
+  - {fileID: 5637734838408286067}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -159,6 +161,18 @@ MonoBehaviour:
   event_vehicle_changed: {fileID: 11400000, guid: f4d3f1ffdecdd354086a78ccc6226159, type: 2}
   vehicle_gfx: {fileID: 7792097959512192672}
   vehicle_collider: {fileID: 7265406051457011835}
+--- !u!114 &2245883669988855901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832105399074481623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c935c5eeea1e24897ad035fc0747fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &3117028271706953928
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,6 +189,69 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &2135317998587669655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5637734838408286067}
+  - component: {fileID: 2406654834356867901}
+  m_Layer: 31
+  m_Name: logic_level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5637734838408286067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135317998587669655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2947494178947079426}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2406654834356867901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135317998587669655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245dc21cc9428744fa28ad2d6ce7d327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPairs:
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: efef06bf257ee27438d6c2aab4936226, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2245883669988855901}
+          m_TargetAssemblyTypeName: VehicleMovement, Assembly-CSharp
+          m_MethodName: OnLevelStarted
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6484529928037877755
 GameObject:
   m_ObjectHideFlags: 0
