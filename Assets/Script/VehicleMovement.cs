@@ -43,6 +43,11 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region API
+    public void OnLevelStarted()
+    {
+		onFixedUpdateMethod = MoveOnPlatform;
+	}
+
     public void OnVehicleChanged( IntGameEvent gameEvent )
     {
 		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ];
@@ -51,6 +56,17 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+    void MoveOnPlatform()
+    {
+		var position = transform.position;
+
+		transform.position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+
+		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+
+		RaycastOntoPlatform();
+	}
+
     void PlaceVehicleOnPlatform()
     {
 		RaycastOntoPlatform();
