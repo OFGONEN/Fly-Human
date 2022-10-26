@@ -31,6 +31,10 @@ public class VehicleMovement : MonoBehaviour
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
 	}
 
+    private void Start()
+    {
+		PlaceVehicleOnPlatform();
+	}
 
     private void FixedUpdate()
     {
@@ -47,6 +51,13 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+    void PlaceVehicleOnPlatform()
+    {
+		RaycastOntoPlatform();
+
+		transform.position = vehicle_point_origin;
+		transform.LookAtAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis );
+	}
 
     void RaycastOntoPlatform()
     {
