@@ -13,6 +13,8 @@ public class VehicleMovement : MonoBehaviour
 
 // Private
     VehicleData vehicle_data;
+	UnityMessage onFingerDown;
+	UnityMessage onFingerUp;
     UnityMessage onFixedUpdateMethod;
 
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
@@ -27,7 +29,7 @@ public class VehicleMovement : MonoBehaviour
 #region Unity API
     private void Awake()
     {
-		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
+		EmptyOutDelegates();
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
 	}
 
@@ -43,9 +45,20 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region API
+
     public void OnLevelStarted()
     {
-		onFixedUpdateMethod = MoveOnPlatform;
+		onFingerDown = FingerDown;
+	}
+
+	public void OnFingerDown()
+	{
+		onFingerDown();
+	}
+
+	public void OnFingerUp()
+	{
+		onFingerUp();
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
@@ -56,6 +69,20 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+	void FingerDown()
+	{
+		onFixedUpdateMethod = MoveOnPlatform;
+		onFingerDown        = ExtensionMethods.EmptyMethod;
+		onFingerUp          = FingerUp;
+	}
+
+	void FingerUp()
+	{
+		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
+		onFingerDown        = FingerDown;
+		onFingerUp          = ExtensionMethods.EmptyMethod;
+	}
+
     void MoveOnPlatform()
     {
 		var position = transform.position;
@@ -93,6 +120,13 @@ public class VehicleMovement : MonoBehaviour
 
 		vehicle_point_origin = hitInfo_Origin.point;
 		vehicle_point_target = hitInfo_Target.point;
+	}
+	
+	void EmptyOutDelegates()
+	{
+		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
+		onFingerDown        = ExtensionMethods.EmptyMethod;
+		onFingerUp          = ExtensionMethods.EmptyMethod;
 	}
 #endregion
 
