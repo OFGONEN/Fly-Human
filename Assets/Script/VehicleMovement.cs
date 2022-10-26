@@ -45,7 +45,6 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region API
-
     public void OnLevelStarted()
     {
 		onFingerDown = FingerDown;
@@ -59,6 +58,13 @@ public class VehicleMovement : MonoBehaviour
 	public void OnFingerUp()
 	{
 		onFingerUp();
+	}
+	
+	public void OnVehicleEject()
+	{
+		onFixedUpdateMethod = MoveOnAir;
+		onFingerDown        = FingerDown_Air;
+		onFingerUp          = ExtensionMethods.EmptyMethod;
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
@@ -76,11 +82,21 @@ public class VehicleMovement : MonoBehaviour
 		onFingerUp          = FingerUp;
 	}
 
+	void FingerDown_Air()
+	{
+
+	}
+
 	void FingerUp()
 	{
 		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
 		onFingerDown        = FingerDown;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
+	}
+
+	void FingerUp_Air()
+	{
+
 	}
 
     void MoveOnPlatform()
@@ -92,6 +108,12 @@ public class VehicleMovement : MonoBehaviour
 		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
 
 		RaycastOntoPlatform();
+	}
+
+	void MoveOnAir()
+	{
+		var position = transform.position;
+		transform.position = Vector3.Lerp( position, position + transform.forward, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_speed );
 	}
 
     void PlaceVehicleOnPlatform()
