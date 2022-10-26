@@ -93,8 +93,6 @@ public class VehicleMovement : MonoBehaviour
 
 		vehicle_point_origin = hitInfo_Origin.point;
 		vehicle_point_target = hitInfo_Target.point;
-
-        FFLogger.Log( "Collider: ", hitInfo_Origin.collider );
 	}
 #endregion
 
