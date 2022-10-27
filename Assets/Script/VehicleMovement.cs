@@ -11,6 +11,8 @@ using DG.Tweening;
 public class VehicleMovement : MonoBehaviour
 {
 #region Fields
+  [ Title( "Setup" ) ]
+	[ SerializeField ] SharedReferenceNotifier notif_vehicle_reference;
 
 // Private
     VehicleData vehicle_data;
@@ -24,6 +26,7 @@ public class VehicleMovement : MonoBehaviour
 
     int layerMask;
 
+	Vehicle vehicle;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
 
@@ -42,6 +45,8 @@ public class VehicleMovement : MonoBehaviour
 
     private void Start()
     {
+		vehicle = notif_vehicle_reference.sharedValue as Vehicle;
+
 		PlaceVehicleOnPlatform();
 	}
 
@@ -173,11 +178,30 @@ public class VehicleMovement : MonoBehaviour
 
 	void VehicleCollidedPlatform()
 	{
+		EmptyOutDelegates();
 		RaycastOntoPlatform();
 
-		EmptyOutDelegates();
+		var vehicleDirection = transform.forward;
+		var slopeDirection   = ( vehicle_point_target - vehicle_point_origin ).normalized;
+
+		var angle = Mathf.Acos( Vector3.Dot( vehicleDirection, slopeDirection ) ) * Mathf.Rad2Deg;
+		FFLogger.Log( "Slope Enter Angle: " + angle, this );
+
+		if( angle >= GameSettings.Instance.vehicle_collide_angle )
+			HandleLanding_Bad();
+		else
+			HandleLanding_Good();
+	}
+
+	void HandleLanding_Good()
+	{
 		onFixedUpdateMethod = MoveOnPlatform;
 		onFingerDown        = FingerDown_Platform;
+	}
+
+	void HandleLanding_Bad()
+	{
+		vehicle.OnLooseStickman( 50 );
 	}
 
     void RaycastOntoPlatform()
