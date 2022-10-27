@@ -24,6 +24,8 @@ public class VehicleMovement : MonoBehaviour
     int layerMask;
 
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
+	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
+
 	RecycledTween recycledTween = new RecycledTween();
 #endregion
 
@@ -76,6 +78,8 @@ public class VehicleMovement : MonoBehaviour
 		onFixedUpdateMethod = MoveOnAir;
 		onFingerDown        = FingerDown_Air;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
+
+		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
@@ -101,7 +105,11 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerDown_Air()
 	{
+		FFLogger.PopUpText( transform.position, "Finger DOWN Air" );
+		onFingerDown = ExtensionMethods.EmptyMethod;
+		onFingerUp   = FingerUp_Air;
 
+		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed_max;
 	}
 
 	void FingerUp_Platform()
@@ -115,6 +123,11 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerUp_Air()
 	{
+		FFLogger.PopUpText( transform.position, "Finger UP Air" );
+		onFingerDown = FingerDown_Air;
+		onFingerUp   = ExtensionMethods.EmptyMethod;
+
+		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
 	}
 
     void MoveOnPlatform()
@@ -122,7 +135,6 @@ public class VehicleMovement : MonoBehaviour
 		var position = transform.position;
 
 		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
-
 		transform.position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * vehicle_movement_speed );
 
 		RaycastOntoPlatform();
@@ -130,8 +142,19 @@ public class VehicleMovement : MonoBehaviour
 
 	void MoveOnAir()
 	{
+		//Move the vehicle
 		var position = transform.position;
 		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
+
+
+		transform.Rotate( Vector3.right * vehicle_movement_rotate_speed * Time.fixedDeltaTime, Space.World );
+		//Rotate the vehicle
+		var eulerAngle         = transform.eulerAngles.x;
+
+		if( eulerAngle < 270 )
+			eulerAngle = Mathf.Min( eulerAngle, GameSettings.Instance.vehicle_fly_rotate_clamp );
+
+		transform.eulerAngles = transform.eulerAngles.SetX( eulerAngle );
 	}
 
     void PlaceVehicleOnPlatform()
