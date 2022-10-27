@@ -30,7 +30,9 @@ namespace FFStudio
 		[ LabelText( "Vehicle Movement Look Axis" ) ] public Vector3 vehicle_movement_look_axis;
 
     [ Title( "Vehicle Air" ) ]
-		[ LabelText( "Vehicle Air Movement Speed Max" ) ] public float vehicle_fly_speed_max;
+		[ LabelText( "Vehicle Air Movement Rotate Clamp" ) ] public float vehicle_fly_rotate_clamp;
+		[ LabelText( "Vehicle Air Movement Rotate Speed" ) ] public float vehicle_fly_rotate_speed;
+		[ LabelText( "Vehicle Air Movement Rotate Speed Max" ) ] public float vehicle_fly_rotate_speed_max;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
