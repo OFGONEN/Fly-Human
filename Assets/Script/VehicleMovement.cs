@@ -31,13 +31,15 @@ public class VehicleMovement : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
 
 	RecycledTween recycledTween = new RecycledTween();
-#endregion
 
-#region Properties
-#endregion
+	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
+	#endregion
 
-#region Unity API
-    private void Awake()
+	#region Properties
+	#endregion
+
+	#region Unity API
+	private void Awake()
     {
 		EmptyOutDelegates();
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
@@ -182,12 +184,11 @@ public class VehicleMovement : MonoBehaviour
 		RaycastOntoPlatform();
 
 		var vehicleDirection = transform.forward;
-		var slopeDirection   = ( vehicle_point_target - vehicle_point_origin ).normalized;
 
-		var angle = Mathf.Acos( Vector3.Dot( vehicleDirection, slopeDirection ) ) * Mathf.Rad2Deg;
-		FFLogger.Log( "Slope Enter Angle: " + angle, this );
+		var angle = Mathf.Acos( Vector3.Dot( vehicleDirection, SlopeDirection ) ) * Mathf.Rad2Deg;
+		FFLogger.PopUpText( transform.position, "Slope Enter Angle: " + angle );
 
-		if( angle >= GameSettings.Instance.vehicle_collide_angle )
+		if( angle >= GameSettings.Instance.vehicle_landing_angle )
 			HandleLanding_Bad();
 		else
 			HandleLanding_Good();
@@ -201,7 +202,20 @@ public class VehicleMovement : MonoBehaviour
 
 	void HandleLanding_Bad()
 	{
+		recycledTween.Kill();
 		vehicle.OnLooseStickman( 50 );
+
+		var vehicleRotation = Quaternion.LookRotation( SlopeDirection, Vector3.up ).eulerAngles;
+
+		recycledTween.Recycle( transform.DORotate( vehicleRotation, GameSettings.Instance.vehicle_landing_adjust_duration )
+			.SetEase( GameSettings.Instance.vehicle_landing_adjust_ease ),
+			OnVehicleAdjustComplete );
+	}
+
+	void OnVehicleAdjustComplete()
+	{
+		//todo Is this Enough ?
+		HandleLanding_Good();
 	}
 
     void RaycastOntoPlatform()
