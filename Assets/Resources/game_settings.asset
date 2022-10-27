@@ -27,6 +27,7 @@ MonoBehaviour:
   vehicle_movement_speed_ease: 1
   vehicle_movement_look_speed: 20
   vehicle_movement_look_axis: {x: 1, y: 0, z: 0}
+  vehicle_fly_rotate_axis: {x: 1, y: 0, z: 0}
   vehicle_fly_rotate_clamp: 85
   vehicle_fly_rotate_speed: 2
   vehicle_fly_rotate_speed_max: 5

@@ -30,6 +30,7 @@ namespace FFStudio
 		[ LabelText( "Vehicle Movement Look Axis" ) ] public Vector3 vehicle_movement_look_axis;
 
     [ Title( "Vehicle Air" ) ]
+		[ LabelText( "Vehicle Air Movement Rotate Axis" ) ] public Vector3 vehicle_fly_rotate_axis;
 		[ LabelText( "Vehicle Air Movement Rotate Clamp" ) ] public float vehicle_fly_rotate_clamp;
 		[ LabelText( "Vehicle Air Movement Rotate Speed" ) ] public float vehicle_fly_rotate_speed;
 		[ LabelText( "Vehicle Air Movement Rotate Speed Max" ) ] public float vehicle_fly_rotate_speed_max;
