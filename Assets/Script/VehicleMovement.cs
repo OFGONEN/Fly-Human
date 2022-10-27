@@ -6,6 +6,7 @@ using UnityEngine;
 using FFStudio;
 using Sirenix.OdinInspector;
 using UnityEditor;
+using DG.Tweening;
 
 public class VehicleMovement : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class VehicleMovement : MonoBehaviour
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_target;
 
-    int layerMask;    
+    int layerMask;
+
+	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
+	RecycledTween recycledTween = new RecycledTween();
 #endregion
 
 #region Properties
@@ -47,7 +51,13 @@ public class VehicleMovement : MonoBehaviour
 #region API
     public void OnLevelStarted()
     {
-		onFingerDown = FingerDown;
+		FFLogger.Log( "Vehicle Level Started" );
+		vehicle_movement_speed = GameSettings.Instance.vehicle_movement_speed;
+
+		onFixedUpdateMethod = MoveOnPlatform;
+		onFingerDown        = FingerDown_Platform;
+
+		FingerDown_Platform();
 	}
 
 	public void OnFingerDown()
@@ -62,6 +72,7 @@ public class VehicleMovement : MonoBehaviour
 	
 	public void OnVehicleEject()
 	{
+		FFLogger.PopUpText( transform.position, "Ejected" );
 		onFixedUpdateMethod = MoveOnAir;
 		onFingerDown        = FingerDown_Air;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
@@ -75,11 +86,17 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
-	void FingerDown()
+	void FingerDown_Platform()
 	{
-		onFixedUpdateMethod = MoveOnPlatform;
-		onFingerDown        = ExtensionMethods.EmptyMethod;
-		onFingerUp          = FingerUp;
+		FFLogger.PopUpText( transform.position, "Finger DOWN Platform" );
+		onFingerDown = ExtensionMethods.EmptyMethod;
+		onFingerUp   = FingerUp_Platform;
+
+		recycledTween.Recycle( 
+			DOTween.To( GetVehicleMovementSpeed, SetVehicleMovementSpeed,
+			GameSettings.Instance.vehicle_movement_speed_max, GameSettings.Instance.vehicle_movement_speed_duration )
+			.SetEase( GameSettings.Instance.vehicle_movement_speed_ease )
+		);
 	}
 
 	void FingerDown_Air()
@@ -87,11 +104,13 @@ public class VehicleMovement : MonoBehaviour
 
 	}
 
-	void FingerUp()
+	void FingerUp_Platform()
 	{
-		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
-		onFingerDown        = FingerDown;
-		onFingerUp          = ExtensionMethods.EmptyMethod;
+		FFLogger.PopUpText( transform.position, "Finger UP Platform" );
+		onFingerDown = FingerDown_Platform;
+		onFingerUp   = ExtensionMethods.EmptyMethod;
+
+		recycledTween.Kill();
 	}
 
 	void FingerUp_Air()
@@ -150,6 +169,20 @@ public class VehicleMovement : MonoBehaviour
 		onFingerDown        = ExtensionMethods.EmptyMethod;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
 	}
+#endregion
+
+#region GetterAndSetter
+	float GetVehicleMovementSpeed()
+	{
+		return vehicle_movement_speed;
+	}
+
+	void SetVehicleMovementSpeed( float value )
+	{
+		vehicle_movement_speed = value;
+	}
+
+
 #endregion
 
 #region Editor Only
