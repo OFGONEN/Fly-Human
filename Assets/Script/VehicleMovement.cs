@@ -115,16 +115,15 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerUp_Air()
 	{
-
 	}
 
     void MoveOnPlatform()
     {
 		var position = transform.position;
 
-		transform.position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
-
 		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+
+		transform.position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * vehicle_movement_speed );
 
 		RaycastOntoPlatform();
 	}
