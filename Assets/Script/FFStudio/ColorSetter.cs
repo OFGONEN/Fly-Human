@@ -57,7 +57,7 @@ namespace FFStudio
 
 		public Tween LerpColor( Color endColor, float duration )
 		{
-			return DOTween.To( GetCurrentColor, SetCurrentColor, endColor, duration );
+			return DOTween.To( GetCurrentColor, SetCurrentColor, endColor, duration ).OnUpdate( SetColor );
 		}
 #endregion
 
