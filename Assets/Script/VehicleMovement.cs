@@ -219,7 +219,7 @@ public class VehicleMovement : MonoBehaviour
 
 	void OnVehicleAdjustComplete()
 	{
-		//todo Is this Enough ?
+		vehicle_movement_speed = GameSettings.Instance.vehicle_movement_speed_default;
 		HandleLanding_Good();
 	}
 
