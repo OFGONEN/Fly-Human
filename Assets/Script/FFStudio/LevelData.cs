@@ -51,6 +51,10 @@ namespace FFStudio
 				FFLogger.LogError( "Create Level Data assets and go into Play mode to update MaxLevelCount value of GameSettings" );
 				vehicle_level_next = GameSettings.Instance.maxLevelCount;
 			}
+
+			vehicle_start_index = Mathf.Clamp( vehicle_start_index, 0, vehicle_data_array.Length - 1 );
+			var vehicleData = vehicle_data_array[ vehicle_start_index ];
+			vehicle_start_count = Mathf.Clamp( vehicle_start_count, vehicleData.VehicleCountMin, vehicleData.VehicleCountMax );
 		}
 #endif
     }

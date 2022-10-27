@@ -79,6 +79,7 @@ public class Stickman : MonoBehaviour
 		target_stickman = stickman;
 
 		DetachFromVehicle();
+		_toggleRagdoll.MakeMainRbMovable();
 
 		stickman_movement_start.Raise();
 
@@ -89,6 +90,8 @@ public class Stickman : MonoBehaviour
 	public void MoveTowardsPosition ( Vector3 position )
 	{
 		DetachFromVehicle();
+		_toggleRagdoll.MakeMainRbMovable();
+
 		stickman_movement_start.Raise();
 		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( position,
 			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMoveTowardsTargetComplete );

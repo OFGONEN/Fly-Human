@@ -22,9 +22,25 @@ namespace FFStudio
 #endregion
 
 #region Unity API
+		private void Awake()
+		{
+			ragdollRigidbody_main = ragdoll_rigidbody_array[ 0 ];
+		}
 #endregion
 
 #region API
+		public void BecomeMovableRagdoll()
+		{
+			SwitchRagdoll( true );
+			MakeMainRbMovable();
+		}
+
+		public void MakeMainRbMovable()
+		{
+			ragdollRigidbody_main.isKinematic = true;
+			ragdollRigidbody_main.useGravity  = false;
+		}
+
         [ Button() ]
         public void SwitchRagdoll( bool on )
         {

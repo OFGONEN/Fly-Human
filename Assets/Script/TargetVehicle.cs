@@ -14,7 +14,9 @@ public class TargetVehicle : MonoBehaviour
     [ SerializeField ] GameEvent event_vehicle_unlocked;
     [ SerializeField ] GameEvent event_vehicle_progressed;
 
-    int vehicle_stickman_count;
+	public Vector3 TargetVehiclePosition => transform.TransformPoint( vehicle_data.VehiclePosition );
+
+	int vehicle_stickman_count;
 
 // Private
 
