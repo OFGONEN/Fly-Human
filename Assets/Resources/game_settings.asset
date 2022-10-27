@@ -33,7 +33,9 @@ MonoBehaviour:
   vehicle_fly_rotate_speed_max: 10
   vehicle_landing_angle: 20
   vehicle_landing_adjust_duration: 0.45
-  vehicle_landing_adjust_ease: 1
+  vehicle_landing_adjust_rotation_ease: 1
+  vehicle_landing_adjust_jump_power: 1
+  vehicle_landing_adjust_jump_ease: 1
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 1}
   maxLevelCount: 1

@@ -37,7 +37,9 @@ namespace FFStudio
 	[ Title( "Vehicle Landing" ) ]
 		[ LabelText( "Vehicle Landing Collide Angle" ) ] public float vehicle_landing_angle;
 		[ LabelText( "Vehicle Landing Adjust Duration" ) ] public float vehicle_landing_adjust_duration;
-		[ LabelText( "Vehicle Landing Adjust Ease" ) ] public Ease vehicle_landing_adjust_ease;
+		[ LabelText( "Vehicle Landing Adjust Rotation Ease" ) ] public Ease vehicle_landing_adjust_rotation_ease;
+		[ LabelText( "Vehicle Landing Adjust Jump Power" ) ] public float vehicle_landing_adjust_jump_power;
+		[ LabelText( "Vehicle Landing Adjust Jump Ease" ) ] public Ease vehicle_landing_adjust_jump_ease;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
