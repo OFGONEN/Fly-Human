@@ -221,6 +221,12 @@ namespace FFStudio
 			return value;
 		}
 
+		public static Vector3 ClampX( this Vector3 theVector, float min, float max )
+		{
+			theVector.x = Mathf.Clamp( theVector.x, min, max );
+			return theVector;
+		}
+
 		public static Vector3 SetX( this Vector3 theVector, float newX )
 		{
 			theVector.x = newX;
