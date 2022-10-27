@@ -131,7 +131,7 @@ public class VehicleMovement : MonoBehaviour
 	void MoveOnAir()
 	{
 		var position = transform.position;
-		transform.position = Vector3.Lerp( position, position + transform.forward, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_speed );
+		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
 	}
 
     void PlaceVehicleOnPlatform()
