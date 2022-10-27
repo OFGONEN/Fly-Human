@@ -35,6 +35,17 @@ namespace FFStudio
 			MakeMainRbMovable();
 		}
 
+		public void BecomeMovableRagdollWithoutGravity()
+		{
+			for( var i = 0; i < ragdoll_rigidbody_array.Length; i++ )
+			{
+				ragdoll_rigidbody_array[ i ].isKinematic = false;
+				ragdoll_rigidbody_array[ i ].useGravity  = false;
+			}
+
+			MakeMainRbMovable();
+		}
+
 		public void MakeMainRbMovable()
 		{
 			ragdollRigidbody_main.isKinematic = true;
