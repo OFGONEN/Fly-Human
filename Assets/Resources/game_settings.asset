@@ -25,12 +25,12 @@ MonoBehaviour:
   vehicle_movement_speed_max: 50
   vehicle_movement_speed_duration: 1
   vehicle_movement_speed_ease: 1
-  vehicle_movement_look_speed: 20
+  vehicle_movement_look_speed: 100
   vehicle_movement_look_axis: {x: 1, y: 0, z: 0}
   vehicle_fly_rotate_axis: {x: 1, y: 0, z: 0}
   vehicle_fly_rotate_clamp: 85
-  vehicle_fly_rotate_speed: 2
-  vehicle_fly_rotate_speed_max: 5
+  vehicle_fly_rotate_speed: 5
+  vehicle_fly_rotate_speed_max: 10
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 1}
   maxLevelCount: 1
