@@ -147,7 +147,7 @@ public class VehicleMovement : MonoBehaviour
 		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
 
 
-		transform.Rotate( Vector3.right * vehicle_movement_rotate_speed * Time.fixedDeltaTime, Space.World );
+		transform.Rotate( GameSettings.Instance.vehicle_fly_rotate_axis * vehicle_movement_rotate_speed * Time.fixedDeltaTime, Space.World );
 		//Rotate the vehicle
 		var eulerAngle         = transform.eulerAngles.x;
 
