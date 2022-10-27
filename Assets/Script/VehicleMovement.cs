@@ -30,7 +30,8 @@ public class VehicleMovement : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
 
-	RecycledTween recycledTween = new RecycledTween();
+	RecycledTween    recycledTween    = new RecycledTween();
+	RecycledSequence recycledSequence = new RecycledSequence();
 
 	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
 	#endregion
@@ -203,13 +204,17 @@ public class VehicleMovement : MonoBehaviour
 	void HandleLanding_Bad()
 	{
 		recycledTween.Kill();
-		vehicle.OnLooseStickman( 50 );
+		vehicle.OnLooseStickman( 50 ); // percentage
 
 		var vehicleRotation = Quaternion.LookRotation( SlopeDirection, Vector3.up ).eulerAngles;
 
-		recycledTween.Recycle( transform.DORotate( vehicleRotation, GameSettings.Instance.vehicle_landing_adjust_duration )
-			.SetEase( GameSettings.Instance.vehicle_landing_adjust_ease ),
-			OnVehicleAdjustComplete );
+		var sequence = recycledSequence.Recycle( OnVehicleAdjustComplete );
+
+		sequence.Append( transform.DOJump( vehicle_point_origin, GameSettings.Instance.vehicle_landing_adjust_jump_power,
+			1, GameSettings.Instance.vehicle_landing_adjust_duration )
+			.SetEase( GameSettings.Instance.vehicle_landing_adjust_jump_ease ) );
+		sequence.Join( transform.DORotate( vehicleRotation, GameSettings.Instance.vehicle_landing_adjust_duration )
+			.SetEase( GameSettings.Instance.vehicle_landing_adjust_rotation_ease ) );
 	}
 
 	void OnVehicleAdjustComplete()
