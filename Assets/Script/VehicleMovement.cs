@@ -17,6 +17,7 @@ public class VehicleMovement : MonoBehaviour
 	UnityMessage onFingerDown;
 	UnityMessage onFingerUp;
     UnityMessage onFixedUpdateMethod;
+    UnityMessage onVehicleCollide;
 
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_target;
@@ -78,6 +79,7 @@ public class VehicleMovement : MonoBehaviour
 		onFixedUpdateMethod = MoveOnAir;
 		onFingerDown        = FingerDown_Air;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
+		onVehicleCollide    = VehicleCollidedPlatform;
 
 		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
 	}
@@ -86,6 +88,11 @@ public class VehicleMovement : MonoBehaviour
     {
 		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ];
         //todo ? speed etc.
+	}
+
+	public void OnVehicleCollidePlatform()
+	{
+		onVehicleCollide();
 	}
 #endregion
 
@@ -146,10 +153,9 @@ public class VehicleMovement : MonoBehaviour
 		var position = transform.position;
 		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
 
-
 		transform.Rotate( GameSettings.Instance.vehicle_fly_rotate_axis * vehicle_movement_rotate_speed * Time.fixedDeltaTime, Space.World );
 		//Rotate the vehicle
-		var eulerAngle         = transform.eulerAngles.x;
+		var eulerAngle = transform.eulerAngles.x;
 
 		if( eulerAngle < 270 )
 			eulerAngle = Mathf.Min( eulerAngle, GameSettings.Instance.vehicle_fly_rotate_clamp );
@@ -163,6 +169,15 @@ public class VehicleMovement : MonoBehaviour
 
 		transform.position = vehicle_point_origin;
 		transform.LookAtAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis );
+	}
+
+	void VehicleCollidedPlatform()
+	{
+		RaycastOntoPlatform();
+
+		EmptyOutDelegates();
+		onFixedUpdateMethod = MoveOnPlatform;
+		onFingerDown        = FingerDown_Platform;
 	}
 
     void RaycastOntoPlatform()
@@ -190,6 +205,7 @@ public class VehicleMovement : MonoBehaviour
 		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
 		onFingerDown        = ExtensionMethods.EmptyMethod;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
+		onVehicleCollide    = ExtensionMethods.EmptyMethod;
 	}
 #endregion
 
@@ -203,8 +219,6 @@ public class VehicleMovement : MonoBehaviour
 	{
 		vehicle_movement_speed = value;
 	}
-
-
 #endregion
 
 #region Editor Only
