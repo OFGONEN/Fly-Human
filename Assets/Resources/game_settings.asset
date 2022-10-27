@@ -22,8 +22,13 @@ MonoBehaviour:
   vehicle_rayCast_distance: 1000
   vehicle_movement_step: 0.1
   vehicle_movement_speed: 5
+  vehicle_movement_speed_max: 50
+  vehicle_movement_speed_duration: 1
+  vehicle_movement_speed_ease: 1
   vehicle_movement_look_speed: 20
   vehicle_movement_look_axis: {x: 1, y: 0, z: 0}
+  vehicle_fly_speed: 0
+  vehicle_fly_speed_max: 0
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 1}
   maxLevelCount: 1

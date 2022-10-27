@@ -17,15 +17,20 @@ namespace FFStudio
 		[ LabelText( "Disable Duration" ) ] public float stickman_disableDuration;
 		[ LabelText( "Target Movement Duration" ) ] public Vector2 stickman_targetMove_duration;
 
-    [ Title( "Vehicle" ) ]
+    [ Title( "Vehicle Platform" ) ]
 		[ LabelText( "Vehicle Ray Cast Height" ) ] public float vehicle_rayCast_height;
 		[ LabelText( "Vehicle Ray Cast Direction" ) ] public Vector3 vehicle_rayCast_direction;
 		[ LabelText( "Vehicle Ray Cast Distance" ) ] public float vehicle_rayCast_distance;
 		[ LabelText( "Vehicle Movement Step Distance" ) ] public float vehicle_movement_step;
 		[ LabelText( "Vehicle Movement Speed" ) ] public float vehicle_movement_speed;
+		[ LabelText( "Vehicle Movement Speed Max" ) ] public float vehicle_movement_speed_max;
+		[ LabelText( "Vehicle Movement Accelerate Duration" ) ] public float vehicle_movement_speed_duration;
+		[ LabelText( "Vehicle Movement Accelerate Ease" ) ] public Ease vehicle_movement_speed_ease;
 		[ LabelText( "Vehicle Movement Look Speed" ) ] public float vehicle_movement_look_speed;
 		[ LabelText( "Vehicle Movement Look Axis" ) ] public Vector3 vehicle_movement_look_axis;
 
+    [ Title( "Vehicle Air" ) ]
+		[ LabelText( "Vehicle Air Movement Speed Max" ) ] public float vehicle_fly_speed_max;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
