@@ -95,7 +95,7 @@ public class Stickman : MonoBehaviour
 
 		stickman_movement_start.Raise();
 		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( position,
-			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMoveTowardsTargetComplete );
+			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMovePositionComplete );
 	}
 
 	public void SpawnIntoVehicle( Transform vehicle, VehiclePartData data )
