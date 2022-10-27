@@ -23,6 +23,7 @@ namespace FFStudio
 		[ LabelText( "Vehicle Ray Cast Distance" ) ] public float vehicle_rayCast_distance;
 		[ LabelText( "Vehicle Movement Step Distance" ) ] public float vehicle_movement_step;
 		[ LabelText( "Vehicle Movement Speed" ) ] public float vehicle_movement_speed;
+		[ LabelText( "Vehicle Movement Default Speed" ) ] public float vehicle_movement_speed_default;
 		[ LabelText( "Vehicle Movement Speed Max" ) ] public float vehicle_movement_speed_max;
 		[ LabelText( "Vehicle Movement Accelerate Duration" ) ] public float vehicle_movement_speed_duration;
 		[ LabelText( "Vehicle Movement Accelerate Ease" ) ] public Ease vehicle_movement_speed_ease;

@@ -22,6 +22,7 @@ MonoBehaviour:
   vehicle_rayCast_distance: 1000
   vehicle_movement_step: 0.1
   vehicle_movement_speed: 5
+  vehicle_movement_speed_default: 1
   vehicle_movement_speed_max: 50
   vehicle_movement_speed_duration: 1
   vehicle_movement_speed_ease: 1
