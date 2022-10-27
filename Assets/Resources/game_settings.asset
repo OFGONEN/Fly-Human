@@ -31,6 +31,7 @@ MonoBehaviour:
   vehicle_fly_rotate_clamp: 85
   vehicle_fly_rotate_speed: 5
   vehicle_fly_rotate_speed_max: 10
+  vehicle_collide_angle: 20
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 1}
   maxLevelCount: 1
