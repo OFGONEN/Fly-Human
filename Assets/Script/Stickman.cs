@@ -16,6 +16,7 @@ public class Stickman : MonoBehaviour
     [ SerializeField ] Animator _animator;
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] ToggleRagdoll _toggleRagdoll;
+    [ SerializeField ] Collider _collider;
 
 // Private 
 	bool is_pooled;
@@ -110,6 +111,7 @@ public class Stickman : MonoBehaviour
 		transform.localPosition    = data.position;
 		transform.localEulerAngles = data.rotation;
 
+		_collider.enabled = false;
 		_colorSetter.SetColor( data.color );
 		_animator.SetTrigger( data.pose );
 	}
