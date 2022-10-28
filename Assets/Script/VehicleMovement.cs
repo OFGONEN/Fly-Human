@@ -208,12 +208,11 @@ public class VehicleMovement : MonoBehaviour
 		var vehicleRotation = Quaternion.LookRotation( SlopeDirection, Vector3.up ).eulerAngles;
 
 		var sequence = recycledSequence.Recycle( OnVehicleAdjustComplete );
-
-		sequence.Append( transform.DOJump( vehicle_point_origin, GameSettings.Instance.vehicle_landing_adjust_jump_power,
+		sequence.Append( transform.DOJump( vehicle_point_origin, vehicle_movement.landing_adjust_jump_power,
 			1, GameSettings.Instance.vehicle_landing_adjust_duration )
-			.SetEase( GameSettings.Instance.vehicle_landing_adjust_jump_ease ) );
+			.SetEase( vehicle_movement.landing_adjust_jump_ease ) );
 		sequence.Join( transform.DORotate( vehicleRotation, GameSettings.Instance.vehicle_landing_adjust_duration )
-			.SetEase( GameSettings.Instance.vehicle_landing_adjust_rotation_ease ) );
+			.SetEase( vehicle_movement.landing_adjust_rotation_ease ) );
 	}
 
 	void OnVehicleAdjustComplete()
