@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using Sirenix.OdinInspector;
 
 [ CreateAssetMenu( fileName = "vehicle_data_", menuName = "FF/Game/Vehicle Data" ) ]
 public class VehicleData : ScriptableObject
@@ -11,6 +12,7 @@ public class VehicleData : ScriptableObject
     [ SerializeField ] string vehicle_name;
     [ SerializeField, Min( 1 ) ] int vehicle_count_min;
     [ SerializeField ] Vector3 vehicle_position;
+    [ LabelText( "Vehicle Raycast Position" ), SerializeField ] Vector3 vehicle_raycast_landing_position; // Will be used when handling landing
     [ SerializeField ] VehicleColliderData vehicle_collider;
 
 	public string VehicleName                      => vehicle_name;
@@ -19,6 +21,7 @@ public class VehicleData : ScriptableObject
 	public Vector3 VehiclePosition                 => vehicle_position;
 	public VehicleMovementData VehicleMovementData => vehicle_movement;
 	public VehicleColliderData VehicleCollider     => vehicle_collider;
+	public Vector3 VehicleLandingRaycastPosition   => vehicle_raycast_landing_position;
 
     public VehiclePartData VehiclePartAtIndex( int index )
     {
