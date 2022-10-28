@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: test_vehicle_observe_5
       objectReference: {fileID: 0}
+    - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2435416155528061059, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -199,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: test_vehicle_observe_4
       objectReference: {fileID: 0}
+    - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2435416155528061059, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -259,6 +267,10 @@ PrefabInstance:
     - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_Name
       value: test_vehicle_observe_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2435416155528061059, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_RootOrder
@@ -373,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_Name
       value: test_vehicle_observe_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2435416155528061059, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_RootOrder
@@ -540,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: test_vehicle_observe_3
       objectReference: {fileID: 0}
+    - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2435416155528061059, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -600,6 +620,10 @@ PrefabInstance:
     - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_Name
       value: test_vehicle_observe_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435416155528061058, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2435416155528061059, guid: 2a2df46ee9d38254c9de8181e67d8424, type: 3}
       propertyPath: m_RootOrder
