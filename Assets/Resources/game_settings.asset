@@ -29,9 +29,6 @@ MonoBehaviour:
   vehicle_fly_rotate_speed_max: 10
   vehicle_landing_angle: 20
   vehicle_landing_adjust_duration: 0.45
-  vehicle_landing_adjust_rotation_ease: 1
-  vehicle_landing_adjust_jump_power: 1
-  vehicle_landing_adjust_jump_ease: 1
   camera_follow_speed: 5
   camera_follow_offset_position: {x: 6.5, y: 5, z: -5}
   camera_follow_offset_rotation: {x: 20, y: -43, z: 0}
