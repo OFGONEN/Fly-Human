@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 2636708230433608132}
   m_Layer: 31
   m_Name: vehicle
-  m_TagString: Untagged
+  m_TagString: CameraFocus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
