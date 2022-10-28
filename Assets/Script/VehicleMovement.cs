@@ -147,11 +147,12 @@ public class VehicleMovement : MonoBehaviour
     void MoveOnPlatform()
     {
 		var position = transform.position;
+		position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * vehicle_movement_speed );
 
 		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
-		transform.position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * vehicle_movement_speed );
+		transform.position = position;
 
-		RaycastOntoPlatform();
+		RaycastOntoPlatform( position );
 	}
 
 	void MoveOnAir()
@@ -172,7 +173,7 @@ public class VehicleMovement : MonoBehaviour
 
     void PlaceVehicleOnPlatform()
     {
-		RaycastOntoPlatform();
+		RaycastOntoPlatform( transform.position );
 
 		transform.position = vehicle_point_origin;
 		transform.LookAtAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis );
@@ -181,7 +182,7 @@ public class VehicleMovement : MonoBehaviour
 	void VehicleCollidedPlatform()
 	{
 		EmptyOutDelegates();
-		RaycastOntoPlatform();
+		RaycastOntoPlatform( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ) );
 
 		var vehicleDirection = transform.forward;
 
@@ -221,13 +222,13 @@ public class VehicleMovement : MonoBehaviour
 		HandleLanding_Good();
 	}
 
-    void RaycastOntoPlatform()
+    void RaycastOntoPlatform( Vector3 position )
     {
 		//Info: We are presuming that vehicle always above the platform
 		RaycastHit hitInfo_Origin;
 		RaycastHit hitInfo_Target;
 
-		var hitPosition_Origin = transform.position.SetY(
+		var hitPosition_Origin = position.SetY(
 			GameSettings.Instance.vehicle_rayCast_height
         );
 
@@ -266,11 +267,13 @@ public class VehicleMovement : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-		Gizmos.DrawWireSphere( vehicle_point_origin, 0.25f );
-		Gizmos.DrawWireSphere( vehicle_point_target, 0.25f );
+		Gizmos.DrawWireSphere( vehicle_point_origin, 0.1f );
+		Gizmos.DrawWireSphere( vehicle_point_target, 0.1f );
+		Gizmos.DrawWireSphere( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ), 0.1f );
 
 		Handles.Label( vehicle_point_origin, "Origin" );
 		Handles.Label( vehicle_point_target, "Target" );
+		Handles.Label( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ), "Raycast" );
 	}
 
 	[ Button() ]
