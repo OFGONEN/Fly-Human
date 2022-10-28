@@ -29,6 +29,7 @@ MonoBehaviour:
     rotation: {x: -0.00000085377366, y: 344.76697, z: 270}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved_feet_1
+  vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_1
   vehicle_count_min: 2
   vehicle_position: {x: 0, y: 0.25, z: -1}
