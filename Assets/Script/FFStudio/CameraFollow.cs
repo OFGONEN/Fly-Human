@@ -16,7 +16,6 @@ namespace FFStudio
         [ SerializeField ] SharedReferenceNotifier notifier_reference_transform_target;
 
         Transform transform_target;
-        Vector3 followOffset;
 
         UnityMessage updateMethod;
 #endregion
@@ -33,7 +32,9 @@ namespace FFStudio
 
         void OnDisable()
         {
-            levelRevealEventListener.OnDisable();
+			updateMethod = ExtensionMethods.EmptyMethod;
+
+			levelRevealEventListener.OnDisable();
             levelEndEventListener.OnDisable();
         }
 
@@ -45,7 +46,14 @@ namespace FFStudio
             updateMethod = ExtensionMethods.EmptyMethod;
         }
 
-        void Update()
+        private void Start()
+        {
+            transform_target      = ( notifier_reference_transform_target.SharedValue as Vehicle ).transform;
+            transform.position    = transform_target.position + GameSettings.Instance.camera_follow_offset_position;
+            transform.eulerAngles = GameSettings.Instance.camera_follow_offset_rotation;
+        }
+
+        void FixedUpdate()
         {
             updateMethod();
         }
@@ -57,10 +65,6 @@ namespace FFStudio
 #region Implementation
         void LevelRevealedResponse()
         {
-            transform_target = notifier_reference_transform_target.SharedValue as Transform;
-
-            followOffset = transform_target.position - transform.position;
-
             updateMethod = FollowTarget;
         }
 
@@ -72,17 +76,23 @@ namespace FFStudio
         void FollowTarget()
         {
             // Info: Simple follow logic.
-            var player_position = transform_target.position;
-            var target_position = transform_target.position - followOffset;
-
-            target_position.x = 0;
-            target_position.z = Mathf.Lerp( transform.position.z, target_position.z, Time.deltaTime * GameSettings.Instance.camera_follow_speed_depth );
-            transform.position = target_position;
-        }
+			transform.position = Vector3.Lerp( transform.position, transform_target.position + GameSettings.Instance.camera_follow_offset_position, Time.fixedDeltaTime * GameSettings.Instance.camera_follow_speed );
+#if UNITY_EDITOR
+			transform.eulerAngles = GameSettings.Instance.camera_follow_offset_rotation;
+#endif
+		}
 #endregion
 
 #region Editor Only
 #if UNITY_EDITOR
+        [ Button() ]
+        void ResetOffset()
+        {
+			var targetPosition =  GameObject.FindWithTag( "CameraFocus" ).transform.position;
+
+			transform.position    = targetPosition + GameSettings.Instance.camera_follow_offset_position;
+			transform.eulerAngles = GameSettings.Instance.camera_follow_offset_rotation;
+		}
 #endif
 #endregion
     }

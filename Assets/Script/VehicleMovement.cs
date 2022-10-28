@@ -27,6 +27,7 @@ public class VehicleMovement : MonoBehaviour
     int layerMask;
 
 	Vehicle vehicle;
+	VehicleMovementData vehicle_movement;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
 
@@ -34,23 +35,22 @@ public class VehicleMovement : MonoBehaviour
 	RecycledSequence recycledSequence = new RecycledSequence();
 
 	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
-	#endregion
+#endregion
 
-	#region Properties
-	#endregion
+#region Properties
+#endregion
 
-	#region Unity API
+#region Unity API
 	private void Awake()
     {
 		EmptyOutDelegates();
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+		PlaceVehicleOnPlatform();
 	}
 
     private void Start()
     {
 		vehicle = notif_vehicle_reference.sharedValue as Vehicle;
-
-		PlaceVehicleOnPlatform();
 	}
 
     private void FixedUpdate()
@@ -62,8 +62,7 @@ public class VehicleMovement : MonoBehaviour
 #region API
     public void OnLevelStarted()
     {
-		FFLogger.Log( "Vehicle Level Started" );
-		vehicle_movement_speed = GameSettings.Instance.vehicle_movement_speed;
+		vehicle_movement_speed = vehicle_movement.movement_ground_speed_default;
 
 		onFixedUpdateMethod = MoveOnPlatform;
 		onFingerDown        = FingerDown_Platform;
@@ -94,8 +93,8 @@ public class VehicleMovement : MonoBehaviour
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
     {
-		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ];
-        //todo ? speed etc.
+		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ];
+		vehicle_movement = vehicle_data.VehicleMovementData;
 	}
 
 	public void OnVehicleCollidePlatform()
@@ -113,8 +112,8 @@ public class VehicleMovement : MonoBehaviour
 
 		recycledTween.Recycle( 
 			DOTween.To( GetVehicleMovementSpeed, SetVehicleMovementSpeed,
-			GameSettings.Instance.vehicle_movement_speed_max, GameSettings.Instance.vehicle_movement_speed_duration )
-			.SetEase( GameSettings.Instance.vehicle_movement_speed_ease )
+			vehicle_movement.movement_ground_speed_max, vehicle_movement.movement_ground_speed_accelerate_duration )
+			.SetEase( vehicle_movement.movement_ground_speed_accelerate_ease )
 		);
 	}
 
@@ -219,7 +218,7 @@ public class VehicleMovement : MonoBehaviour
 
 	void OnVehicleAdjustComplete()
 	{
-		vehicle_movement_speed = GameSettings.Instance.vehicle_movement_speed_default;
+		vehicle_movement_speed = vehicle_movement.movement_ground_speed_default;
 		HandleLanding_Good();
 	}
 
@@ -273,6 +272,29 @@ public class VehicleMovement : MonoBehaviour
 
 		Handles.Label( vehicle_point_origin, "Origin" );
 		Handles.Label( vehicle_point_target, "Target" );
+	}
+
+	[ Button() ]
+	void PlaceVehicleOnPlatform_Editor()
+	{
+		//Info: We are presuming that vehicle always above the platform
+		RaycastHit hitInfo_Origin;
+		RaycastHit hitInfo_Target;
+
+		var mask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+
+		var hitPosition_Origin = transform.position.SetY(
+			GameSettings.Instance.vehicle_rayCast_height
+		);
+
+		var hitPosition_Target = hitPosition_Origin + GameSettings.Instance.game_forward * GameSettings.Instance.vehicle_movement_step;
+
+		var hitOrigin = Physics.Raycast( hitPosition_Origin, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Origin, GameSettings.Instance.vehicle_rayCast_distance, mask );
+
+		Physics.Raycast( hitPosition_Target, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Target, GameSettings.Instance.vehicle_rayCast_distance, mask );
+
+		transform.position = hitInfo_Origin.point;
+		transform.LookAtAxis( hitInfo_Target.point, GameSettings.Instance.vehicle_movement_look_axis );
 	}
 #endif
 #endregion
