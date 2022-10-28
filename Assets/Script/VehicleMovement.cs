@@ -34,12 +34,12 @@ public class VehicleMovement : MonoBehaviour
 	RecycledSequence recycledSequence = new RecycledSequence();
 
 	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
-	#endregion
+#endregion
 
-	#region Properties
-	#endregion
+#region Properties
+#endregion
 
-	#region Unity API
+#region Unity API
 	private void Awake()
     {
 		EmptyOutDelegates();
@@ -62,7 +62,6 @@ public class VehicleMovement : MonoBehaviour
 #region API
     public void OnLevelStarted()
     {
-		FFLogger.Log( "Vehicle Level Started" );
 		vehicle_movement_speed = GameSettings.Instance.vehicle_movement_speed;
 
 		onFixedUpdateMethod = MoveOnPlatform;
