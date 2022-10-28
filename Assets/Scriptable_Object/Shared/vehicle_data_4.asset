@@ -129,6 +129,7 @@ MonoBehaviour:
   vehicle_name: plane_4
   vehicle_count_min: 20
   vehicle_position: {x: 0, y: 1.1, z: -0.7}
+  vehicle_raycast_landing_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
     position: {x: 0, y: 1.4, z: 3.4}
     size: 0.5
