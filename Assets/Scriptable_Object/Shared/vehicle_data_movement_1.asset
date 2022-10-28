@@ -16,3 +16,6 @@ MonoBehaviour:
   movement_ground_speed_max: 50
   movement_ground_speed_accelerate_duration: 1
   movement_ground_speed_accelerate_ease: 1
+  landing_adjust_rotation_ease: 1
+  landing_adjust_jump_power: 1
+  landing_adjust_jump_ease: 1
