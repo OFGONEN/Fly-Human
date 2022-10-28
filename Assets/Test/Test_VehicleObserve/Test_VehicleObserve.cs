@@ -12,6 +12,7 @@ public class Test_VehicleObserve : MonoBehaviour
     [ SerializeField ] Pool_Stickman pool_stickman;
     [ SerializeField ] VehicleData vehicle_data;
     [ SerializeField ] Transform vehicle_gfx;
+    [ SerializeField ] SphereCollider vehicle_collider;
 #endregion
 
 #region Properties
@@ -20,14 +21,17 @@ public class Test_VehicleObserve : MonoBehaviour
 #region Unity API
     private void Start()
     {
-		SpawnStickmans();
+		ConstructVehicle();
 	}
 #endregion
 
 #region API
     [ Button() ]
-    public void SpawnStickmans()
+    public void ConstructVehicle()
     {
+		vehicle_collider.transform.localPosition = vehicle_data.VehicleCollider.position;
+		vehicle_collider.radius                  = vehicle_data.VehicleCollider.size;
+
 		vehicle_gfx.localPosition = vehicle_data.VehiclePosition;
 		vehicle_gfx.DestroyAllChildren();
 
@@ -36,7 +40,6 @@ public class Test_VehicleObserve : MonoBehaviour
 			var stickman = pool_stickman.GetEntity();
 			stickman.SpawnIntoVehicle( vehicle_gfx, vehicle_data.VehiclePartAtIndex( i ) );
 		}
-
 	}
 #endregion
 
