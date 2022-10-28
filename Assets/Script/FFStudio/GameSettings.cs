@@ -38,7 +38,10 @@ namespace FFStudio
 		[ LabelText( "Vehicle Landing Adjust Jump Ease" ) ] public Ease vehicle_landing_adjust_jump_ease;
     
     [ Title( "Camera" ) ]
-        [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
+        [ LabelText( "Follow Speed" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed;
+        [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
+
+        [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public Vector3 game_forward;
