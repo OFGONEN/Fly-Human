@@ -156,7 +156,7 @@ MonoBehaviour:
   vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_5
   vehicle_count_min: 28
-  vehicle_position: {x: 0, y: 0.1, z: 0.02}
+  vehicle_position: {x: 0, y: 0.25, z: 2.5}
   vehicle_collider:
-    position: {x: 0, y: 0.1, z: 0.02}
+    position: {x: 0, y: 1.2, z: 3}
     size: 0.5
