@@ -57,5 +57,5 @@ MonoBehaviour:
   vehicle_count_min: 4
   vehicle_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
-    position: {x: 0, y: 0.5, z: 2.4}
+    position: {x: 0, y: -0.17, z: 2}
     size: 0.5
