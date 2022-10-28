@@ -153,10 +153,9 @@ MonoBehaviour:
     rotation: {x: -0, y: 90, z: -0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
-  vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_5
   vehicle_count_min: 28
-  vehicle_position: {x: 0, y: 0, z: 0}
+  vehicle_position: {x: 0, y: 0.1, z: 0.02}
   vehicle_collider:
-    position: {x: 0, y: 0.5, z: 1.5}
+    position: {x: 0, y: 0.1, z: 0.02}
     size: 0.5

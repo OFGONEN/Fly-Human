@@ -197,10 +197,9 @@ MonoBehaviour:
     rotation: {x: 90, y: 90.000336, z: 0}
     color: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
     pose: pose_straight_2
-  vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_6
   vehicle_count_min: 35
-  vehicle_position: {x: 0, y: 0, z: 0}
+  vehicle_position: {x: 0, y: 0.3, z: 0.05}
   vehicle_collider:
-    position: {x: 0, y: 0.5, z: 2.5}
+    position: {x: 0, y: 0.3, z: 0.05}
     size: 0.5
