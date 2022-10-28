@@ -45,13 +45,12 @@ public class VehicleMovement : MonoBehaviour
     {
 		EmptyOutDelegates();
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+		PlaceVehicleOnPlatform();
 	}
 
     private void Start()
     {
 		vehicle = notif_vehicle_reference.sharedValue as Vehicle;
-
-		PlaceVehicleOnPlatform();
 	}
 
     private void FixedUpdate()
@@ -273,6 +272,29 @@ public class VehicleMovement : MonoBehaviour
 
 		Handles.Label( vehicle_point_origin, "Origin" );
 		Handles.Label( vehicle_point_target, "Target" );
+	}
+
+	[ Button() ]
+	void PlaceVehicleOnPlatform_Editor()
+	{
+		//Info: We are presuming that vehicle always above the platform
+		RaycastHit hitInfo_Origin;
+		RaycastHit hitInfo_Target;
+
+		var mask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+
+		var hitPosition_Origin = transform.position.SetY(
+			GameSettings.Instance.vehicle_rayCast_height
+		);
+
+		var hitPosition_Target = hitPosition_Origin + GameSettings.Instance.game_forward * GameSettings.Instance.vehicle_movement_step;
+
+		var hitOrigin = Physics.Raycast( hitPosition_Origin, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Origin, GameSettings.Instance.vehicle_rayCast_distance, mask );
+
+		Physics.Raycast( hitPosition_Target, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Target, GameSettings.Instance.vehicle_rayCast_distance, mask );
+
+		transform.position = hitInfo_Origin.point;
+		transform.LookAtAxis( hitInfo_Target.point, GameSettings.Instance.vehicle_movement_look_axis );
 	}
 #endif
 #endregion
