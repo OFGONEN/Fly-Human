@@ -7,16 +7,18 @@ using FFStudio;
 public class VehicleData : ScriptableObject
 {
     [ SerializeField ] VehiclePartData[] vehicle_data_array;
+    [ SerializeField ] VehicleMovementData vehicle_movement;
     [ SerializeField ] string vehicle_name;
     [ SerializeField, Min( 1 ) ] int vehicle_count_min;
     [ SerializeField ] Vector3 vehicle_position;
     [ SerializeField ] VehicleColliderData vehicle_collider;
 
-	public string VehicleName                  => vehicle_name;
-	public int VehicleCountMin                 => vehicle_count_min;
-	public int VehicleCountMax                 => vehicle_data_array.Length;
-	public Vector3 VehiclePosition => vehicle_position;
-	public VehicleColliderData VehicleCollider => vehicle_collider;
+	public string VehicleName                      => vehicle_name;
+	public int VehicleCountMin                     => vehicle_count_min;
+	public int VehicleCountMax                     => vehicle_data_array.Length;
+	public Vector3 VehiclePosition                 => vehicle_position;
+	public VehicleMovementData VehicleMovementData => vehicle_movement;
+	public VehicleColliderData VehicleCollider     => vehicle_collider;
 
     public VehiclePartData VehiclePartAtIndex( int index )
     {
