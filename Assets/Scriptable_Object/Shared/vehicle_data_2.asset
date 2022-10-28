@@ -55,7 +55,7 @@ MonoBehaviour:
     pose: pose_straight_1
   vehicle_name: plane_2
   vehicle_count_min: 4
-  vehicle_position: {x: 0, y: 0, z: 0}
+  vehicle_position: {x: 0, y: -0.17, z: 2}
   vehicle_collider:
     position: {x: 0, y: -0.17, z: 2}
     size: 0.5

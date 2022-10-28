@@ -127,7 +127,7 @@ MonoBehaviour:
     pose: pose_straight_curved
   vehicle_name: plane_4
   vehicle_count_min: 20
-  vehicle_position: {x: 0, y: 0, z: 0}
+  vehicle_position: {x: 0, y: -0.2, z: 3.5}
   vehicle_collider:
     position: {x: 0, y: -0.2, z: 3.5}
     size: 0.5
