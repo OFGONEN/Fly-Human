@@ -16,6 +16,7 @@ public class Stickman : MonoBehaviour
     [ SerializeField ] Animator _animator;
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] ToggleRagdoll _toggleRagdoll;
+    [ SerializeField ] Collider _collider;
 
 // Private 
 	bool is_pooled;
@@ -79,7 +80,7 @@ public class Stickman : MonoBehaviour
 		target_stickman = stickman;
 
 		DetachFromVehicle();
-		_toggleRagdoll.MakeMainRbMovable();
+		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
 
 		stickman_movement_start.Raise();
 
@@ -90,11 +91,11 @@ public class Stickman : MonoBehaviour
 	public void MoveTowardsPosition ( Vector3 position )
 	{
 		DetachFromVehicle();
-		_toggleRagdoll.MakeMainRbMovable();
+		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
 
 		stickman_movement_start.Raise();
 		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( position,
-			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMoveTowardsTargetComplete );
+			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMovePositionComplete );
 	}
 
 	public void SpawnIntoVehicle( Transform vehicle, VehiclePartData data )
@@ -110,6 +111,7 @@ public class Stickman : MonoBehaviour
 		transform.localPosition    = data.position;
 		transform.localEulerAngles = data.rotation;
 
+		_collider.enabled = false;
 		_colorSetter.SetColor( data.color );
 		_animator.SetTrigger( data.pose );
 	}

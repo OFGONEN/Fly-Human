@@ -23,6 +23,7 @@ namespace FFStudio
 		[ LabelText( "Vehicle Ray Cast Distance" ) ] public float vehicle_rayCast_distance;
 		[ LabelText( "Vehicle Movement Step Distance" ) ] public float vehicle_movement_step;
 		[ LabelText( "Vehicle Movement Speed" ) ] public float vehicle_movement_speed;
+		[ LabelText( "Vehicle Movement Default Speed" ) ] public float vehicle_movement_speed_default;
 		[ LabelText( "Vehicle Movement Speed Max" ) ] public float vehicle_movement_speed_max;
 		[ LabelText( "Vehicle Movement Accelerate Duration" ) ] public float vehicle_movement_speed_duration;
 		[ LabelText( "Vehicle Movement Accelerate Ease" ) ] public Ease vehicle_movement_speed_ease;
@@ -34,6 +35,12 @@ namespace FFStudio
 		[ LabelText( "Vehicle Air Movement Rotate Clamp" ) ] public float vehicle_fly_rotate_clamp;
 		[ LabelText( "Vehicle Air Movement Rotate Speed" ) ] public float vehicle_fly_rotate_speed;
 		[ LabelText( "Vehicle Air Movement Rotate Speed Max" ) ] public float vehicle_fly_rotate_speed_max;
+	[ Title( "Vehicle Landing" ) ]
+		[ LabelText( "Vehicle Landing Collide Angle" ) ] public float vehicle_landing_angle;
+		[ LabelText( "Vehicle Landing Adjust Duration" ) ] public float vehicle_landing_adjust_duration;
+		[ LabelText( "Vehicle Landing Adjust Rotation Ease" ) ] public Ease vehicle_landing_adjust_rotation_ease;
+		[ LabelText( "Vehicle Landing Adjust Jump Power" ) ] public float vehicle_landing_adjust_jump_power;
+		[ LabelText( "Vehicle Landing Adjust Jump Ease" ) ] public Ease vehicle_landing_adjust_jump_ease;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

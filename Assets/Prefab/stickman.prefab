@@ -52,6 +52,7 @@ MonoBehaviour:
   _animator: {fileID: 6780120202778769619}
   _colorSetter: {fileID: 6494386529884526295}
   _toggleRagdoll: {fileID: 8920674293691552949}
+  _collider: {fileID: 8060648162934427229}
 --- !u!1 &7960501705774725083
 GameObject:
   m_ObjectHideFlags: 0
