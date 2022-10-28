@@ -461,6 +461,12 @@ namespace FFStudio
 			return Mathf.Lerp( vector.y, vector.x, progress );
 		}
 
+
+		public static void DestroyAllChildren( this GameObject gameObject )
+		{
+			DestroyAllChildren( gameObject.transform );
+		}
+
 		public static void DestroyAllChildren( this Transform transform )
 		{
 			var childCount = transform.childCount;
