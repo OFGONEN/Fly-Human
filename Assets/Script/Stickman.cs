@@ -122,6 +122,7 @@ public class Stickman : MonoBehaviour
 
 		_collider.enabled = false;
 		_colorSetter.SetColor( data.color );
+		_animator.enabled = true;
 		_animator.SetTrigger( data.pose );
 
 		OnStickmanPoseComplete();
