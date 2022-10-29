@@ -115,6 +115,7 @@ public class Stickman : MonoBehaviour
 
 		_toggleRagdoll.SwitchRagdoll( false );
 		_toggleRagdoll.ToggleCollider( true );
+		_toggleRagdoll.SetTransformDatas();
 
 		transform.parent           = vehicle;
 		transform.localPosition    = data.position;
@@ -122,6 +123,7 @@ public class Stickman : MonoBehaviour
 
 		_collider.enabled = false;
 		_colorSetter.SetColor( data.color );
+
 		_animator.enabled = true;
 		_animator.SetTrigger( data.pose );
 
