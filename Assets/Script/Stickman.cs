@@ -46,9 +46,10 @@ public class Stickman : MonoBehaviour
 		_animator.SetTrigger( vehiclePartData.pose );
 
 		vehicle_part_data = vehiclePartData;
+
 		var colorTween = _colorSetter.LerpColor( vehiclePartData.color, GameSettings.Instance.stickman_pose_duration );
 
-		var sequence = recycledSequence.Recycle();
+		var sequence = recycledSequence.Recycle( OnStickmanPoseComplete );
 		sequence.Append( transform.DOLocalJump( vehiclePartData.position,
 			GameSettings.Instance.stickman_jump_power,
 			1,
@@ -59,10 +60,13 @@ public class Stickman : MonoBehaviour
 
     public void ChangeToAnoterPart( VehiclePartData vehiclePartData )
     {
+		vehicle_part_data = vehiclePartData;
+
 		_animator.SetTrigger( vehiclePartData.pose );
+
 		var colorTween = _colorSetter.LerpColor( vehiclePartData.color, GameSettings.Instance.stickman_pose_duration );
 
-		var sequence = recycledSequence.Recycle();
+		var sequence = recycledSequence.Recycle( OnStickmanPoseComplete );
 		sequence.Append( transform.DOLocalMove( vehiclePartData.position, GameSettings.Instance.stickman_pose_duration ) );
 		sequence.Join( transform.DOLocalRotate( vehiclePartData.rotation, GameSettings.Instance.stickman_pose_duration ) );
 		sequence.Join( colorTween );
@@ -105,6 +109,8 @@ public class Stickman : MonoBehaviour
 	{
 		gameObject.SetActive( true );
 
+		vehicle_part_data = data;
+
 		is_pooled = true;
 
 		_toggleRagdoll.SwitchRagdoll( false );
@@ -117,6 +123,8 @@ public class Stickman : MonoBehaviour
 		_collider.enabled = false;
 		_colorSetter.SetColor( data.color );
 		_animator.SetTrigger( data.pose );
+
+		OnStickmanPoseComplete();
 	}
 
 	public void TurnIntoCurrency()
