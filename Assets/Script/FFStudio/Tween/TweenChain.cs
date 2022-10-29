@@ -118,6 +118,12 @@ namespace FFStudio
         {
 			tweenDatas[ index_playing ].Kill();
 		}
+
+		public void ClearAndKill()
+		{
+			tweenDatas.Clear();
+			Kill();
+		}
 #endregion
 
 #region Implementation
