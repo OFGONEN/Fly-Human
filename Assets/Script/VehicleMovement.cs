@@ -275,11 +275,15 @@ public class VehicleMovement : MonoBehaviour
     {
 		Gizmos.DrawWireSphere( vehicle_point_origin, 0.1f );
 		Gizmos.DrawWireSphere( vehicle_point_target, 0.1f );
-		Gizmos.DrawWireSphere( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ), 0.1f );
+
+		if( Application.isPlaying )
+		{
+			Gizmos.DrawWireSphere( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ), 0.1f );
+			Handles.Label( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ), "Raycast" );
+		}
 
 		Handles.Label( vehicle_point_origin, "Origin" );
 		Handles.Label( vehicle_point_target, "Target" );
-		Handles.Label( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ), "Raycast" );
 	}
 
 	[ Button() ]
