@@ -126,6 +126,15 @@ public class Stickman : MonoBehaviour
 		OnDelayedDisableComplete();
 	}
 
+	void OnStickmanPoseComplete()
+	{
+		if( vehicle_part_data.tweener )
+		{
+			_tweenChain.AddTweenData( vehicle_part_data.tween_data );
+			_tweenChain.Play( 0 );
+		}
+	}
+
 	void OnMoveTowardsTargetComplete()
 	{
 		target_stickman.IncreaseCount();
