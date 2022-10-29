@@ -150,14 +150,13 @@ public class Stickman : MonoBehaviour
 		target_vehicle.IncreaseCount();
 
 		stickman_movement_end.Raise();
-
-		gameObject.SetActive( false );
+		OnDelayedDisableComplete();
 	}
 
 	void OnMovePositionComplete()
 	{
 		stickman_movement_end.Raise();
-		gameObject.SetActive( false );
+		OnDelayedDisableComplete();
 	}
 
 	void DetachFromVehicle()
