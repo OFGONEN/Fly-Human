@@ -14,6 +14,7 @@ namespace FFStudio
 		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
 		public static string Key_Plane_Count = "plane_count";
 		public static string Layer_Platform = "Platform";
+		public static string Key_Currency = "Currency";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
