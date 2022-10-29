@@ -176,7 +176,7 @@ namespace FFStudio
 		public Vector3 rotation;
 		public Color color;
 		public string pose;
-		public bool tweener;
+		[ LabelText( "Is Tweener" ) ] public bool tweener;
 		[ SerializeReference, ShowIf( "tweener" ) ] public TweenData tween_data;
 
 		public VehiclePartData( Transform transform, string pose )
