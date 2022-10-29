@@ -107,6 +107,11 @@ public class VehicleMovement : MonoBehaviour
 		FFLogger.Log( "Vehicle Movement Finish Line" );
 		EmptyOutDelegates();
 	}
+
+	public void OnLevelFinished()
+	{
+		EmptyOutDelegates();
+	}
 #endregion
 
 #region Implementation
