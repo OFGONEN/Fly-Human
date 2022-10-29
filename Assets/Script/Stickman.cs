@@ -22,6 +22,7 @@ public class Stickman : MonoBehaviour
 // Private 
 	bool is_pooled;
 
+	VehiclePartData vehicle_part_data;
 	TargetVehicle target_vehicle;
 	TargetStickman target_stickman;
 
@@ -42,8 +43,9 @@ public class Stickman : MonoBehaviour
     public void AttachToVehicle( Transform parent, VehiclePartData vehiclePartData )
     {
 		transform.parent = parent;
-
 		_animator.SetTrigger( vehiclePartData.pose );
+
+		vehicle_part_data = vehiclePartData;
 		var colorTween = _colorSetter.LerpColor( vehiclePartData.color, GameSettings.Instance.stickman_pose_duration );
 
 		var sequence = recycledSequence.Recycle();
