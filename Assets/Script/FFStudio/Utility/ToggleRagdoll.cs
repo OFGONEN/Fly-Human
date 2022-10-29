@@ -70,6 +70,15 @@ namespace FFStudio
 				ragdoll_rigidbody_collider_array[ i ].enabled = enable;
 			}
 		}
+
+		[ Button() ]
+		public void SetTransformDatas()
+		{
+			for( var i = 0; i < ragdoll_rigidbody_array.Length; i++ )
+			{
+				ragdoll_rigidbody_array[ i ].transform.SetTransformDataLocal( ragdoll_rigidbody_transformData_array[ i ] );
+			}
+		}
         
         [ Button() ]
 		public void ApplyForce( Vector3 force, ForceMode mode )
