@@ -13,6 +13,7 @@ public class VehicleMovement : MonoBehaviour
 #region Fields
   [ Title( "Setup" ) ]
 	[ SerializeField ] SharedReferenceNotifier notif_vehicle_reference;
+	[ SerializeField ] SharedReferenceNotifier notif_vehicle_target_reference;
 	[ SerializeField ] GameEvent event_vehicle_eject_perfect;
 
 // Private
@@ -108,8 +109,12 @@ public class VehicleMovement : MonoBehaviour
 	
 	public void OnFinishLine()
 	{
-		FFLogger.Log( "Vehicle Movement Finish Line" );
 		EmptyOutDelegates();
+		var targetPosition = ( notif_vehicle_target_reference.sharedValue as TargetVehicle ).transform.position;
+		var duration = GameSettings.Instance.stickman_targetMove_duration.ReturnProgress( 0.5f );
+
+		recycledTween.Recycle( transform.DOMove( targetPosition, duration )
+			.SetEase( Ease.Linear ) );
 	}
 
 	public void OnLevelFinished()
