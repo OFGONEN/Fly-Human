@@ -13,6 +13,7 @@ public class VehicleMovement : MonoBehaviour
 #region Fields
   [ Title( "Setup" ) ]
 	[ SerializeField ] SharedReferenceNotifier notif_vehicle_reference;
+	[ SerializeField ] GameEvent event_vehicle_eject_perfect;
 
 // Private
     VehicleData vehicle_data;
@@ -89,6 +90,9 @@ public class VehicleMovement : MonoBehaviour
 		onVehicleCollide    = VehicleCollidedPlatform;
 
 		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
+
+		if( vehicle_movement_speed >= vehicle_movement.movement_ground_speed_eject_perfect )
+			event_vehicle_eject_perfect.Raise();
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
