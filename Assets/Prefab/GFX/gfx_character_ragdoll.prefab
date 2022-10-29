@@ -339,7 +339,40 @@ MonoBehaviour:
   - {fileID: 3289393752431046262}
   - {fileID: 3678798723883059823}
   - {fileID: 5487284034778581354}
-  ragdoll_rigidbody_transformData_array: []
+  ragdoll_rigidbody_transformData_array:
+  - position: {x: -0.000000038146972, y: 0.7581161, z: 0.008028033}
+    rotation: {x: -0, y: -0, z: -0}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.07910551, y: -0.053913422, z: -0.009758499}
+    rotation: {x: 4.4189854, y: 0, z: 178.48158}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 4.4702153e-10, y: 0.32240266, z: -0.0000000010870872}
+    rotation: {x: 3.9507399, y: 0.096552394, z: 1.4010878}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0.07910551, y: -0.053913422, z: -0.008926604}
+    rotation: {x: 4.209248, y: 0.0000000033440735, z: 181.51883}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -2.806546e-11, y: 0.3223137, z: -7.060265e-10}
+    rotation: {x: 3.489181, y: 359.91473, z: 358.59915}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0, y: 0.11361664, z: 4.4499027e-10}
+    rotation: {x: -0, y: -0, z: -0}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 1.05343324e-10, y: 0.12232553, z: -0.000000002465466}
+    rotation: {x: 342.0808, y: 357.35617, z: 8.535304}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0.0000000011191386, y: 0.2066599, z: -6.966019e-12}
+    rotation: {x: 0.87208664, y: 359.79114, z: 346.53003}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -0, y: 0.10245483, z: 0.015752563}
+    rotation: {x: -0, y: -0, z: -0}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: -1.2413884e-10, y: 0.12232553, z: -0.0000000024645914}
+    rotation: {x: 342.05835, y: 2.4736698, z: 352.01694}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0.0000000011405991, y: 0.20648508, z: -2.313513e-11}
+    rotation: {x: 0.9098983, y: 0.20563306, z: 12.735241}
+    scale: {x: 1, y: 1, z: 1}
 --- !u!1 &2110002084987939638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1207862116695081395, guid: e6e50b4ed7f25a24d8417cf36948bc87, type: 3}
