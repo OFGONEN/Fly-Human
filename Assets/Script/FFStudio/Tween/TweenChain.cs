@@ -59,6 +59,11 @@ namespace FFStudio
             if( playOnStart )
                 Play( index_toPlayOnStart );
         }
+
+		void OnDisable()
+		{
+			Kill();
+		}
 #endregion
 
 #region API
