@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notif_vehicle_reference: {fileID: 11400000, guid: 82d82fa295bd54feab4e1bea5f77fea4, type: 2}
+  event_vehicle_eject_perfect: {fileID: 11400000, guid: 96aa9bd8a63ff8642ac08abbc16a5128, type: 2}
 --- !u!54 &3117028271706953928
 Rigidbody:
   m_ObjectHideFlags: 0
