@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notif_vehicle_reference: {fileID: 11400000, guid: 82d82fa295bd54feab4e1bea5f77fea4, type: 2}
   notif_vehicle_target_reference: {fileID: 11400000, guid: 8168742b06830422984b6a6a71faf072, type: 2}
+  notif_finishLine_reference: {fileID: 11400000, guid: aa5169783e78586458db7fb75951c1a7, type: 2}
+  notif_level_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
   event_vehicle_eject_perfect: {fileID: 11400000, guid: 96aa9bd8a63ff8642ac08abbc16a5128, type: 2}
 --- !u!54 &3117028271706953928
 Rigidbody:

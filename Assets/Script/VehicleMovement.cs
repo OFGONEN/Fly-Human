@@ -14,6 +14,8 @@ public class VehicleMovement : MonoBehaviour
   [ Title( "Setup" ) ]
 	[ SerializeField ] SharedReferenceNotifier notif_vehicle_reference;
 	[ SerializeField ] SharedReferenceNotifier notif_vehicle_target_reference;
+	[ SerializeField ] SharedReferenceNotifier notif_finishLine_reference;
+	[ SerializeField ] SharedFloatNotifier notif_level_progress;
 	[ SerializeField ] GameEvent event_vehicle_eject_perfect;
 
 // Private
@@ -21,12 +23,15 @@ public class VehicleMovement : MonoBehaviour
 	UnityMessage onFingerDown;
 	UnityMessage onFingerUp;
     UnityMessage onFixedUpdateMethod;
+    UnityMessage onUpdateMethod;
     UnityMessage onVehicleCollide;
 
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_target;
 
     int layerMask;
+	float vehicle_position_start;
+	float vehicle_position_end;
 
 	Vehicle vehicle;
 	VehicleMovementData vehicle_movement;
@@ -52,7 +57,14 @@ public class VehicleMovement : MonoBehaviour
 
     private void Start()
     {
-		vehicle = notif_vehicle_reference.sharedValue as Vehicle;
+		vehicle_position_start = transform.position.z;
+		vehicle_position_end   = ( notif_finishLine_reference.sharedValue as Transform ).position.z;
+		vehicle                = notif_vehicle_reference.sharedValue as Vehicle;
+	}
+
+	private void Update()
+	{
+		onUpdateMethod();
 	}
 
     private void FixedUpdate()
@@ -66,6 +78,7 @@ public class VehicleMovement : MonoBehaviour
     {
 		vehicle_movement_speed = vehicle_movement.movement_ground_speed_default;
 
+		onUpdateMethod      = UpdateLevelProgress;
 		onFixedUpdateMethod = MoveOnPlatform;
 		onFingerDown        = FingerDown_Platform;
 
@@ -110,8 +123,11 @@ public class VehicleMovement : MonoBehaviour
 	public void OnFinishLine()
 	{
 		EmptyOutDelegates();
+
 		var targetPosition = ( notif_vehicle_target_reference.sharedValue as TargetVehicle ).transform.position;
 		var duration = GameSettings.Instance.stickman_targetMove_duration.ReturnProgress( 0.5f );
+
+		notif_level_progress.SharedValue = 1f;
 
 		recycledTween.Recycle( transform.DOMove( targetPosition, duration )
 			.SetEase( Ease.Linear ) );
@@ -124,6 +140,11 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+	void UpdateLevelProgress()
+	{
+		notif_level_progress.SharedValue = Mathf.InverseLerp( vehicle_position_start, vehicle_position_end, transform.position.z );
+	}
+
 	void FingerDown_Platform()
 	{
 		FFLogger.PopUpText( transform.position, "Finger DOWN Platform" );
@@ -264,6 +285,7 @@ public class VehicleMovement : MonoBehaviour
 	
 	void EmptyOutDelegates()
 	{
+		onUpdateMethod      = ExtensionMethods.EmptyMethod;
 		onFixedUpdateMethod = ExtensionMethods.EmptyMethod;
 		onFingerDown        = ExtensionMethods.EmptyMethod;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
