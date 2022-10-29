@@ -67,6 +67,11 @@ namespace FFStudio
 #endregion
 
 #region API
+		public void AddTweenData( TweenData data )
+		{
+			tweenDatas.Add( data );
+		}
+
         [ Button() ]
         public void Play( int index )
         {
