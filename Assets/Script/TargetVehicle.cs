@@ -52,11 +52,16 @@ public class TargetVehicle : MonoBehaviour
 	{
 		if( vehicle_stickman_count >= vehicle_data.VehicleStickmanCount )
 		{
+			FFLogger.Log( "Vehicle Unlocked" );
 			vehicle_data.Unlock();
 			event_vehicle_unlocked.Raise();
 		}
 		else
+		{
+			FFLogger.Log( "Vehicle Progressed: " + vehicle_stickman_count );
+			PlayerPrefsUtility.Instance.SetInt( ExtensionMethods.Key_Plane_Count, vehicle_stickman_count );
 			event_vehicle_progressed.Raise();
+		}
 	}
 
     void SpawnStickmans()
