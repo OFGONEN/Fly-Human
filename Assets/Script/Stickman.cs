@@ -17,6 +17,7 @@ public class Stickman : MonoBehaviour
     [ SerializeField ] ColorSetter _colorSetter;
     [ SerializeField ] ToggleRagdoll _toggleRagdoll;
     [ SerializeField ] Collider _collider;
+    [ SerializeField ] TweenChain _tweenChain;
 
 // Private 
 	bool is_pooled;
@@ -147,6 +148,7 @@ public class Stickman : MonoBehaviour
 
 		_toggleRagdoll.SwitchRagdoll( true );
 		_toggleRagdoll.ToggleCollider( true );
+		_tweenChain.ClearAndKill();
 	}
 
 	void DelayedDisable()
