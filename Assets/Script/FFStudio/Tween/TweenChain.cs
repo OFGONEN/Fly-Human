@@ -116,7 +116,8 @@ namespace FFStudio
 		[ Button() ]
         public void Kill()
         {
-			tweenDatas[ index_playing ].Kill();
+			if( IsPlaying )
+				tweenDatas[ index_playing ].Kill();
 		}
 
 		public void ClearAndKill()
