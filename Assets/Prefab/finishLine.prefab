@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7466346833214196625}
   - component: {fileID: 4119671338201373171}
   - component: {fileID: 4117014421779678930}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7466346833214196625
 Transform:
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5106679627576020549}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: finishLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,9 +175,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157068160569359643, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157068160569359643, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7594422203589493278, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
       propertyPath: m_Name
       value: gfx_finish_line_flag_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594422203589493278, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594422203589493278, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
@@ -241,9 +257,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157068160569359643, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157068160569359643, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7594422203589493278, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
       propertyPath: m_Name
       value: gfx_finish_line_flag_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594422203589493278, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594422203589493278, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a8b3aaa55d4f243a4b228eea99936f, type: 3}
