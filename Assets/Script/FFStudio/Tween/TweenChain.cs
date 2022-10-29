@@ -122,8 +122,8 @@ namespace FFStudio
 
 		public void ClearAndKill()
 		{
-			tweenDatas.Clear();
 			Kill();
+			tweenDatas.Clear();
 		}
 #endregion
 
