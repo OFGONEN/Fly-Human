@@ -17,14 +17,14 @@ namespace FFStudio
 
 		public TransformData( Transform transform )
 		{
-			position = transform.position;
-			rotation = transform.eulerAngles;
+			position = transform.localPosition;
+			rotation = transform.localEulerAngles;
 			scale    = transform.localScale;
 		}
 
 		public TransformData( Rigidbody rigidbody )
 		{
-			position = rigidbody.transform.position;
+			position = rigidbody.transform.localPosition;
 			rotation = rigidbody.transform.localEulerAngles;
 			scale 	 = rigidbody.transform.localScale;
 		}
