@@ -17,6 +17,7 @@ public class VehicleMovement : MonoBehaviour
 	[ SerializeField ] SharedReferenceNotifier notif_finishLine_reference;
 	[ SerializeField ] SharedFloatNotifier notif_level_progress;
 	[ SerializeField ] GameEvent event_vehicle_eject_perfect;
+	[ SerializeField ] ParticleSystem _particleSystem;
 
 // Private
     VehicleData vehicle_data;
@@ -106,7 +107,10 @@ public class VehicleMovement : MonoBehaviour
 		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
 
 		if( vehicle_movement_speed >= vehicle_movement.movement_ground_speed_eject_perfect )
+		{
 			event_vehicle_eject_perfect.Raise();
+			_particleSystem.Play();
+		}
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
@@ -229,6 +233,8 @@ public class VehicleMovement : MonoBehaviour
 
 		var angle = Mathf.Acos( Vector3.Dot( vehicleDirection, SlopeDirection ) ) * Mathf.Rad2Deg;
 		FFLogger.PopUpText( transform.position, "Slope Enter Angle: " + angle );
+
+		_particleSystem.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 
 		if( angle >= GameSettings.Instance.vehicle_landing_angle )
 			HandleLanding_Bad();
