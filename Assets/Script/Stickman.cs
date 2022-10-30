@@ -11,6 +11,7 @@ public class Stickman : MonoBehaviour
 	[ SerializeField ] Pool_Stickman pool_stickman;
 	[ SerializeField ] GameEvent stickman_movement_start;
 	[ SerializeField ] GameEvent stickman_movement_end;
+	[ SerializeField ] GameEvent stickman_collected;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Animator _animator;
@@ -132,8 +133,8 @@ public class Stickman : MonoBehaviour
 
 	public void TurnIntoCurrency()
 	{
-		//todo gain currency
 		//todo spawn particle effect - coin splash particle
+		stickman_collected.Raise();
 		OnDelayedDisableComplete();
 	}
 

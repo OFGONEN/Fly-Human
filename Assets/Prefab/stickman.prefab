@@ -50,6 +50,7 @@ MonoBehaviour:
   pool_stickman: {fileID: 11400000, guid: 1a4560599a02b47cbb40989818643e3a, type: 2}
   stickman_movement_start: {fileID: 11400000, guid: 0fb9bc9cb30affa49b4bfb3d62afb234, type: 2}
   stickman_movement_end: {fileID: 11400000, guid: 945280de0208c2b40be115e8f01cd95a, type: 2}
+  stickman_collected: {fileID: 11400000, guid: 9677a1c75ed6648eb9680c89649a3b2e, type: 2}
   _animator: {fileID: 6780120202778769619}
   _colorSetter: {fileID: 6494386529884526295}
   _toggleRagdoll: {fileID: 8920674293691552949}
