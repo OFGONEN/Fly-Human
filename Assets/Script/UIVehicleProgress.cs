@@ -64,6 +64,8 @@ public class UIVehicleProgress : MonoBehaviour
 				position += GameSettings.Instance.ui_vehicle_progress_distance;
 			}
 		}
+
+		vehicle_progress_list.RemoveAt( vehicle_progress_list.Count - 1 );
 	}
 
     public void OnLevelStart()
