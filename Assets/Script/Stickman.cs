@@ -19,6 +19,7 @@ public class Stickman : MonoBehaviour
     [ SerializeField ] ToggleRagdoll _toggleRagdoll;
     [ SerializeField ] Collider _collider;
     [ SerializeField ] TweenChain _tweenChain;
+    [ SerializeField ] ParticleSpawner _particleSpawner;
 
 // Private 
 	bool is_pooled;
@@ -133,7 +134,7 @@ public class Stickman : MonoBehaviour
 
 	public void TurnIntoCurrency()
 	{
-		//todo spawn particle effect - coin splash particle
+		_particleSpawner.Spawn( 0 );
 		stickman_collected.Raise();
 		OnDelayedDisableComplete();
 	}
