@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedReferenceProperty: {fileID: 11400000, guid: 34e3fa117b85a0b459586f5085aeb04d, type: 2}
-  referenceComponent: {fileID: 1362701038643043574}
+  referenceComponent: {fileID: 2020304475607066888}
 --- !u!1 &9196122072629688090
 GameObject:
   m_ObjectHideFlags: 0
