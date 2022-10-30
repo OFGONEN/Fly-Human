@@ -40,6 +40,9 @@ namespace FFStudio
         [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
 
         [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
+
+    [ Title( "UI Vehicle Progress" ) ]
+		[ LabelText( "Gap Distance" ) ] public float ui_vehicle_progress_gapDistance;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         public Vector3 game_forward;
