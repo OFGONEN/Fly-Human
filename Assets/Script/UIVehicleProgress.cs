@@ -39,10 +39,11 @@ public class UIVehicleProgress : MonoBehaviour
 		for( var i = 0; i < levelData.vehicle_data_array.Length; i++ )
         {
 			var vehicleData = levelData.vehicle_data_array[ i ];
+			vehicle_icon_list.Add( vehicle_icon_array[ i ] );
+			vehicle_icon_array[ i ].sprite = vehicleData.VehicleIcon;
+
 			var vehicleIconRectTransform = vehicle_icon_array[ i ].rectTransform;
 			vehicleIconRectTransform.localPosition = Vector3.right.SetX( position );
-
-			vehicle_icon_list.Add( vehicle_icon_array[ i ] );
 
 			position += GameSettings.Instance.ui_vehicle_progress_gapDistance;
 

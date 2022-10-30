@@ -1155,7 +1155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62260743388a84b109cc17ac2ffe63a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicle_icon_array: []
+  vehicle_icon_array:
+  - {fileID: 8513642738873672352}
+  - {fileID: 5167343296352682658}
+  - {fileID: 8461779221314199676}
+  - {fileID: 6759753791266604983}
+  - {fileID: 3637180835553387908}
+  - {fileID: 7639699692069671034}
   vehicle_cursor: {fileID: 6834441036685987922}
   vehicle_name: {fileID: 8369765741935683780}
   pool_ui_image_progress: {fileID: 11400000, guid: 2798ac5e75d6741cc9746bc86c7c9213, type: 2}
