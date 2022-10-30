@@ -12,6 +12,7 @@ public class Stickman : MonoBehaviour
 	[ SerializeField ] GameEvent stickman_movement_start;
 	[ SerializeField ] GameEvent stickman_movement_end;
 	[ SerializeField ] GameEvent stickman_collected;
+	[ SerializeField ] UIParticlePool pool_ui_particle;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Animator _animator;
@@ -136,6 +137,9 @@ public class Stickman : MonoBehaviour
 	{
 		_particleSpawner.Spawn( 0 );
 		stickman_collected.Raise();
+
+		pool_ui_particle.Spawn( CurrentLevelData.Instance.levelData.stickman_currency, transform.position + Vector3.up * 1.4f );
+
 		OnDelayedDisableComplete();
 	}
 
