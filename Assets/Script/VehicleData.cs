@@ -10,12 +10,14 @@ public class VehicleData : ScriptableObject
     [ SerializeField ] VehiclePartData[] vehicle_data_array;
     [ SerializeField ] VehicleMovementData vehicle_movement;
     [ SerializeField ] string vehicle_name;
+    [ SerializeField ] Sprite vehicle_icon;
     [ SerializeField, Min( 1 ) ] int vehicle_count_min;
     [ SerializeField ] Vector3 vehicle_position;
     [ LabelText( "Vehicle Raycast Position" ), SerializeField ] Vector3 vehicle_raycast_landing_position; // Will be used when handling landing
     [ SerializeField ] VehicleColliderData vehicle_collider;
 
 	public string VehicleName                      => vehicle_name;
+	public Sprite VehicleIcon                      => vehicle_icon;
 	public int VehicleCountMin                     => vehicle_count_min;
 	public int VehicleCountMax                     => vehicle_data_array.Length;
 	public Vector3 VehiclePosition                 => vehicle_position;

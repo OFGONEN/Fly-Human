@@ -17,119 +17,209 @@ MonoBehaviour:
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 1, g: 0.2477299, b: 0, a: 1}
     pose: pose_sitting
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.68, y: 0.938, z: 1.809}
     rotation: {x: 15.000002, y: 255, z: 270}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.428, y: 0.938, z: 1.791}
     rotation: {x: -0, y: 105.000015, z: 90}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -1.443, y: 0.555, z: 3.676}
     rotation: {x: 0.00005019934, y: 180, z: 76.68481}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 1.617, y: 1.271, z: 3.566}
     rotation: {x: -0.000051444043, y: -0.000004485169, z: 103.31519}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.408, y: -0.019, z: 1.616}
     rotation: {x: 14.999667, y: 270.00018, z: 270.0002}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.166, y: -0.019, z: 1.614}
     rotation: {x: 14.999667, y: 270.00018, z: 270.0002}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.408, y: -0.019, z: 0.192}
     rotation: {x: 14.999667, y: 270.00018, z: 270.0002}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.166, y: -0.019, z: 0.181}
     rotation: {x: 14.999667, y: 270.00018, z: 270.0002}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 1.913, y: 1.241, z: 1.505}
     rotation: {x: 90, y: 270.00018, z: 0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 1.928, y: 1.241, z: 1.2076175}
     rotation: {x: 90, y: 270.00018, z: 0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -1.756, y: 1.241, z: 1.4993829}
     rotation: {x: 90, y: 90.00051, z: 0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -1.747, y: 1.241, z: 1.2020001}
     rotation: {x: 90, y: 90.00051, z: 0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.789, y: -0.167, z: 0.802}
     rotation: {x: 90, y: 90.001175, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.793, y: -0.167, z: 1.203}
     rotation: {x: 90, y: 90.001175, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.788, y: -0.167, z: 1.54}
     rotation: {x: 90, y: 90.001175, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.689, y: -0.248, z: 1.513}
     rotation: {x: 51.764046, y: 270, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.684, y: -0.251, z: 1.092}
     rotation: {x: 51.764046, y: 270, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.916, y: -0.247, z: 1.535641}
     rotation: {x: 51.76401, y: 90, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.923, y: -0.25, z: 1.094}
     rotation: {x: 51.76401, y: 90, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.678, y: -0.245, z: 0.8}
     rotation: {x: 51.764046, y: 270, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.927, y: -0.25, z: 0.80200005}
     rotation: {x: 51.76401, y: 90, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 1.905, y: 1.241, z: 0.813}
     rotation: {x: 90, y: 270.00018, z: 0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -1.748, y: 1.241, z: 0.8073829}
     rotation: {x: 90, y: 90.00051, z: 0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.48, y: -0.029218882, z: -0.959}
     rotation: {x: -0.0000136603785, y: 81.62766, z: 90.00013}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.331, y: -0.034845263, z: -0.957}
     rotation: {x: -0.00031931134, y: 278.37234, z: 270.00006}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.524, y: 0.751, z: -2.24}
     rotation: {x: 42.84519, y: 175.6138, z: 180.84593}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.345, y: 0.753, z: -2.253}
     rotation: {x: 42.84519, y: 184.3862, z: 179.15407}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_curved
+    tweener: 0
+    tween_data:
+      rid: -2
   vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_4
+  vehicle_icon: {fileID: 21300000, guid: 8acfd5c25d5828540ad9eb6093c5245d, type: 3}
   vehicle_count_min: 20
   vehicle_position: {x: 0, y: 1.1, z: -0.7}
   vehicle_raycast_landing_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
     position: {x: 0, y: 1.4, z: 3.4}
     size: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

@@ -17,23 +17,41 @@ MonoBehaviour:
     rotation: {x: 90, y: 0, z: 0}
     color: {r: 1, g: 0.40648973, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.932, y: -0.003, z: 0.954}
     rotation: {x: -0.000002561321, y: 7.2905593, z: 270}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved_feet_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.303, y: -0.003, z: 1.138}
     rotation: {x: -0.0000034150946, y: 38.658134, z: 270}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved_feet_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -1.906, y: -0.003, z: 0.324}
     rotation: {x: -0.00000085377366, y: 344.76697, z: 270}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_curved_feet_1
+    tweener: 0
+    tween_data:
+      rid: -2
   vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_1
+  vehicle_icon: {fileID: 21300000, guid: dc4107fa84d0ac74da3a4cf99c084114, type: 3}
   vehicle_count_min: 2
   vehicle_position: {x: 0, y: 0.75, z: -0.02}
   vehicle_raycast_landing_position: {x: 0, y: 0, z: 1}
   vehicle_collider:
     position: {x: 0, y: 1.1, z: 1.2}
     size: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

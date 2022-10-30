@@ -32,6 +32,9 @@ MonoBehaviour:
   camera_follow_speed: 5
   camera_follow_offset_position: {x: 6.5, y: 5, z: -5}
   camera_follow_offset_rotation: {x: 20, y: -43, z: 0}
+  ui_vehicle_progress_distance: 64
+  ui_vehicle_progress_travel_duration: 0.35
+  ui_vehicle_progress_travel_ease: 1
   game_forward: {x: 0, y: 0, z: 1}
   maxLevelCount: 1
   useRemoteConfig_GameSettings: 0

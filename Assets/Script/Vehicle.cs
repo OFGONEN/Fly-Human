@@ -11,8 +11,9 @@ public class Vehicle : MonoBehaviour
     [ SerializeField ] Set_TargetStickman set_stickman_target;
     [ SerializeField ] SharedReferenceNotifier notif_vehicle_target;
     [ SerializeField ] IntGameEvent event_vehicle_changed;
+    [ SerializeField ] SharedIntNotifier notif_vehicle_stickman_count;
 
-  [ Title( "Setup" ) ]
+  [ Title( "Components" ) ]
     [ SerializeField ] Transform vehicle_gfx;
     [ SerializeField ] SphereCollider vehicle_collider;
 
@@ -49,6 +50,8 @@ public class Vehicle : MonoBehaviour
 			stickman.AttachToVehicle( vehicle_gfx, vehicle_data.VehiclePartAtIndex( stickman_count ) );
 			vehicle_stickman.Add( stickman );
 		}
+
+		notif_vehicle_stickman_count.SharedValue = vehicle_stickman.Count;
 	}
 
 	public void OnLooseStickman( float percentage )
@@ -86,6 +89,8 @@ public class Vehicle : MonoBehaviour
 
 		if( devolve && vehicle_index > 0 )
 			Devolve();
+		
+		notif_vehicle_stickman_count.SharedValue = vehicle_stickman.Count;
 	}
 
 	[ Button() ]

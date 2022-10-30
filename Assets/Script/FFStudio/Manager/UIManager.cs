@@ -16,6 +16,9 @@ namespace FFStudio
         public EventListenerDelegateResponse levelCompleteResponse;
         public EventListenerDelegateResponse levelFailResponse;
         public EventListenerDelegateResponse tapInputListener;
+
+    [ Title( "Shared Variables" ) ]
+        public Pool_UI_Image pool_ui_image;
         public UIParticlePool pool_ui_particle;
 
     [ Title( "UI Elements" ) ]
@@ -27,7 +30,7 @@ namespace FFStudio
         public Image foreGroundImage;
         public RectTransform tutorialObjects;
         public UIEntity level_complete_entity;
-        public Transform parent_ui_particle;
+        public Transform parent_ui_pool_entities;
 
     [ Title( "Fired Events" ) ]
         public GameEvent levelRevealedEvent;
@@ -60,7 +63,8 @@ namespace FFStudio
             levelCompleteResponse.response = LevelCompleteResponse;
             tapInputListener.response      = ExtensionMethods.EmptyMethod;
 
-			pool_ui_particle.InitPool( transform, false );
+			pool_ui_particle.InitPool( parent_ui_pool_entities, false );
+			pool_ui_image.InitPool( parent_ui_pool_entities, false );
 
 			level_information_text.text = "Tap to Start";
         }

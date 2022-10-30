@@ -17,147 +17,258 @@ MonoBehaviour:
     rotation: {x: 270, y: 202.05876, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -3.287, y: 3.067, z: 1.011}
     rotation: {x: 270, y: 332.41217, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.51, y: 3.068, z: -0.925}
     rotation: {x: 270, y: 97.05821, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -2.292, y: 1.662, z: -0.71000004}
     rotation: {x: 0.00014826136, y: 270.00018, z: 0.00013636397}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.519, y: 2.422, z: -0.8823984}
     rotation: {x: 74.99989, y: 180.00038, z: 270.00024}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.519, y: 2.422, z: -0.4573984}
     rotation: {x: 74.99989, y: 180.00038, z: 270.00024}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.552, y: 2.422, z: -0.523}
     rotation: {x: 74.99986, y: 0.0000065973954, z: 270.00018}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.558, y: 2.422, z: -0.9480001}
     rotation: {x: 74.99986, y: 0.0000065973954, z: 270.00018}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 1.509, y: 3.068, z: 1.008}
     rotation: {x: 270, y: 332.41217, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 1.596, y: 3.064, z: -2.436}
     rotation: {x: 270, y: 202.05876, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 4.281, y: 3.068, z: -0.925}
     rotation: {x: 270, y: 97.05821, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 2.3300002, y: 1.652, z: -0.74122787}
     rotation: {x: 0.00014826133, y: 90.00052, z: 0.00013636399}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.413, y: 2.596, z: -1.435}
     rotation: {x: -0, y: 180, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.02, y: 2.523, z: -1.435}
     rotation: {x: -0, y: 180, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.416, y: 2.595, z: -1.435}
     rotation: {x: -0, y: 180, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.368, y: 2.599, z: 0.001}
     rotation: {x: -0, y: 0.0003380943, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.03, y: 2.598, z: 0.001}
     rotation: {x: -0, y: 0.0003380943, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.467, y: 2.6, z: 0.001}
     rotation: {x: -0, y: 0.0003380943, z: 180}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.412, y: 0.411, z: 0}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.014, y: 0.41, z: 0}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.412, y: 0.414, z: 0}
     rotation: {x: -0, y: 0, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.372, y: 0.417, z: -1.435}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.448, y: 0.416, z: -1.435}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
     pose: pose_straight_curved_feet_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.091000006, y: 1.0297751, z: -3.135}
     rotation: {x: 344.9995, y: 89.999825, z: 90.00007}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.091000006, y: 1.055843, z: -2.005}
     rotation: {x: 15.000492, y: 90.00026, z: 270.0004}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.169, y: 1.0456182, z: -2.005}
     rotation: {x: -0.00017758492, y: 269.99982, z: 89.999695}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.169, y: 1.04, z: -3.147}
     rotation: {x: 0.00017416982, y: 270.00018, z: 270}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.403, y: 1.0456182, z: -1.667}
     rotation: {x: -0.00017758492, y: 269.99982, z: 89.999695}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.357, y: 1.055843, z: -1.725}
     rotation: {x: 15.000492, y: 90.00026, z: 270.0004}
     color: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     pose: pose_straight_1
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.81, y: 0.127, z: -3.698}
     rotation: {x: -2.035555e-13, y: 270.00018, z: 0.000005122642}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.935, y: 1.004, z: -3.7820764}
     rotation: {x: -0, y: 0, z: 270.00018}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.915, y: 0.128, z: -3.698}
     rotation: {x: -0, y: 90, z: -0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: 0.81, y: 0.127, z: -3.9929237}
     rotation: {x: -2.035555e-13, y: 270.00018, z: 0.000005122642}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.935, y: 1.004, z: -4.077}
     rotation: {x: -0, y: 0, z: 270.00018}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   - position: {x: -0.915, y: 0.128, z: -3.9929237}
     rotation: {x: -0, y: 90, z: -0}
     color: {r: 0.43124676, g: 0.2, b: 0.6117647, a: 1}
     pose: pose_straight_2
+    tweener: 0
+    tween_data:
+      rid: -2
   vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
   vehicle_name: plane_5
+  vehicle_icon: {fileID: 21300000, guid: 01fba9212ed6df74bb188a3115a24e8d, type: 3}
   vehicle_count_min: 28
   vehicle_position: {x: 0, y: 0.25, z: 2.5}
   vehicle_raycast_landing_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
     position: {x: 0, y: 1.2, z: 3}
     size: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
