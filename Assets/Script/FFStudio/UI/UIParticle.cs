@@ -56,7 +56,7 @@ public class UIParticle : MonoBehaviour
 	void OnSequenceComplete()
 	{
 		pool_ui_particle.ReturnEntity( this );
-		( notif_target_PunchScale.SharedValue as UI_PunchScale_Float ).PunchScale();
+		( notif_target_PunchScale.SharedValue as UI_PunchScale_Int ).PunchScale();
 		oComplete_additional?.Invoke();
 	}
 #endregion
