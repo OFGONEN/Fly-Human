@@ -160,6 +160,7 @@ MonoBehaviour:
   set_stickman_target: {fileID: 11400000, guid: 0995d5b1ae94eb44b8b2a2381e50e9d2, type: 2}
   notif_vehicle_target: {fileID: 11400000, guid: 8168742b06830422984b6a6a71faf072, type: 2}
   event_vehicle_changed: {fileID: 11400000, guid: f4d3f1ffdecdd354086a78ccc6226159, type: 2}
+  notif_vehicle_stickman_count: {fileID: 11400000, guid: 1de714e0fa78e4b08a993b17880d3ece, type: 2}
   vehicle_gfx: {fileID: 7792097959512192672}
   vehicle_collider: {fileID: 7265406051457011835}
 --- !u!114 &2245883669988855901
