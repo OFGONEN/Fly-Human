@@ -12,6 +12,7 @@ public class UIVehicleProgress : MonoBehaviour
     [ SerializeField ] Image[] vehicle_icon_array;
     [ SerializeField ] Image vehicle_cursor;
     [ SerializeField ] TextMeshProUGUI vehicle_name;
+    [ SerializeField ] RectTransform vehicle_ui_parent;
 
   [ Title( "Shared" ) ]
     [ SerializeField ] Pool_UI_Image pool_ui_image_progress;
@@ -50,6 +51,8 @@ public class UIVehicleProgress : MonoBehaviour
 			for( var x = 0; x < vehicleData.VehicleCountMax - vehicleData.VehicleCountMin; x++ )
             {
 				var vehicleProgressIcon = pool_ui_image_progress.GetEntity();
+
+				vehicleProgressIcon.rectTransform.SetParent( vehicle_ui_parent );
 				vehicleProgressIcon.rectTransform.localPosition = Vector3.right.SetX( position );
 
 				vehicle_progress_list.Add( vehicleProgressIcon );

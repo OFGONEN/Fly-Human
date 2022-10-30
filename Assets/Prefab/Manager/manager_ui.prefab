@@ -1164,6 +1164,7 @@ MonoBehaviour:
   - {fileID: 7639699692069671034}
   vehicle_cursor: {fileID: 6834441036685987922}
   vehicle_name: {fileID: 8369765741935683780}
+  vehicle_ui_parent: {fileID: 1757834479213885116}
   pool_ui_image_progress: {fileID: 11400000, guid: 2798ac5e75d6741cc9746bc86c7c9213, type: 2}
 --- !u!1 &3474085241652285997
 GameObject:
