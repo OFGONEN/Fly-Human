@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b0963315ddbad4aa84a527e08fce12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedDataNotifier: {fileID: 11400000, guid: 25a0495eaa629f847aa03b3d8fd42b72, type: 2}
+  sharedDataNotifier: {fileID: 11400000, guid: a95b4c24e8f8b462cafe0c8038694fe0, type: 2}
 --- !u!114 &2020304475607066888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   startScale: {x: 0, y: 0, z: 0}
   punchScale: 1
-  notifier_count: {fileID: 11400000, guid: 25a0495eaa629f847aa03b3d8fd42b72, type: 2}
+  notifier_count: {fileID: 11400000, guid: a95b4c24e8f8b462cafe0c8038694fe0, type: 2}
 --- !u!1 &7713102664584755516
 GameObject:
   m_ObjectHideFlags: 0
