@@ -79,7 +79,9 @@ public class UIVehicleProgress : MonoBehaviour
 
 		vehicle_progress_list.Clear();
 		vehicle_icon_list.Clear();
-    }
+
+		OnVehicleStickmanCountChanged( CurrentLevelData.Instance.levelData.vehicle_start_count );
+	}
 
     public void OnLoadNewLevel()
     {
