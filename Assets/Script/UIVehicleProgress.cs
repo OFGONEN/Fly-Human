@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using FFStudio;
 using TMPro;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public class UIVehicleProgress : MonoBehaviour
@@ -18,10 +19,14 @@ public class UIVehicleProgress : MonoBehaviour
     [ SerializeField ] Pool_UI_Image pool_ui_image_progress;
 
 // Private
+    RecycledTween recycledTween = new RecycledTween();
+
     List< Image > vehicle_icon_list;
     List< Image > vehicle_progress_list;
-    
-    void Awake()
+
+	int vehicle_stickman_count_start;
+
+	void Awake()
     {
 		vehicle_icon_list     = new List< Image >( vehicle_icon_array.Length );
 		vehicle_progress_list = new List< Image >( 128 );
@@ -35,6 +40,7 @@ public class UIVehicleProgress : MonoBehaviour
 		vehicle_name.gameObject.SetActive( true );
 		vehicle_name.text = levelData.vehicle_data_array[ 0 ].VehicleName;
 
+		vehicle_stickman_count_start = levelData.vehicle_data_array[ 0 ].VehicleCountMin;
 		float position = 0;
 
 		for( var i = 0; i < levelData.vehicle_data_array.Length; i++ )
@@ -46,7 +52,7 @@ public class UIVehicleProgress : MonoBehaviour
 			var vehicleIconRectTransform = vehicle_icon_array[ i ].rectTransform;
 			vehicleIconRectTransform.localPosition = Vector3.right.SetX( position );
 
-			position += GameSettings.Instance.ui_vehicle_progress_gapDistance;
+			position += GameSettings.Instance.ui_vehicle_progress_distance;
 
 			for( var x = 0; x < vehicleData.VehicleCountMax - vehicleData.VehicleCountMin; x++ )
             {
@@ -57,7 +63,7 @@ public class UIVehicleProgress : MonoBehaviour
 
 				vehicle_progress_list.Add( vehicleProgressIcon );
 
-				position += GameSettings.Instance.ui_vehicle_progress_gapDistance;
+				position += GameSettings.Instance.ui_vehicle_progress_distance;
 			}
 		}
 	}
@@ -79,6 +85,8 @@ public class UIVehicleProgress : MonoBehaviour
 
     public void OnLoadNewLevel()
     {
+		recycledTween.Kill();
+
 		vehicle_cursor.gameObject.SetActive( false );
 		vehicle_name.gameObject.SetActive( false );
 
@@ -90,5 +98,19 @@ public class UIVehicleProgress : MonoBehaviour
 
 		vehicle_progress_list.Clear();
 		vehicle_icon_list.Clear();
+	}
+
+    public void OnVehicleChanged( IntGameEvent gameEvent )
+    {
+		vehicle_name.text = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ].VehicleName;
+	}
+
+	public void OnVehicleStickmanCountChanged( int count )
+    {
+		var diff = count - vehicle_stickman_count_start;
+		var targetPosition = Vector3.right.SetX( diff * GameSettings.Instance.ui_vehicle_progress_distance );
+
+		recycledTween.Recycle( vehicle_ui_parent.DOLocalMove( targetPosition, GameSettings.Instance.ui_vehicle_progress_travel_duration )
+			.SetEase( GameSettings.Instance.ui_vehicle_progress_travel_ease ) );
 	}
 }
