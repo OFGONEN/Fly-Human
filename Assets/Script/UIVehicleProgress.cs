@@ -36,8 +36,6 @@ public class UIVehicleProgress : MonoBehaviour
     {
 		var levelData = CurrentLevelData.Instance.levelData;
 
-		vehicle_cursor.gameObject.SetActive( true );
-		vehicle_name.gameObject.SetActive( true );
 		vehicle_name.text = levelData.vehicle_data_array[ 0 ].VehicleName;
 
 		vehicle_stickman_count_start = levelData.vehicle_data_array[ 0 ].VehicleCountMin;
@@ -108,7 +106,7 @@ public class UIVehicleProgress : MonoBehaviour
 	public void OnVehicleStickmanCountChanged( int count )
     {
 		var diff = count - vehicle_stickman_count_start;
-		var targetPosition = Vector3.right.SetX( diff * GameSettings.Instance.ui_vehicle_progress_distance );
+		var targetPosition = Vector3.right.SetX( -diff * GameSettings.Instance.ui_vehicle_progress_distance );
 
 		recycledTween.Recycle( vehicle_ui_parent.DOLocalMove( targetPosition, GameSettings.Instance.ui_vehicle_progress_travel_duration )
 			.SetEase( GameSettings.Instance.ui_vehicle_progress_travel_ease ) );
