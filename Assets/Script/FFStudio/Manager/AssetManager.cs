@@ -28,7 +28,7 @@ namespace FFStudio
 	[ Title( "Shared Variables" ) ]
 		[ SerializeField ] TargetVehicleData[] target_vehicle_data_array;
 		[ SerializeField ] Set_TargetStickman set_target_stickman;
-
+		[ SerializeField ] Currency currency;
 #endregion
 
 #region UnityAPI
@@ -45,12 +45,14 @@ namespace FFStudio
 			pool_stickman_target.InitPool( transform, false );
 			pool_stickman.InitPool( transform, false );
 
-			onAwakeEvent.Invoke();
+			currency.Load();
 
 			for( var i = 0; i < target_vehicle_data_array.Length; i++ )
 				target_vehicle_data_array[ i ].CheckIfUnLocked();
 
 			set_target_stickman.InitSet();
+
+			onAwakeEvent.Invoke();
 		}
 
 		void Start()
