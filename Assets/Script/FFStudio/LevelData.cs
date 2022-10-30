@@ -16,6 +16,9 @@ namespace FFStudio
 		[ ValueDropdown( "SceneList" ), LabelText( "Scene Index" ) ] public int scene_index;
         [ LabelText( "Override As Active Scene" ) ] public bool scene_overrideAsActiveScene;
 
+	[ Title( "Level Releated" ) ]
+		[ LabelText( "Stickman Currency Amount" ) ] public int stickman_currency;
+
 	[ Title( "Data Setup" ) ]
 		[ LabelText( "Vehicle Evolve List" ) ] public VehicleData[] vehicle_data_array; 
 		[ LabelText( "Target Vehicle Data" ) ] public TargetVehicleData vehicle_target;
