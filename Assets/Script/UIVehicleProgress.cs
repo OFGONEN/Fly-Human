@@ -36,7 +36,7 @@ public class UIVehicleProgress : MonoBehaviour
     {
 		var levelData = CurrentLevelData.Instance.levelData;
 
-		vehicle_name.text = levelData.vehicle_data_array[ 0 ].VehicleName;
+		vehicle_name.text = levelData.vehicle_data_array[ levelData.vehicle_start_index ].VehicleName;
 
 		vehicle_stickman_count_start = levelData.vehicle_data_array[ 0 ].VehicleCountMin;
 		float position = 0;
