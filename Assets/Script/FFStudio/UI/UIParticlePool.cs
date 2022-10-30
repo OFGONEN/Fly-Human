@@ -12,4 +12,10 @@ public class UIParticlePool : ComponentPool< UIParticle >
 	{
 		GetEntity().Spawn( worldPosition, onComplete );
 	}
+
+	public void Spawn( int count, Vector3 worldPosition, OnCompleteMessage onComplete = null )
+	{
+		for( var i = 0; i < count; i++ )
+			GetEntity().Spawn( worldPosition, onComplete );
+	}
 }
