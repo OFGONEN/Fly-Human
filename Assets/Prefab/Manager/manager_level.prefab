@@ -81,6 +81,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: 9677a1c75ed6648eb9680c89649a3b2e, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3087407567312676473}
+          m_TargetAssemblyTypeName: FFStudio.LevelManager, Assembly-CSharp
+          m_MethodName: OnStickmanCollected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2333294110489974212
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +150,7 @@ MonoBehaviour:
   levelCompleted: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
   event_stickman_movement_done: {fileID: 11400000, guid: e0c184cfcef8bdf448850066c411bbaf, type: 2}
   notifier_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
+  currency: {fileID: 11400000, guid: a95b4c24e8f8b462cafe0c8038694fe0, type: 2}
 --- !u!114 &6253295288017648143
 MonoBehaviour:
   m_ObjectHideFlags: 0

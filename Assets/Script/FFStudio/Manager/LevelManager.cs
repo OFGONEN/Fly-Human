@@ -16,6 +16,7 @@ namespace FFStudio
 
       [ Title( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
+        public Currency currency;
 
 // Private
         int stickman_movement_count;
@@ -70,6 +71,11 @@ namespace FFStudio
                 FFLogger.LogError( "This value cannot be below zero" );
             }
 #endif
+		}
+
+        public void OnStickmanCollected()
+        {
+			currency.SharedValue += CurrentLevelData.Instance.levelData.stickman_currency;
 		}
 #endregion
 
