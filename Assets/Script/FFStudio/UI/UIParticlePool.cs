@@ -8,8 +8,8 @@ using Sirenix.OdinInspector;
 public class UIParticlePool : ComponentPool< UIParticle > 
 {
 	[ Button() ]
-	public void Spawn( string value, Vector3 worldPosition, OnCompleteMessage onComplete = null )
+	public void Spawn( Vector3 worldPosition, OnCompleteMessage onComplete = null )
 	{
-		GetEntity().Spawn( value, worldPosition, onComplete );
+		GetEntity().Spawn( worldPosition, onComplete );
 	}
 }
