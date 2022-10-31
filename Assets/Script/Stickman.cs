@@ -84,7 +84,7 @@ public class Stickman : MonoBehaviour
 		DelayedDisable();
 	}
 
-    public void MoveTowardsTargetVehicle( TargetVehicle targetVehicle, TargetStickman stickman )
+    public void MoveTowardsTargetVehicle( int index, TargetVehicle targetVehicle, TargetStickman stickman )
 	{
 		target_vehicle  = targetVehicle;
 		target_stickman = stickman;
@@ -98,7 +98,7 @@ public class Stickman : MonoBehaviour
 			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ),OnMoveTowardsTargetComplete );
 	}
 
-	public void MoveTowardsPosition ( Vector3 position )
+	public void MoveTowardsPosition( int index, Vector3 position )
 	{
 		DetachFromVehicle();
 		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
