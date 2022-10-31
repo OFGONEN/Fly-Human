@@ -43,6 +43,8 @@ public class VehicleMovement : MonoBehaviour
 	RecycledSequence recycledSequence = new RecycledSequence();
 
 	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
+	public float VehicleMovementSpeed => vehicle_movement_speed;
+	public float VehicleRotateSpeed   => vehicle_movement_speed;
 #endregion
 
 #region Properties
