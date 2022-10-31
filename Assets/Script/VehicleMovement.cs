@@ -17,6 +17,8 @@ public class VehicleMovement : MonoBehaviour
 	[ SerializeField ] SharedReferenceNotifier notif_finishLine_reference;
 	[ SerializeField ] SharedFloatNotifier notif_level_progress;
 	[ SerializeField ] GameEvent event_vehicle_eject_perfect;
+
+  [ Title( "Components" ) ]
 	[ SerializeField ] ParticleSystem _particleSystem;
 
 // Private
@@ -35,6 +37,7 @@ public class VehicleMovement : MonoBehaviour
 	float vehicle_position_end;
 
 	Vehicle vehicle;
+	TargetVehicle vehicle_target;
 	VehicleMovementData vehicle_movement;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
@@ -43,6 +46,8 @@ public class VehicleMovement : MonoBehaviour
 	RecycledSequence recycledSequence = new RecycledSequence();
 
 	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
+	public float VehicleMovementSpeed => vehicle_movement_speed;
+	public float VehicleRotateSpeed   => vehicle_movement_rotate_speed;
 #endregion
 
 #region Properties
@@ -127,15 +132,21 @@ public class VehicleMovement : MonoBehaviour
 	public void OnFinishLine()
 	{
 		EmptyOutDelegates();
+
 		_particleSystem.Stop( true, ParticleSystemStopBehavior.StopEmitting );
-
-		var targetPosition = ( notif_vehicle_target_reference.sharedValue as TargetVehicle ).transform.position;
-		var duration = GameSettings.Instance.stickman_targetMove_duration.ReturnProgress( 0.5f );
-
 		notif_level_progress.SharedValue = 1f;
 
-		recycledTween.Recycle( transform.DOMove( targetPosition, duration )
-			.SetEase( Ease.Linear ) );
+		recycledTween.Kill();
+
+		onFixedUpdateMethod = MoveForwardOnAir;
+		InitTargetVehicle();
+
+		var sequence = recycledSequence.Recycle( OnVehicleAlignComplete );
+
+		sequence.Append( transform.DORotate( Vector3.zero, GameSettings.Instance.vehicle_landing_adjust_duration ) );
+		sequence.Append( vehicle_target.transform.DOLocalMove( GameSettings.Instance.vehicle_target_offset,
+			GameSettings.Instance.vehicle_target_spawn_duration ) );
+		sequence.SetUpdate( UpdateType.Fixed );
 	}
 
 	public void OnLevelFinished()
@@ -145,6 +156,24 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+	void OnVehicleAlignComplete()
+	{
+		vehicle.SendStickmenToTargetVehicle( vehicle_target );
+	}
+
+	void MoveForwardOnAir()
+	{
+		var position = transform.position;
+		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
+	}
+
+	void InitTargetVehicle() 
+	{
+		vehicle_target = ( notif_vehicle_target_reference.sharedValue as TargetVehicle );
+		vehicle_target.transform.SetParent( transform );
+		vehicle_target.transform.localPosition = GameSettings.Instance.vehicle_target_spawn_offset;
+	}
+
 	void UpdateLevelProgress()
 	{
 		notif_level_progress.SharedValue = Mathf.InverseLerp( vehicle_position_start, vehicle_position_end, transform.position.z );
@@ -289,7 +318,7 @@ public class VehicleMovement : MonoBehaviour
 		vehicle_point_origin = hitInfo_Origin.point;
 		vehicle_point_target = hitInfo_Target.point;
 	}
-	
+
 	void EmptyOutDelegates()
 	{
 		onUpdateMethod      = ExtensionMethods.EmptyMethod;

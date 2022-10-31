@@ -16,6 +16,7 @@ public class Vehicle : MonoBehaviour
   [ Title( "Components" ) ]
     [ SerializeField ] Transform vehicle_gfx;
     [ SerializeField ] SphereCollider vehicle_collider;
+    [ SerializeField ] VehicleMovement vehicle_movement;
 
 // Private
     [ ShowInInspector, ReadOnly ] List< Stickman > vehicle_stickman = new List< Stickman >( 64 );
@@ -93,10 +94,12 @@ public class Vehicle : MonoBehaviour
 		notif_vehicle_stickman_count.SharedValue = vehicle_stickman.Count;
 	}
 
-	[ Button() ]
-	public void OnFinishLine()
+	public void OnLevelFinished()
 	{
-		var targetVehicle = notif_vehicle_target.sharedValue as TargetVehicle;
+	}
+
+	public void SendStickmenToTargetVehicle( TargetVehicle targetVehicle )
+	{
 		var stickmanIndex = 0;
 
 		for( var i = 0; i < set_stickman_target.ListCount; i++ )
@@ -106,21 +109,16 @@ public class Vehicle : MonoBehaviour
 
 			for( ; stickmanIndex < vehicleIndexTarget && stickmanIndex < vehicle_stickman.Count; stickmanIndex++ )
 			{
-				vehicle_stickman[ stickmanIndex ].MoveTowardsTargetVehicle( targetVehicle, targetStickman );
+				vehicle_stickman[ stickmanIndex ].MoveTowardsTargetVehicle( stickmanIndex, targetVehicle, targetStickman );
 			}
 		}
 
 		var targetVehiclePosition = targetVehicle.TargetVehiclePosition;
 
-		for( var i = stickmanIndex; i < vehicle_stickman.Count; i++ )
+		for( ; stickmanIndex < vehicle_stickman.Count; stickmanIndex++ )
 		{
-			vehicle_stickman[ i ].MoveTowardsPosition( targetVehiclePosition );
+			vehicle_stickman[ stickmanIndex ].MoveTowardsPosition( stickmanIndex, targetVehicle );
 		}
-	}
-
-	public void OnLevelFinished()
-	{
-
 	}
 
 	void Evolve( Stickman incomingStickman )

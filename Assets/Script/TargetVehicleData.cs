@@ -10,7 +10,7 @@ public class TargetVehicleData : ScriptableObject
     [ SerializeField ] TargetVehiclePartData[] vehicle_data_array;
     [ SerializeField ] string vehicle_name;
     [ SerializeField ] bool vehicle_is_unlocked;
-	[ LabelText( "Vehicle Stickman Move Position" ), SerializeField ] Vector3 vehicle_position;
+	[ LabelText( "Move Position" ), SerializeField ] Vector3 vehicle_position;
 	[ SerializeField, ReadOnly ] int vehicle_stickman_count;
 
 	public string VehicleName       => vehicle_name;

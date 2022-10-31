@@ -84,28 +84,39 @@ public class Stickman : MonoBehaviour
 		DelayedDisable();
 	}
 
-    public void MoveTowardsTargetVehicle( TargetVehicle targetVehicle, TargetStickman stickman )
+    public void MoveTowardsTargetVehicle( int index, TargetVehicle targetVehicle, TargetStickman stickman )
 	{
 		target_vehicle  = targetVehicle;
 		target_stickman = stickman;
 
-		DetachFromVehicle();
+		transform.SetParent( targetVehicle.transform );
+		_animator.enabled = false;
+		_tweenChain.ClearAndKill();
 		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
+		_toggleRagdoll.ToggleCollider( true );
 
 		stickman_movement_start.Raise();
 
-		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( stickman.transform.position,
-			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ),OnMoveTowardsTargetComplete );
+		recycledTween.Recycle( transform.DOLocalJump( stickman.transform.localPosition,
+			GameSettings.Instance.stickman_target_jump_power.ReturnRandom(), 1,
+			GameSettings.Instance.stickman_target_jump_duration.ReturnRandom() )
+			.SetUpdate( UpdateType.Fixed ), OnMoveTowardsTargetComplete );
 	}
 
-	public void MoveTowardsPosition ( Vector3 position )
+	public void MoveTowardsPosition( int index, TargetVehicle targetVehicle )
 	{
-		DetachFromVehicle();
+		transform.SetParent( targetVehicle.transform );
+		_animator.enabled = false;
+		_tweenChain.ClearAndKill();
 		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
+		_toggleRagdoll.ToggleCollider( true );
 
 		stickman_movement_start.Raise();
-		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( position,
-			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMovePositionComplete );
+
+		recycledTween.Recycle( transform.DOLocalJump( targetVehicle.TargetPosition,
+			GameSettings.Instance.stickman_target_jump_power.ReturnRandom(), 1,
+			GameSettings.Instance.stickman_target_jump_duration.ReturnRandom() )
+			.SetUpdate( UpdateType.Fixed ), OnMovePositionComplete );
 	}
 
 	public void SpawnIntoVehicle( Transform vehicle, VehiclePartData data )

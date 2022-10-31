@@ -16,7 +16,8 @@ MonoBehaviour:
   stickman_jump_power: 1
   stickman_jump_duration: 0.5
   stickman_disableDuration: 1
-  stickman_targetMove_duration: {x: 2, y: 3}
+  stickman_target_jump_power: {x: 0.75, y: 1.5}
+  stickman_target_jump_duration: {x: 0.5, y: 1}
   vehicle_rayCast_height: 100
   vehicle_rayCast_direction: {x: 0, y: -1, z: 0}
   vehicle_rayCast_distance: 1000
@@ -29,6 +30,9 @@ MonoBehaviour:
   vehicle_fly_rotate_speed_max: 10
   vehicle_landing_angle: 20
   vehicle_landing_adjust_duration: 0.45
+  vehicle_target_offset: {x: 0, y: 0, z: 5}
+  vehicle_target_spawn_offset: {x: 0, y: 10, z: 10}
+  vehicle_target_spawn_duration: 1.35
   camera_follow_speed: 5
   camera_follow_offset_position: {x: 6.5, y: 5, z: -5}
   camera_follow_offset_rotation: {x: 20, y: -43, z: 0}

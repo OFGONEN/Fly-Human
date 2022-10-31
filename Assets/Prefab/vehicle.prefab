@@ -164,6 +164,7 @@ MonoBehaviour:
   notif_vehicle_stickman_count: {fileID: 11400000, guid: 1de714e0fa78e4b08a993b17880d3ece, type: 2}
   vehicle_gfx: {fileID: 7792097959512192672}
   vehicle_collider: {fileID: 7265406051457011835}
+  vehicle_movement: {fileID: 2245883669988855901}
 --- !u!114 &2245883669988855901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +315,7 @@ MonoBehaviour:
   - eventListener:
       gameEvents:
       - {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
-      - {fileID: 11400000, guid: d6870c4c590adb64dbff6d73023b384a, type: 2}
+      - {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -411,18 +412,6 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6883730530862109171}
-          m_TargetAssemblyTypeName: Vehicle, Assembly-CSharp
-          m_MethodName: OnFinishLine
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 2245883669988855901}
           m_TargetAssemblyTypeName: VehicleMovement, Assembly-CSharp
           m_MethodName: OnFinishLine

@@ -15,7 +15,8 @@ namespace FFStudio
 		[ LabelText( "Jump Power" ) ] public float stickman_jump_power;
 		[ LabelText( "Jump Duration" ) ] public float stickman_jump_duration;
 		[ LabelText( "Disable Duration" ) ] public float stickman_disableDuration;
-		[ LabelText( "Target Movement Duration" ) ] public Vector2 stickman_targetMove_duration;
+		[ LabelText( "Target Jump Power" ) ] public Vector2 stickman_target_jump_power;
+		[ LabelText( "Target Jump Duration" ) ] public Vector2 stickman_target_jump_duration;
 
     [ Title( "Vehicle Platform" ) ]
 		[ LabelText( "Vehicle Ray Cast Height" ) ] public float vehicle_rayCast_height;
@@ -34,7 +35,12 @@ namespace FFStudio
 	[ Title( "Vehicle Landing" ) ]
 		[ LabelText( "Vehicle Landing Collide Angle" ) ] public float vehicle_landing_angle;
 		[ LabelText( "Vehicle Landing Adjust Duration" ) ] public float vehicle_landing_adjust_duration;
-   
+	
+	[ Title( "Target Vehicle" ) ]
+		[ LabelText( "Target Vehicle Offset" ) ] public Vector3 vehicle_target_offset;
+		[ LabelText( "Target Vehicle Spawn Offset" ) ] public Vector3 vehicle_target_spawn_offset;
+		[ LabelText( "Target Vehicle Spawn Duration" ) ] public float vehicle_target_spawn_duration;
+
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed;
         [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
