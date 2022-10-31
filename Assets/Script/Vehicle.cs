@@ -117,7 +117,7 @@ public class Vehicle : MonoBehaviour
 
 		for( ; stickmanIndex < vehicle_stickman.Count; stickmanIndex++ )
 		{
-			vehicle_stickman[ stickmanIndex ].MoveTowardsPosition( stickmanIndex, targetVehiclePosition );
+			vehicle_stickman[ stickmanIndex ].MoveTowardsPosition( stickmanIndex, targetVehicle );
 		}
 	}
 
