@@ -97,10 +97,10 @@ public class Stickman : MonoBehaviour
 
 		stickman_movement_start.Raise();
 
-		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.transform.DOLocalJump( stickman.transform.localPosition,
+		recycledTween.Recycle( transform.DOLocalJump( stickman.transform.localPosition,
 			GameSettings.Instance.stickman_target_jump_power.ReturnRandom(), 1,
 			GameSettings.Instance.stickman_target_jump_duration.ReturnRandom() )
-			.SetDelay( index * GameSettings.Instance.stickman_target_jump_delay ), OnMoveTowardsTargetComplete );
+			.SetUpdate( UpdateType.Fixed ), OnMoveTowardsTargetComplete );
 	}
 
 	public void MoveTowardsPosition( int index, TargetVehicle targetVehicle )
@@ -113,10 +113,10 @@ public class Stickman : MonoBehaviour
 
 		stickman_movement_start.Raise();
 
-		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.transform.DOLocalJump( targetVehicle.TargetPosition,
+		recycledTween.Recycle( transform.DOLocalJump( targetVehicle.TargetPosition,
 			GameSettings.Instance.stickman_target_jump_power.ReturnRandom(), 1,
 			GameSettings.Instance.stickman_target_jump_duration.ReturnRandom() )
-			.SetDelay( index * GameSettings.Instance.stickman_target_jump_delay ), OnMovePositionComplete );
+			.SetUpdate( UpdateType.Fixed ), OnMovePositionComplete );
 	}
 
 	public void SpawnIntoVehicle( Transform vehicle, VehiclePartData data )
