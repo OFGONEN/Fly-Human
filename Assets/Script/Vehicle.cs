@@ -16,6 +16,7 @@ public class Vehicle : MonoBehaviour
   [ Title( "Components" ) ]
     [ SerializeField ] Transform vehicle_gfx;
     [ SerializeField ] SphereCollider vehicle_collider;
+    [ SerializeField ] VehicleMovement vehicle_movement;
 
 // Private
     [ ShowInInspector, ReadOnly ] List< Stickman > vehicle_stickman = new List< Stickman >( 64 );

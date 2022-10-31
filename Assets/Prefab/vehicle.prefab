@@ -164,6 +164,7 @@ MonoBehaviour:
   notif_vehicle_stickman_count: {fileID: 11400000, guid: 1de714e0fa78e4b08a993b17880d3ece, type: 2}
   vehicle_gfx: {fileID: 7792097959512192672}
   vehicle_collider: {fileID: 7265406051457011835}
+  vehicle_movement: {fileID: 2245883669988855901}
 --- !u!114 &2245883669988855901
 MonoBehaviour:
   m_ObjectHideFlags: 0
