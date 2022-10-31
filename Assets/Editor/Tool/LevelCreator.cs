@@ -4,6 +4,8 @@ using UnityEngine;
 using FFStudio;
 using Dreamteck.Splines;
 using Sirenix.OdinInspector;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [ CreateAssetMenu( fileName = "tool_level_creator", menuName = "FF/Tool/Level Creator" ) ]
 public class LevelCreator : ScriptableObject
@@ -20,6 +22,8 @@ public class LevelCreator : ScriptableObject
     [ Button() ]
     public void ConstructLevel()
     {
+		EditorSceneManager.MarkAllScenesDirty();
+
 		level_point_peak_list = new List< Vector3 >();
 		level_point_drop_list = new List< Vector3 >();
 
