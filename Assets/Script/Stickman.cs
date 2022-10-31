@@ -89,23 +89,34 @@ public class Stickman : MonoBehaviour
 		target_vehicle  = targetVehicle;
 		target_stickman = stickman;
 
-		DetachFromVehicle();
+		transform.SetParent( targetVehicle.transform );
+		_animator.enabled = false;
+		_tweenChain.ClearAndKill();
 		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
+		_toggleRagdoll.ToggleCollider( true );
 
 		stickman_movement_start.Raise();
 
-		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( stickman.transform.position,
-			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ),OnMoveTowardsTargetComplete );
+		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.transform.DOLocalJump( stickman.transform.localPosition,
+			GameSettings.Instance.stickman_target_jump_power.ReturnRandom(), 1,
+			GameSettings.Instance.stickman_target_jump_duration.ReturnRandom() )
+			.SetDelay( index * GameSettings.Instance.stickman_target_jump_delay ), OnMoveTowardsTargetComplete );
 	}
 
-	public void MoveTowardsPosition( int index, Vector3 position )
+	public void MoveTowardsPosition( int index, TargetVehicle targetVehicle )
 	{
-		DetachFromVehicle();
+		transform.SetParent( targetVehicle.transform );
+		_animator.enabled = false;
+		_tweenChain.ClearAndKill();
 		_toggleRagdoll.BecomeMovableRagdollWithoutGravity();
+		_toggleRagdoll.ToggleCollider( true );
 
 		stickman_movement_start.Raise();
-		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.DOMove( position,
-			GameSettings.Instance.stickman_targetMove_duration.ReturnRandom() ), OnMovePositionComplete );
+
+		recycledTween.Recycle( _toggleRagdoll.MainRigidbody.transform.DOLocalJump( targetVehicle.TargetPosition,
+			GameSettings.Instance.stickman_target_jump_power.ReturnRandom(), 1,
+			GameSettings.Instance.stickman_target_jump_duration.ReturnRandom() )
+			.SetDelay( index * GameSettings.Instance.stickman_target_jump_delay ), OnMovePositionComplete );
 	}
 
 	public void SpawnIntoVehicle( Transform vehicle, VehiclePartData data )
