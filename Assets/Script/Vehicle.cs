@@ -94,10 +94,12 @@ public class Vehicle : MonoBehaviour
 		notif_vehicle_stickman_count.SharedValue = vehicle_stickman.Count;
 	}
 
-	[ Button() ]
-	public void OnFinishLine()
+	public void OnLevelFinished()
 	{
-		var targetVehicle = notif_vehicle_target.sharedValue as TargetVehicle;
+	}
+
+	public void SendStickmenToTargetVehicle( TargetVehicle targetVehicle )
+	{
 		var stickmanIndex = 0;
 
 		for( var i = 0; i < set_stickman_target.ListCount; i++ )
@@ -117,11 +119,6 @@ public class Vehicle : MonoBehaviour
 		{
 			vehicle_stickman[ i ].MoveTowardsPosition( targetVehiclePosition );
 		}
-	}
-
-	public void OnLevelFinished()
-	{
-
 	}
 
 	void Evolve( Stickman incomingStickman )
