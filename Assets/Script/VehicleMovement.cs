@@ -129,13 +129,13 @@ public class VehicleMovement : MonoBehaviour
 		EmptyOutDelegates();
 		_particleSystem.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 
-		var targetPosition = ( notif_vehicle_target_reference.sharedValue as TargetVehicle ).transform.position;
-		var duration = GameSettings.Instance.stickman_targetMove_duration.ReturnProgress( 0.5f );
+		// var targetPosition = ( notif_vehicle_target_reference.sharedValue as TargetVehicle ).transform.position;
+		// var duration = GameSettings.Instance.stickman_targetMove_duration.ReturnProgress( 0.5f );
 
 		notif_level_progress.SharedValue = 1f;
 
-		recycledTween.Recycle( transform.DOMove( targetPosition, duration )
-			.SetEase( Ease.Linear ) );
+		// recycledTween.Recycle( transform.DOMove( targetPosition, duration )
+		// 	.SetEase( Ease.Linear ) );
 	}
 
 	public void OnLevelFinished()
