@@ -14,28 +14,32 @@ public class LevelCreator : ScriptableObject
     [ SerializeField ] Vector2 level_drop_height;
     [ SerializeField ] Vector2 level_drop_placement;
 
-    [ ShowInInspector, ReadOnly ] Vector3[] level_point_peak_list;
-    [ ShowInInspector, ReadOnly ] Vector3[] level_point_drop_list;
+    [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_peak_list;
+    [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_drop_list;
 
     [ Button() ]
     public void ConstructLevel()
     {
-		level_point_peak_list = new Vector3[ level_peak_count ];
-		level_point_drop_list = new Vector3[ level_peak_count - 1 ];
+		level_point_peak_list = new List< Vector3 >();
+		level_point_drop_list = new List< Vector3 >();
 
 		float peakForward = 0;
 
-		for( var i = 0; i < level_point_peak_list.Length; i++ )
+		for( var i = 0; i < level_peak_count; i++ )
         {
-			level_point_peak_list[ i ] = Vector3.up * level_peak_height.ReturnRandom() + Vector3.forward * peakForward;
+			level_point_peak_list.Add( Vector3.up * level_peak_height.ReturnRandom() + Vector3.forward * peakForward );
 			peakForward += level_peak_distance.ReturnRandom();
 		}
-        
-        for( var i = 0; i < level_point_drop_list.Length; i++ )
+
+        for( var i = 0; i < level_peak_count - 1; i++ )
         {
 			var forward = Mathf.Lerp( level_point_peak_list[ i ].z, level_point_peak_list[ i + 1 ].z, level_drop_placement.ReturnRandom() );
-			level_point_drop_list[ i ] = Vector3.up * level_drop_height.ReturnRandom() + Vector3.forward * forward;
-		}
+			level_point_drop_list.Add( Vector3.up * level_drop_height.ReturnRandom() + Vector3.forward * forward );
+        }
+
+		level_point_drop_list.Insert( 0, Vector3.up * level_drop_height.ReturnRandom() + Vector3.forward * -1f * level_peak_distance.ReturnRandom() * level_drop_placement.ReturnRandom() );
+
+		level_point_drop_list.Add( Vector3.forward * level_point_peak_list[ level_point_peak_list.Count - 1 ].z + Vector3.forward * level_peak_distance.ReturnRandom() * level_drop_placement.ReturnRandom() );
 
 		SetSplineComputerPoints();
 	}
@@ -44,20 +48,20 @@ public class LevelCreator : ScriptableObject
     {
         var spline = GameObject.Find( "spline" ).GetComponent< SplineComputer >();
 
-        for( var i = 0; i < level_point_peak_list.Length; i++ )
-        {
-			var splinePointPeak = new SplinePoint( level_point_peak_list[ i ] );
-			splinePointPeak.normal = Vector3.up;
-
-			spline.SetPoint( i * 2, splinePointPeak );
-		}
-
-		for( var i = 0; i < level_point_drop_list.Length; i++ )
+		for( var i = 0; i < level_point_drop_list.Count; i++ )
 		{
 			var splinePointDrop = new SplinePoint( level_point_drop_list[ i ] );
 			splinePointDrop.normal = Vector3.up;
 
-			spline.SetPoint( i * 2 + 1, splinePointDrop );
+			spline.SetPoint( i * 2, splinePointDrop );
+		}
+
+        for( var i = 0; i < level_point_peak_list.Count; i++ )
+        {
+			var splinePointPeak = new SplinePoint( level_point_peak_list[ i ] );
+			splinePointPeak.normal = Vector3.up;
+
+			spline.SetPoint( i * 2 + 1, splinePointPeak );
 		}
     }
 }
