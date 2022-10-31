@@ -127,6 +127,7 @@ public class VehicleMovement : MonoBehaviour
 	public void OnFinishLine()
 	{
 		EmptyOutDelegates();
+		_particleSystem.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 
 		var targetPosition = ( notif_vehicle_target_reference.sharedValue as TargetVehicle ).transform.position;
 		var duration = GameSettings.Instance.stickman_targetMove_duration.ReturnProgress( 0.5f );

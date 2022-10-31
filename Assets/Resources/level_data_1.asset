@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 1
   scene_overrideAsActiveScene: 0
+  stickman_currency: 5
   vehicle_data_array:
   - {fileID: 11400000, guid: ea7ff680ccaa93549aa5112eabb85f84, type: 2}
   - {fileID: 11400000, guid: b7bc38c5eadb7e943a4c89eb88adc0e7, type: 2}
@@ -22,4 +23,4 @@ MonoBehaviour:
   vehicle_level_replay: 
   vehicle_level_next: 1
   vehicle_start_index: 0
-  vehicle_start_count: 4
+  vehicle_start_count: 2
