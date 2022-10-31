@@ -16,7 +16,9 @@ MonoBehaviour:
   stickman_jump_power: 1
   stickman_jump_duration: 0.5
   stickman_disableDuration: 1
-  stickman_targetMove_duration: {x: 2, y: 3}
+  stickman_target_jump_power: {x: 0.75, y: 1.25}
+  stickman_target_jump_duration: {x: 0.5, y: 0.75}
+  stickman_target_jump_delay: 0.05
   vehicle_rayCast_height: 100
   vehicle_rayCast_direction: {x: 0, y: -1, z: 0}
   vehicle_rayCast_distance: 1000

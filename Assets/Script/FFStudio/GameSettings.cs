@@ -15,7 +15,9 @@ namespace FFStudio
 		[ LabelText( "Jump Power" ) ] public float stickman_jump_power;
 		[ LabelText( "Jump Duration" ) ] public float stickman_jump_duration;
 		[ LabelText( "Disable Duration" ) ] public float stickman_disableDuration;
-		[ LabelText( "Target Movement Duration" ) ] public Vector2 stickman_targetMove_duration;
+		[ LabelText( "Target Jump Power" ) ] public Vector2 stickman_target_jump_power;
+		[ LabelText( "Target Jump Duration" ) ] public Vector2 stickman_target_jump_duration;
+		[ LabelText( "Target Jump Delay" ) ] public float stickman_target_jump_delay;
 
     [ Title( "Vehicle Platform" ) ]
 		[ LabelText( "Vehicle Ray Cast Height" ) ] public float vehicle_rayCast_height;
