@@ -164,7 +164,7 @@ public class VehicleMovement : MonoBehaviour
 	void MoveForwardOnAir()
 	{
 		var position = transform.position;
-		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
+		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step * GameSettings.Instance.vehicle_fly_cofactor, Time.fixedDeltaTime * vehicle_movement_speed );
 	}
 
 	void InitTargetVehicle() 
@@ -234,8 +234,8 @@ public class VehicleMovement : MonoBehaviour
 	{
 		//Move the vehicle
 		var position = transform.position;
-		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
-
+		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step * GameSettings.Instance.vehicle_fly_cofactor, Time.fixedDeltaTime * vehicle_movement_speed );
+     
 		transform.Rotate( GameSettings.Instance.vehicle_fly_rotate_axis * vehicle_movement_rotate_speed * Time.fixedDeltaTime, Space.World );
 		//Rotate the vehicle
 		var eulerAngle = transform.eulerAngles.x;
