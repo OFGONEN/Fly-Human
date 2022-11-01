@@ -206,30 +206,30 @@ MonoBehaviour:
     rotation: {x: 0.00016420982, y: 0.00032841729, z: 89.99967}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244971
   - position: {x: -0.089, y: 1.593, z: 1.97}
     rotation: {x: 0.00016421085, y: 180.00066, z: 89.999664}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244973
   - position: {x: -0.102, y: 1.611, z: 1.97}
     rotation: {x: -0, y: -0, z: 65}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244974
   - position: {x: -0.089, y: 1.611, z: 1.97}
     rotation: {x: -0, y: 180.00099, z: 65}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244975
   - position: {x: 0.47, y: 0.251, z: -0.696}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
@@ -349,3 +349,87 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 9014386796773244971
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: -90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}
+    - rid: 9014386796773244973
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: 90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}
+    - rid: 9014386796773244974
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: -90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}
+    - rid: 9014386796773244975
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: 90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}

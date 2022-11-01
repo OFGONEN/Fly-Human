@@ -17,23 +17,23 @@ MonoBehaviour:
     rotation: {x: 270, y: 202.05876, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244953
   - position: {x: -3.287, y: 3.067, z: 1.011}
     rotation: {x: 270, y: 332.41217, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244963
   - position: {x: -0.51, y: 3.068, z: -0.925}
     rotation: {x: 270, y: 97.05821, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244964
   - position: {x: -2.292, y: 1.662, z: -0.71000004}
     rotation: {x: 0.00014826136, y: 270.00018, z: 0.00013636397}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
@@ -73,23 +73,23 @@ MonoBehaviour:
     rotation: {x: 270, y: 332.41217, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244959
   - position: {x: 1.596, y: 3.064, z: -2.436}
     rotation: {x: 270, y: 202.05876, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244960
   - position: {x: 4.281, y: 3.068, z: -0.925}
     rotation: {x: 270, y: 97.05821, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244961
   - position: {x: 2.3300002, y: 1.652, z: -0.74122787}
     rotation: {x: 0.00014826133, y: 90.00052, z: 0.00013636399}
     color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
@@ -272,3 +272,117 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 9014386796773244953
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: -2.39, y: 3.068, z: -0.745}
+        rotationAxisVector: 1
+    - rid: 9014386796773244959
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: 2.39, y: 3.068, z: -0.745}
+        rotationAxisVector: 1
+    - rid: 9014386796773244960
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: 2.39, y: 3.068, z: -0.745}
+        rotationAxisVector: 1
+    - rid: 9014386796773244961
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: 2.39, y: 3.068, z: -0.745}
+        rotationAxisVector: 1
+    - rid: 9014386796773244963
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: -2.39, y: 3.068, z: -0.745}
+        rotationAxisVector: 1
+    - rid: 9014386796773244964
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: -2.39, y: 3.068, z: -0.745}
+        rotationAxisVector: 1

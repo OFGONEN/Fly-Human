@@ -70,6 +70,13 @@ namespace FFStudio
 		public void AddTweenData( TweenData data )
 		{
 			tweenDatas.Add( data );
+
+			index_playing = -1;
+
+			transform_ToTween = transform;
+
+			foreach( var tweenData in tweenDatas )
+				tweenData.Initialize( transform_ToTween );
 		}
 
         [ Button() ]
