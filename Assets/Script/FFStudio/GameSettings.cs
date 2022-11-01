@@ -31,6 +31,7 @@ namespace FFStudio
 		[ LabelText( "Vehicle Air Movement Rotate Clamp" ) ] public float vehicle_fly_rotate_clamp;
 		[ LabelText( "Vehicle Air Movement Rotate Speed" ) ] public float vehicle_fly_rotate_speed;
 		[ LabelText( "Vehicle Air Movement Rotate Speed Max" ) ] public float vehicle_fly_rotate_speed_max;
+		[ LabelText( "Vehicle Air Movement Cofactor" ) ] public float vehicle_fly_cofactor = 1.5f;
 
 	[ Title( "Vehicle Landing" ) ]
 		[ LabelText( "Vehicle Landing Collide Angle" ) ] public float vehicle_landing_angle;
