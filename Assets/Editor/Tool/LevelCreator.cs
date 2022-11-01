@@ -108,7 +108,7 @@ public class LevelCreator : ScriptableObject
 
 		var mask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
 
-		var hitPosition_Origin = new Vector3( 0, forward, GameSettings.Instance.vehicle_rayCast_height );
+		var hitPosition_Origin = new Vector3( 0, GameSettings.Instance.vehicle_rayCast_height, forward );
 		var hitPosition_Target = hitPosition_Origin + GameSettings.Instance.game_forward * GameSettings.Instance.vehicle_movement_step;
 
 		Physics.Raycast( hitPosition_Origin, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Origin, GameSettings.Instance.vehicle_rayCast_distance, mask );
@@ -116,5 +116,6 @@ public class LevelCreator : ScriptableObject
 
 		transform.position = hitInfo_Origin.point;
 		transform.LookAtAxis( hitInfo_Target.point, GameSettings.Instance.vehicle_movement_look_axis );
+		transform.Rotate( Vector3.up * 180f, Space.Self );
 	}
 }
