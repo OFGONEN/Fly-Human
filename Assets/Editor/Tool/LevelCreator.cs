@@ -10,17 +10,25 @@ using UnityEditor.SceneManagement;
 [ CreateAssetMenu( fileName = "tool_level_creator", menuName = "FF/Tool/Level Creator" ) ]
 public class LevelCreator : ScriptableObject
 {
+  [ Title( "Construct Platform" ) ]
     [ SerializeField ] Vector2 level_peak_height;
     [ SerializeField ] int level_peak_count;
     [ SerializeField ] Vector2 level_peak_distance;
     [ SerializeField ] Vector2 level_drop_height;
     [ SerializeField ] Vector2 level_drop_placement;
+  [ Title( "Place Eject Points" ) ]
+    [ SerializeField ] float level_eject_placement_ratio;
+	[ SerializeField ] GameObject level_object_eject;
+  [ Title( "Place Stickmen" ) ]
+	[ SerializeField ] GameObject level_object_stickman;
+	[ SerializeField ] int level_stickmen_count;
+	[ SerializeField ] int level_stickman_step;
 
     [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_peak_list;
     [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_drop_list;
 
     [ Button() ]
-    public void ConstructLevel()
+    void ConstructLevel()
     {
 		EditorSceneManager.MarkAllScenesDirty();
 
@@ -48,7 +56,7 @@ public class LevelCreator : ScriptableObject
 		SetSplineComputerPoints();
 	}
 
-    public void SetSplineComputerPoints()
+    void SetSplineComputerPoints()
     {
         var spline = GameObject.Find( "spline" ).GetComponent< SplineComputer >();
 
@@ -75,6 +83,23 @@ public class LevelCreator : ScriptableObject
 
 		spline.SetPoints( splinePointArray );
 	}
+
+	[ Button() ]
+	void PlaceEjectPoints()
+	{
+		EditorSceneManager.MarkAllScenesDirty();
+
+		for( var i = 0; i < level_point_peak_list.Count - 1; i++ )
+		{
+			var currentPeak = level_point_peak_list[ i ].z;
+			var nextPeak    = level_point_peak_list[ i + 1 ].z;
+
+			var forwardPosition = currentPeak + ( nextPeak - currentPeak ) * level_eject_placement_ratio;
+			var ejectGameObject = PrefabUtility.InstantiatePrefab( level_object_eject ) as GameObject;
+			PlaceTransformOnPlatform( ejectGameObject.transform , forwardPosition );
+		}
+	}
+
 	void PlaceTransformOnPlatform( Transform transform, float forward )
 	{
 		//Info: We are presuming that vehicle always above the platform
