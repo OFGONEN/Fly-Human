@@ -26,6 +26,35 @@ public class LevelCreator : ScriptableObject
 
     [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_peak_list;
     [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_drop_list;
+    [ ShowInInspector, ReadOnly ] List< GameObject > level_stickman_cache = new List< GameObject >();
+
+	[ Button() ]
+	void PlaceStickmen()
+	{
+		level_stickman_cache.Clear();
+		var index   = GameObject.Find( "--- Entities_Start ---" ).transform.GetSiblingIndex();
+		var forward = GameObject.Find( "cursor_stickman" ).transform.position.z;
+
+		for( var i = 0; i < level_stickmen_count; i++ )
+		{
+			var stickmanObject = PrefabUtility.InstantiatePrefab( level_object_stickman ) as GameObject;
+			PlaceTransformOnPlatform( stickmanObject.transform, forward );
+			stickmanObject.transform.SetSiblingIndex( index + 1 );
+
+			level_stickman_cache.Add( stickmanObject );
+
+			forward += level_stickman_step;
+		}
+	}
+
+	[ Button() ]
+	void DeleteStickmanCache()
+	{
+		for( var i = 0; i < level_stickman_cache.Count; i++ )
+			GameObject.DestroyImmediate( level_stickman_cache[ i ] );
+
+		level_stickman_cache.Clear();
+	}
 
     [ Button() ]
     void ConstructLevel()
