@@ -154,7 +154,7 @@ MonoBehaviour:
     tween_data:
       rid: -2
   vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
-  vehicle_name: plane_3
+  vehicle_name: AIRPLANE
   vehicle_icon: {fileID: 21300000, guid: bcd8f1ea72daded4ba46e5866a4bc962, type: 3}
   vehicle_count_min: 10
   vehicle_position: {x: 0, y: 0.8, z: -2.4}
