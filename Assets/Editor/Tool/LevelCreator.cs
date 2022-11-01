@@ -75,4 +75,21 @@ public class LevelCreator : ScriptableObject
 
 		spline.SetPoints( splinePointArray );
 	}
+	void PlaceTransformOnPlatform( Transform transform, float forward )
+	{
+		//Info: We are presuming that vehicle always above the platform
+		RaycastHit hitInfo_Origin;
+		RaycastHit hitInfo_Target;
+
+		var mask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+
+		var hitPosition_Origin = new Vector3( 0, forward, GameSettings.Instance.vehicle_rayCast_height );
+		var hitPosition_Target = hitPosition_Origin + GameSettings.Instance.game_forward * GameSettings.Instance.vehicle_movement_step;
+
+		Physics.Raycast( hitPosition_Origin, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Origin, GameSettings.Instance.vehicle_rayCast_distance, mask );
+		Physics.Raycast( hitPosition_Target, GameSettings.Instance.vehicle_rayCast_direction, out hitInfo_Target, GameSettings.Instance.vehicle_rayCast_distance, mask );
+
+		transform.position = hitInfo_Origin.point;
+		transform.LookAtAxis( hitInfo_Target.point, GameSettings.Instance.vehicle_movement_look_axis );
+	}
 }
