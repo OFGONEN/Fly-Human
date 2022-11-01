@@ -174,6 +174,7 @@ public class VehicleMovement : MonoBehaviour
 		vehicle_target = ( notif_vehicle_target_reference.sharedValue as TargetVehicle );
 		vehicle_target.transform.SetParent( transform );
 		vehicle_target.transform.localPosition = GameSettings.Instance.vehicle_target_spawn_offset;
+		vehicle_target.transform.localRotation = Quaternion.identity;
 	}
 
 	void UpdateLevelProgress()
