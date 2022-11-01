@@ -224,7 +224,8 @@ public class VehicleMovement : MonoBehaviour
 		var position = transform.position;
 		position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * vehicle_movement_speed );
 
-		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+		// transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+		transform.LookAtAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis );
 		transform.position = position;
 
 		RaycastOntoPlatform( position );
