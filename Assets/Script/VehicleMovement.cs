@@ -109,7 +109,7 @@ public class VehicleMovement : MonoBehaviour
 		onFingerUp          = ExtensionMethods.EmptyMethod;
 		onVehicleCollide    = VehicleCollidedPlatform;
 
-		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
 
 		if( vehicle_movement_speed >= vehicle_movement.movement_ground_speed_eject_perfect )
 		{
@@ -198,7 +198,7 @@ public class VehicleMovement : MonoBehaviour
 		onFingerDown = ExtensionMethods.EmptyMethod;
 		onFingerUp   = FingerUp_Air;
 
-		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed_max;
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed_max;
 	}
 
 	void FingerUp_Platform()
@@ -216,7 +216,7 @@ public class VehicleMovement : MonoBehaviour
 		onFingerDown = FingerDown_Air;
 		onFingerUp   = ExtensionMethods.EmptyMethod;
 
-		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
 	}
 
     void MoveOnPlatform()
