@@ -52,12 +52,16 @@ public class LevelCreator : ScriptableObject
     {
         var spline = GameObject.Find( "spline" ).GetComponent< SplineComputer >();
 
+		SplinePoint[] splinePointArray = new SplinePoint[ level_point_drop_list.Count + level_point_peak_list.Count ];
+		// spline.SetPoints( null );
+
 		for( var i = 0; i < level_point_drop_list.Count; i++ )
 		{
 			var splinePointDrop = new SplinePoint( level_point_drop_list[ i ] );
 			splinePointDrop.normal = Vector3.up;
 
-			spline.SetPoint( i * 2, splinePointDrop );
+			splinePointArray[ i * 2 ] = splinePointDrop;
+			// spline.SetPoint( i * 2, splinePointDrop );
 		}
 
         for( var i = 0; i < level_point_peak_list.Count; i++ )
@@ -65,7 +69,10 @@ public class LevelCreator : ScriptableObject
 			var splinePointPeak = new SplinePoint( level_point_peak_list[ i ] );
 			splinePointPeak.normal = Vector3.up;
 
-			spline.SetPoint( i * 2 + 1, splinePointPeak );
+			splinePointArray[ i * 2 + 1 ] = splinePointPeak;
+			// spline.SetPoint( i * 2 + 1, splinePointPeak );
 		}
-    }
+
+		spline.SetPoints( splinePointArray );
+	}
 }
