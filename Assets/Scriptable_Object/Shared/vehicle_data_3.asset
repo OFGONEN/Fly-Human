@@ -157,10 +157,10 @@ MonoBehaviour:
   vehicle_name: plane_3
   vehicle_icon: {fileID: 21300000, guid: bcd8f1ea72daded4ba46e5866a4bc962, type: 3}
   vehicle_count_min: 10
-  vehicle_position: {x: 0, y: 0.88, z: -0.25}
+  vehicle_position: {x: 0, y: 0.8, z: -2.4}
   vehicle_raycast_landing_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
-    position: {x: 0, y: 1.2, z: 3.5}
+    position: {x: 0, y: 1.2, z: 1.4}
     size: 0.5
   references:
     version: 2
