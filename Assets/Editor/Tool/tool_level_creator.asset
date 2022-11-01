@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d712cf86b8d4e19836f9955097e0ef, type: 3}
   m_Name: tool_level_creator
   m_EditorClassIdentifier: 
-  level_peak_height: {x: 25, y: 25}
-  level_peak_count: 10
-  level_peak_distance: {x: 50, y: 50}
-  level_drop_height: {x: 0, y: 0}
-  level_drop_placement: {x: 0.5, y: 0.5}
+  level_peak_height: {x: 3.5, y: 10}
+  level_peak_count: 5
+  level_peak_distance: {x: 15, y: 50}
+  level_drop_height: {x: 0, y: 1.5}
+  level_drop_placement: {x: 0.4, y: 0.6}
