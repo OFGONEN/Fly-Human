@@ -103,6 +103,8 @@ public class VehicleMovement : MonoBehaviour
 	
 	public void OnVehicleEject()
 	{
+		if( vehicle_movement_speed < vehicle_movement.movement_ground_speed_eject_min ) return;
+
 		FFLogger.PopUpText( transform.position, "Ejected" );
 		onFixedUpdateMethod = MoveOnAir;
 		onFingerDown        = FingerDown_Air;
