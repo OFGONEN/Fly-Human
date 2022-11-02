@@ -131,6 +131,7 @@ namespace FFStudio
 		{
 			Kill();
 			tweenDatas.Clear();
+			index_playing = -1;
 		}
 #endregion
 
