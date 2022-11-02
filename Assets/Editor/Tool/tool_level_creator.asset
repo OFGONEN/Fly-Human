@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d712cf86b8d4e19836f9955097e0ef, type: 3}
   m_Name: tool_level_creator
   m_EditorClassIdentifier: 
-  level_peak_height: {x: 5, y: 10}
-  level_peak_count: 2
-  level_peak_distance: {x: 10, y: 30}
+  level_peak_height: {x: 5, y: 15}
+  level_peak_count: 7
+  level_peak_distance: {x: 30, y: 60}
   level_drop_height: {x: 0, y: 1.5}
   level_drop_placement: {x: 0.5, y: 0.5}
   level_eject_placement_ratio: 0.95
   level_object_eject: {fileID: 385095978481805785, guid: e765391ce54236c4db7dfc8461f10dbf, type: 3}
   level_object_stickman: {fileID: 5389050320175352662, guid: ced097972026349c3805da90dccb34a5, type: 3}
-  level_stickmen_count: 8
-  level_stickman_step: 1.5
+  level_stickmen_count: 4
+  level_stickman_step: 5
