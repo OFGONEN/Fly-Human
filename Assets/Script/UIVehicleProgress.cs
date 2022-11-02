@@ -100,6 +100,8 @@ public class UIVehicleProgress : MonoBehaviour
 
 		vehicle_progress_list.Clear();
 		vehicle_icon_list.Clear();
+
+		vehicle_ui_parent.localPosition = Vector3.zero;
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
