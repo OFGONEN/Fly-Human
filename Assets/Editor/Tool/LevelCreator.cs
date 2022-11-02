@@ -16,24 +16,56 @@ public class LevelCreator : ScriptableObject
     [ SerializeField ] Vector2 level_peak_distance;
     [ SerializeField ] Vector2 level_drop_height;
     [ SerializeField ] Vector2 level_drop_placement;
+
   [ Title( "Place Eject Points" ) ]
     [ SerializeField ] float level_eject_placement_ratio;
 	[ SerializeField ] GameObject level_object_eject;
+
   [ Title( "Place Stickmen" ) ]
 	[ SerializeField ] GameObject level_object_stickman;
 	[ SerializeField ] int level_stickmen_count;
 	[ SerializeField ] float level_stickman_step;
+
+
+  [ Title( "Fill Stickmen" ) ]
+	[ SerializeField ] Vector2 level_stickman_fill_start;
+	[ SerializeField ] Vector2 level_stickman_fill_group;
+	[ SerializeField ] Vector2 level_stickman_fill_distance;
+	[ SerializeField ] Vector2 level_stickman_fill_step;
+	[ SerializeField ] Vector2 level_stickman_fill_count;
 
     [ SerializeField, ReadOnly ] List< Vector3 > level_point_peak_list;
     [ SerializeField, ReadOnly ] List< Vector3 > level_point_drop_list;
     [ ShowInInspector, ReadOnly ] List< GameObject > level_stickman_cache = new List< GameObject >();
 
 	[ Button() ]
-	void PlaceStickmen()
+	void FillStickmen()
 	{
 		EditorSceneManager.MarkAllScenesDirty();
 
 		level_stickman_cache.Clear();
+
+		var forward = level_stickman_fill_start.ReturnRandom();
+		var count   = Mathf.FloorToInt( level_stickman_fill_group.ReturnRandom() );
+
+		for( var i = 0; i < count; i++ )
+		{
+			var stickmanCount = ( int )level_stickman_fill_count.ReturnRandom();
+			var stickmanStep = ( int )level_stickman_fill_step.ReturnRandom();
+
+			PlaceStickmen( forward, stickmanCount, stickmanStep );
+			forward += level_stickman_fill_distance.ReturnRandom() + ( stickmanCount - 1 ) * stickmanStep;
+		}
+	}
+
+	[ Button() ]
+	void PlaceStickmen()
+	{
+		EditorSceneManager.MarkAllScenesDirty();
+
+		DeleteStickmanCache();
+		level_stickman_cache.Clear();
+
 		var index   = GameObject.Find( "--- Entities_Start ---" ).transform.GetSiblingIndex();
 		var forward = GameObject.Find( "cursor_stickman" ).transform.position.z;
 
@@ -47,6 +79,26 @@ public class LevelCreator : ScriptableObject
 			level_stickman_cache.Add( stickmanObject );
 
 			forward += level_stickman_step;
+		}
+	}
+
+	void PlaceStickmen( float forward, int count, float step )
+	{
+		EditorSceneManager.MarkAllScenesDirty();
+
+		// level_stickman_cache.Clear();
+		var index = GameObject.Find( "--- Entities_Start ---" ).transform.GetSiblingIndex();
+
+		for( var i = 0; i < count; i++ )
+		{
+			var stickmanObject = PrefabUtility.InstantiatePrefab( level_object_stickman ) as GameObject;
+			PlaceTransformOnPlatform( stickmanObject.transform, forward );
+			stickmanObject.transform.SetSiblingIndex( index + 1 );
+			stickmanObject.transform.eulerAngles = Vector3.up * 180f;
+
+			level_stickman_cache.Add( stickmanObject );
+
+			forward += step;
 		}
 	}
 
