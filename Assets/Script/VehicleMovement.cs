@@ -28,6 +28,7 @@ public class VehicleMovement : MonoBehaviour
     UnityMessage onFixedUpdateMethod;
     UnityMessage onUpdateMethod;
     UnityMessage onVehicleCollide;
+    UnityMessage onVehicleEject;
     IntUnityMessage onVehicleChange;
 
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
@@ -92,6 +93,7 @@ public class VehicleMovement : MonoBehaviour
 		onUpdateMethod      = UpdateLevelProgress;
 		onFixedUpdateMethod = MoveOnPlatform;
 		onFingerDown        = FingerDown_Platform;
+		onVehicleEject      = VehicleEject;
 
 		FingerDown_Platform();
 	}
@@ -108,21 +110,7 @@ public class VehicleMovement : MonoBehaviour
 	
 	public void OnVehicleEject()
 	{
-		if( vehicle_movement_speed < vehicle_movement.movement_ground_speed_eject_min ) return;
-
-		FFLogger.PopUpText( transform.position, "Ejected" );
-		onFixedUpdateMethod = MoveOnAir;
-		onFingerDown        = FingerDown_Air;
-		onFingerUp          = ExtensionMethods.EmptyMethod;
-		onVehicleCollide    = VehicleCollidedPlatform;
-
-		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
-
-		if( vehicle_movement_speed >= vehicle_movement.movement_ground_speed_eject_perfect )
-		{
-			event_vehicle_eject_perfect.Raise();
-			_particleSystem.Play();
-		}
+		onVehicleEject();
 	}
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
@@ -162,6 +150,26 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+	void VehicleEject()
+	{
+		if( vehicle_movement_speed < vehicle_movement.movement_ground_speed_eject_min ) return;
+
+		FFLogger.PopUpText( transform.position, "Ejected" );
+		onFixedUpdateMethod = MoveOnAir;
+		onFingerDown        = FingerDown_Air;
+		onFingerUp          = ExtensionMethods.EmptyMethod;
+		onVehicleCollide    = VehicleCollidedPlatform;
+		onVehicleEject      = ExtensionMethods.EmptyMethod;
+
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
+
+		if( vehicle_movement_speed >= vehicle_movement.movement_ground_speed_eject_perfect )
+		{
+			event_vehicle_eject_perfect.Raise();
+			_particleSystem.Play();
+		}
+	}
+
 	void VehicleInited( int index )
 	{
 		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ index ].vehicle_data;
@@ -284,6 +292,8 @@ public class VehicleMovement : MonoBehaviour
 	void VehicleCollidedPlatform()
 	{
 		EmptyOutDelegates();
+		onVehicleEject = VehicleEject;
+
 		RaycastOntoPlatform( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ) );
 
 		var vehicleDirection = transform.forward;
@@ -353,6 +363,7 @@ public class VehicleMovement : MonoBehaviour
 		onFingerDown        = ExtensionMethods.EmptyMethod;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
 		onVehicleCollide    = ExtensionMethods.EmptyMethod;
+		onVehicleEject      = ExtensionMethods.EmptyMethod;
 	}
 #endregion
 
