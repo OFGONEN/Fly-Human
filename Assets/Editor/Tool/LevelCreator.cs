@@ -31,6 +31,8 @@ public class LevelCreator : ScriptableObject
 	[ Button() ]
 	void PlaceStickmen()
 	{
+		EditorSceneManager.MarkAllScenesDirty();
+
 		level_stickman_cache.Clear();
 		var index   = GameObject.Find( "--- Entities_Start ---" ).transform.GetSiblingIndex();
 		var forward = GameObject.Find( "cursor_stickman" ).transform.position.z;
@@ -51,6 +53,8 @@ public class LevelCreator : ScriptableObject
 	[ Button() ]
 	void DeleteStickmanCache()
 	{
+		EditorSceneManager.MarkAllScenesDirty();
+
 		for( var i = 0; i < level_stickman_cache.Count; i++ )
 			GameObject.DestroyImmediate( level_stickman_cache[ i ] );
 
@@ -119,6 +123,8 @@ public class LevelCreator : ScriptableObject
 	{
 		EditorSceneManager.MarkAllScenesDirty();
 
+		var index = GameObject.Find( "--- Environment_Start ---" ).transform.GetSiblingIndex() + 1;
+
 		for( var i = 0; i < level_point_peak_list.Count - 1; i++ )
 		{
 			var currentPeak = level_point_peak_list[ i ].z;
@@ -126,8 +132,14 @@ public class LevelCreator : ScriptableObject
 
 			var forwardPosition = currentPeak + ( nextPeak - currentPeak ) * level_eject_placement_ratio;
 			var ejectGameObject = PrefabUtility.InstantiatePrefab( level_object_eject ) as GameObject;
+			ejectGameObject.transform.SetSiblingIndex( index );
+
 			PlaceTransformOnPlatform( ejectGameObject.transform , forwardPosition );
+
 		}
+
+		var finishLine = GameObject.Find( "finishLine" ).transform;
+		finishLine.transform.position = Vector3.forward.SetZ( level_point_drop_list[ level_point_drop_list.Count - 1 ].z );
 	}
 
 	void PlaceTransformOnPlatform( Transform transform, float forward )
