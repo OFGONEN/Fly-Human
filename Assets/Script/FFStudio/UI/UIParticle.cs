@@ -10,8 +10,6 @@ using Sirenix.OdinInspector;
 public class UIParticle : MonoBehaviour
 {
 #region Fields
-[ Title( "Setup" ) ]
-	[ SerializeField ] TextMeshProUGUI ui_text;
 [ Title( "SharedVariable" ) ]
     [ SerializeField ] SharedReferenceNotifier notif_camera_transform;
     [ SerializeField ] SharedReferenceNotifier notif_target_transform;
@@ -27,22 +25,15 @@ public class UIParticle : MonoBehaviour
 #endregion
 
 #region Unity API
-	void Awake()
-	{
-		font_size_original = ui_text.fontSize;
-	}
 #endregion
 
 #region API
 	[ Button() ]
-    public void Spawn( string value, Vector3 worldPosition, OnCompleteMessage onComplete = null )
+    public void Spawn( Vector3 worldPosition, OnCompleteMessage onComplete = null )
     {
 		gameObject.SetActive( true );
 
 		oComplete_additional = onComplete;
-
-		ui_text.text = value;
-		ui_text.fontSize = font_size_original;
 
 		var screenPosition      = ( notif_camera_transform.SharedValue as Transform ).GetComponent< Camera >().WorldToScreenPoint( worldPosition );
         var spawnTargetPosition = screenPosition + Random.insideUnitCircle.ConvertV3() * GameSettings.Instance.uiParticle_spawn_width_percentage * Screen.width / 100f;
@@ -65,7 +56,7 @@ public class UIParticle : MonoBehaviour
 	void OnSequenceComplete()
 	{
 		pool_ui_particle.ReturnEntity( this );
-		( notif_target_PunchScale.SharedValue as UI_PunchScale_Float ).PunchScale();
+		( notif_target_PunchScale.SharedValue as UI_PunchScale_Int ).PunchScale();
 		oComplete_additional?.Invoke();
 	}
 #endregion

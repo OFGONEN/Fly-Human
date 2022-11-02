@@ -14,6 +14,20 @@ namespace FFStudio
 		public Vector3 position;
 		public Vector3 rotation; // Euler angles.
 		public Vector3 scale; // Local scale.
+
+		public TransformData( Transform transform )
+		{
+			position = transform.localPosition;
+			rotation = transform.localEulerAngles;
+			scale    = transform.localScale;
+		}
+
+		public TransformData( Rigidbody rigidbody )
+		{
+			position = rigidbody.transform.localPosition;
+			rotation = rigidbody.transform.localEulerAngles;
+			scale 	 = rigidbody.transform.localScale;
+		}
 	}
 
 	[ Serializable ]
@@ -142,9 +156,72 @@ namespace FFStudio
 	}
 
 	[ Serializable ]
+	public struct TriggerRespondData
+	{
+		[ Layer() ] public int collision_layer;
+		public UnityEvent< Collider > trigger_event;
+	}
+
+	[ Serializable ]
 	public struct CollisionRespondData
 	{
 		[ Layer() ] public int collision_layer;
-		public UnityEvent<Collider> collision_event;
+		public UnityEvent< Collision > collision_event;
+	}
+
+	[ Serializable ]
+	public struct VehiclePartData
+	{
+		public Vector3 position;
+		public Vector3 rotation;
+		public Color color;
+		public string pose;
+		[ LabelText( "Is Tweener" ) ] public bool tweener;
+		[ SerializeReference, ShowIf( "tweener" ) ] public TweenData tween_data;
+
+		public VehiclePartData( Transform transform, string pose )
+		{
+			position   = transform.localPosition;
+			rotation   = transform.localEulerAngles;
+			color      = transform.GetComponentInChildren< SkinnedMeshRenderer >().sharedMaterial.color;
+			this.pose  = pose;
+			tweener    = false;
+			tween_data = null;
+		}
+	}
+
+	[ Serializable ]
+	public struct TargetVehiclePartData
+	{
+		public Vector3 position;
+		public Vector3 rotation;
+		public Color color_start;
+		public Color color_end;
+		public int count;
+		public string pose;
+
+		public TargetVehiclePartData( VehiclePartData data )
+		{
+			position    = data.position;
+			rotation    = data.rotation;
+			color_start = Color.white;
+			color_end   = data.color;
+			count       = 1;
+			pose        = data.pose;
+		}
+	}
+
+	[ Serializable ]
+	public struct VehicleColliderData
+	{
+		public Vector3 position;
+		public float size;
+	}
+
+	[ Serializable ]
+	public struct EvolveData
+	{
+		public VehicleData vehicle_data;
+		public bool vehicle_can_evolve;
 	}
 }

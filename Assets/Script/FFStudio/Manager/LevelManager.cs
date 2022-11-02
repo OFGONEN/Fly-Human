@@ -1,5 +1,6 @@
 /* Created by and for usage of FF Studios (2021). */
 
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +9,17 @@ namespace FFStudio
     public class LevelManager : MonoBehaviour
     {
 #region Fields
-        [ Header( "Fired Events" ) ]
+      [ Title( "Fired Events" ) ]
         public GameEvent levelFailedEvent;
         public GameEvent levelCompleted;
+        public GameEvent event_stickman_movement_done;
 
-        [ Header( "Level Releated" ) ]
+      [ Title( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
+        public Currency currency;
+
+// Private
+        int stickman_movement_count;
 #endregion
 
 #region UnityAPI
@@ -45,6 +51,32 @@ namespace FFStudio
         {
 
         }
+
+        public void OnStickmanMovementStart()
+        {
+			stickman_movement_count++;
+		}
+
+        public void OnStickmanMovementEnd()
+        {
+			stickman_movement_count--;
+
+			if( stickman_movement_count == 0)
+            {
+				event_stickman_movement_done.Raise();
+			}
+#if UNITY_EDITOR
+            else if( stickman_movement_count < 0  )
+            {
+                FFLogger.LogError( "This value cannot be below zero" );
+            }
+#endif
+		}
+
+        public void OnStickmanCollected()
+        {
+			currency.SharedValue += CurrentLevelData.Instance.levelData.stickman_currency;
+		}
 #endregion
 
 #region Implementation

@@ -10,11 +10,49 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
-    
+    [ Title( "Stickman" ) ]
+		[ LabelText( "Pose Duration" ) ] public float stickman_pose_duration;
+		[ LabelText( "Jump Power" ) ] public float stickman_jump_power;
+		[ LabelText( "Jump Duration" ) ] public float stickman_jump_duration;
+		[ LabelText( "Disable Duration" ) ] public float stickman_disableDuration;
+		[ LabelText( "Target Jump Power" ) ] public Vector2 stickman_target_jump_power;
+		[ LabelText( "Target Jump Duration" ) ] public Vector2 stickman_target_jump_duration;
+
+    [ Title( "Vehicle Platform" ) ]
+		[ LabelText( "Vehicle Ray Cast Height" ) ] public float vehicle_rayCast_height;
+		[ LabelText( "Vehicle Ray Cast Direction" ) ] public Vector3 vehicle_rayCast_direction;
+		[ LabelText( "Vehicle Ray Cast Distance" ) ] public float vehicle_rayCast_distance;
+		[ LabelText( "Vehicle Movement Step Distance" ) ] public float vehicle_movement_step;
+		[ LabelText( "Vehicle Movement Look Speed" ) ] public float vehicle_movement_look_speed;
+		[ LabelText( "Vehicle Movement Look Axis" ) ] public Vector3 vehicle_movement_look_axis;
+
+    [ Title( "Vehicle Air" ) ]
+		[ LabelText( "Vehicle Air Movement Rotate Axis" ) ] public Vector3 vehicle_fly_rotate_axis;
+		[ LabelText( "Vehicle Air Movement Rotate Clamp" ) ] public float vehicle_fly_rotate_clamp;
+		[ LabelText( "Vehicle Air Movement Cofactor" ) ] public float vehicle_fly_cofactor = 1.5f;
+
+	[ Title( "Vehicle Landing" ) ]
+		[ LabelText( "Vehicle Landing Collide Angle" ) ] public float vehicle_landing_angle;
+		[ LabelText( "Vehicle Landing Adjust Duration" ) ] public float vehicle_landing_adjust_duration;
+	
+	[ Title( "Target Vehicle" ) ]
+		[ LabelText( "Target Vehicle Offset" ) ] public Vector3 vehicle_target_offset;
+		[ LabelText( "Target Vehicle Spawn Offset" ) ] public Vector3 vehicle_target_spawn_offset;
+		[ LabelText( "Target Vehicle Spawn Duration" ) ] public float vehicle_target_spawn_duration;
+
     [ Title( "Camera" ) ]
-        [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
+        [ LabelText( "Follow Speed" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed;
+        [ LabelText( "Follow Offset Position" ) ] public Vector3 camera_follow_offset_position;
+
+        [ LabelText( "Follow Offset Rotation" ) ] public Vector3 camera_follow_offset_rotation;
+
+    [ Title( "UI Vehicle Progress" ) ]
+		[ LabelText( "UI Vehicle Progress Gap Distance" ) ] public float ui_vehicle_progress_distance;
+		[ LabelText( "UI Progress Travel Duration" ) ] public float ui_vehicle_progress_travel_duration;
+		[ LabelText( "UI Progress Travel Ease" ) ] public Ease ui_vehicle_progress_travel_ease;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
+        public Vector3 game_forward;
         public int maxLevelCount;
         
         // Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
@@ -56,8 +94,23 @@ namespace FFStudio
 
         delegate GameSettings ReturnGameSettings();
         static ReturnGameSettings returnInstance = LoadInstance;
+#if UNITY_EDITOR
+		public static GameSettings Instance
+		{
+			get
+			{
+				if( Application.isPlaying )
+					return returnInstance();
+				else
+				{
+					return UnityEditor.AssetDatabase.LoadAssetAtPath< GameSettings >( "Assets/Resources/game_settings.asset" );
+				}
+			}
 
+		}
+#else 
 		public static GameSettings Instance => returnInstance();
+#endif
 #endregion
 
 #region Implementation

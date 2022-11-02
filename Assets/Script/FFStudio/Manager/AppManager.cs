@@ -43,8 +43,7 @@ namespace FFStudio
 
 		public void LoadNewLevel()
 		{
-			CurrentLevelData.Instance.currentLevel_Real++;
-			CurrentLevelData.Instance.currentLevel_Shown++;
+			CurrentLevelData.Instance.IncreaseLevelCount();
 			PlayerPrefs.SetInt( "Level", CurrentLevelData.Instance.currentLevel_Real );
 			PlayerPrefs.SetInt( "Consecutive Level", CurrentLevelData.Instance.currentLevel_Shown );
 

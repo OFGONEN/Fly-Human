@@ -12,6 +12,9 @@ namespace FFStudio
 	public static class ExtensionMethods
 	{
 		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
+		public static string Key_Plane_Count = "plane_count";
+		public static string Layer_Platform = "Platform";
+		public static string Key_Currency = "Currency";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
@@ -219,6 +222,12 @@ namespace FFStudio
 			return value;
 		}
 
+		public static Vector3 ClampX( this Vector3 theVector, float min, float max )
+		{
+			theVector.x = Mathf.Clamp( theVector.x, min, max );
+			return theVector;
+		}
+
 		public static Vector3 SetX( this Vector3 theVector, float newX )
 		{
 			theVector.x = newX;
@@ -311,6 +320,13 @@ namespace FFStudio
 			transform.position    = data.position;
 			transform.eulerAngles = data.rotation;
 			transform.localScale  = data.scale;
+		}
+
+		public static void SetTransformDataLocal( this Transform transform, TransformData data )
+		{
+			transform.localPosition    = data.position;
+			transform.localEulerAngles = data.rotation;
+			transform.localScale       = data.scale;
 		}
 
 		// Takes root bones as parameters that are children of a humanoid model.
@@ -451,6 +467,12 @@ namespace FFStudio
 		public static float ReturnProgressInverse( this Vector2 vector, float progress )
 		{
 			return Mathf.Lerp( vector.y, vector.x, progress );
+		}
+
+
+		public static void DestroyAllChildren( this GameObject gameObject )
+		{
+			DestroyAllChildren( gameObject.transform );
 		}
 
 		public static void DestroyAllChildren( this Transform transform )

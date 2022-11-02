@@ -8,11 +8,21 @@ namespace FFStudio
 {
     public abstract class RuntimeSet< TKey, TValue > : ScriptableObject
     {
-		public int setSize;
-		[ ShowInInspector ]
-		public List< TValue > itemList = new List< TValue >();
-		[ ShowInInspector ]
-		public Dictionary< TKey, TValue > itemDictionary = new Dictionary< TKey, TValue >();
+		[ SerializeField ] int size_list;
+		[ SerializeField ] int size_dictionary;
+
+		[ ShowInInspector, ReadOnly ] List< TValue > itemList;
+		[ ShowInInspector, ReadOnly ] Dictionary< TKey, TValue > itemDictionary;
+
+		public int ListCount            => itemList.Count;
+		public int DictionaryValueCount => itemDictionary.Values.Count;
+		public int DictionaryKeyCount   => itemDictionary.Values.Count;
+
+		public void InitSet()
+		{
+			itemList       = new List< TValue >( size_list );
+			itemDictionary = new Dictionary< TKey, TValue >( size_dictionary );
+		}
 
 		public void AddList( TValue value )
 		{
@@ -66,7 +76,21 @@ namespace FFStudio
 			itemList.Clear();
 			itemDictionary.Clear();
 		}
+
+		public TValue GetFromList( int index )
+		{
+			return itemList[ index ];
+		}
+
+		public TValue GetFromDictionary( TKey key )
+		{
+			TValue value;
+			itemDictionary.TryGetValue( key, out value );
+
+			return value;
+		}
         
+#if UNITY_EDITOR
 		[ Button ]
 		public void LogList()
 		{
@@ -81,4 +105,5 @@ namespace FFStudio
 				Debug.Log( item.ToString() );
 		}
     }
+#endif
 }

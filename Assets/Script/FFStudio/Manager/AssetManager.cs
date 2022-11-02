@@ -22,6 +22,13 @@ namespace FFStudio
 
 	[ Title( "Pool" ) ]
 		[ SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
+		[ SerializeField ] Pool_TargetStickman pool_stickman_target;
+		[ SerializeField ] Pool_Stickman pool_stickman;
+
+	[ Title( "Shared Variables" ) ]
+		[ SerializeField ] TargetVehicleData[] target_vehicle_data_array;
+		[ SerializeField ] Set_TargetStickman set_target_stickman;
+		[ SerializeField ] Currency currency;
 #endregion
 
 #region UnityAPI
@@ -35,6 +42,16 @@ namespace FFStudio
 			Vibration.Init();
 
 			pool_UIPopUpText.InitPool( transform, false );
+			pool_stickman_target.InitPool( transform, false );
+			pool_stickman.InitPool( transform, false );
+
+			currency.Load();
+
+			for( var i = 0; i < target_vehicle_data_array.Length; i++ )
+				target_vehicle_data_array[ i ].CheckIfUnLocked();
+
+			set_target_stickman.InitSet();
+
 			onAwakeEvent.Invoke();
 		}
 

@@ -59,9 +59,26 @@ namespace FFStudio
             if( playOnStart )
                 Play( index_toPlayOnStart );
         }
+
+		void OnDisable()
+		{
+			Kill();
+		}
 #endregion
 
 #region API
+		public void AddTweenData( TweenData data )
+		{
+			tweenDatas.Add( data );
+
+			index_playing = -1;
+
+			transform_ToTween = transform;
+
+			foreach( var tweenData in tweenDatas )
+				tweenData.Initialize( transform_ToTween );
+		}
+
         [ Button() ]
         public void Play( int index )
         {
@@ -106,7 +123,15 @@ namespace FFStudio
 		[ Button() ]
         public void Kill()
         {
-			tweenDatas[ index_playing ].Kill();
+			if( IsPlaying )
+				tweenDatas[ index_playing ].Kill();
+		}
+
+		public void ClearAndKill()
+		{
+			Kill();
+			tweenDatas.Clear();
+			index_playing = -1;
 		}
 #endregion
 

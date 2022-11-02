@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d712cf86b8d4e19836f9955097e0ef, type: 3}
+  m_Name: tool_level_creator
+  m_EditorClassIdentifier: 
+  level_peak_height: {x: 5, y: 15}
+  level_peak_count: 25
+  level_peak_distance: {x: 20, y: 70}
+  level_drop_height: {x: 0, y: 5}
+  level_drop_placement: {x: 0.35, y: 0.65}
+  level_eject_placement_ratio: 0.95
+  level_object_eject: {fileID: 385095978481805785, guid: e765391ce54236c4db7dfc8461f10dbf, type: 3}
+  level_object_stickman: {fileID: 5389050320175352662, guid: ced097972026349c3805da90dccb34a5, type: 3}
+  level_stickmen_count: 10
+  level_stickman_step: 3
+  level_stickman_fill_start: {x: 10, y: 15}
+  level_stickman_fill_group: {x: 10, y: 30}
+  level_stickman_fill_distance: {x: 15, y: 40}
+  level_stickman_fill_step: {x: 3, y: 6}
+  level_stickman_fill_count: {x: 3, y: 15}
+  level_point_peak_list:
+  - {x: 0, y: 5.8553953, z: 0}
+  - {x: 0, y: 9.547059, z: 50.19832}
+  - {x: 0, y: 5.06935, z: 113.06618}
+  - {x: 0, y: 8.231488, z: 166.15027}
+  - {x: 0, y: 8.163229, z: 191.37805}
+  - {x: 0, y: 5.919131, z: 212.2649}
+  - {x: 0, y: 10.008251, z: 266.05423}
+  - {x: 0, y: 14.21546, z: 298.27866}
+  - {x: 0, y: 12.0737, z: 365.0639}
+  - {x: 0, y: 13.181775, z: 399.80963}
+  - {x: 0, y: 13.377168, z: 458.6511}
+  - {x: 0, y: 13.837218, z: 525.8241}
+  - {x: 0, y: 7.0840096, z: 577.7866}
+  - {x: 0, y: 6.9149957, z: 634.44196}
+  - {x: 0, y: 5.842961, z: 676.32166}
+  - {x: 0, y: 6.6342626, z: 717.2375}
+  - {x: 0, y: 9.268127, z: 783.9407}
+  - {x: 0, y: 9.989293, z: 845.2746}
+  - {x: 0, y: 6.9282165, z: 909.1451}
+  - {x: 0, y: 5.5385556, z: 972.5534}
+  - {x: 0, y: 14.832049, z: 998.6132}
+  - {x: 0, y: 11.149382, z: 1036.2311}
+  - {x: 0, y: 12.559161, z: 1093.1263}
+  - {x: 0, y: 9.717662, z: 1129.905}
+  - {x: 0, y: 13.323011, z: 1158.8452}
+  level_point_drop_list:
+  - {x: 0, y: 3.8089466, z: -32.548374}
+  - {x: 0, y: 0.5164373, z: 19.959654}
+  - {x: 0, y: 2.0846477, z: 82.766754}
+  - {x: 0, y: 2.0249317, z: 144.65169}
+  - {x: 0, y: 2.7566025, z: 179.4807}
+  - {x: 0, y: 1.787621, z: 199.60143}
+  - {x: 0, y: 3.6031294, z: 245.924}
+  - {x: 0, y: 0.35776854, z: 283.26212}
+  - {x: 0, y: 1.484026, z: 338.14203}
+  - {x: 0, y: 3.9250875, z: 381.8218}
+  - {x: 0, y: 4.2796636, z: 437.72757}
+  - {x: 0, y: 0.49713492, z: 488.92603}
+  - {x: 0, y: 3.4231567, z: 545.42786}
+  - {x: 0, y: 2.019082, z: 610.1539}
+  - {x: 0, y: 3.532906, z: 654.19745}
+  - {x: 0, y: 0.39771497, z: 690.75714}
+  - {x: 0, y: 4.2783427, z: 755.8468}
+  - {x: 0, y: 3.8098383, z: 809.06757}
+  - {x: 0, y: 4.0754466, z: 884.525}
+  - {x: 0, y: 1.5276423, z: 941.5354}
+  - {x: 0, y: 4.4978995, z: 982.4929}
+  - {x: 0, y: 4.852476, z: 1012.8091}
+  - {x: 0, y: 3.2732563, z: 1060.8523}
+  - {x: 0, y: 1.9144108, z: 1106.9835}
+  - {x: 0, y: 2.5209692, z: 1148.5226}
+  - {x: 0, y: 0, z: 1187.7529}

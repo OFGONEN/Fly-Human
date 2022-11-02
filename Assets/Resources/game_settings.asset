@@ -12,8 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385bd3b4416492409284c9a366cb52a, type: 3}
   m_Name: game_settings
   m_EditorClassIdentifier: 
-  camera_follow_speed_depth: 2.8
-  maxLevelCount: 1
+  stickman_pose_duration: 0.25
+  stickman_jump_power: 1
+  stickman_jump_duration: 0.5
+  stickman_disableDuration: 2
+  stickman_target_jump_power: {x: 0.75, y: 1.5}
+  stickman_target_jump_duration: {x: 0.5, y: 1}
+  vehicle_rayCast_height: 100
+  vehicle_rayCast_direction: {x: 0, y: -1, z: 0}
+  vehicle_rayCast_distance: 1000
+  vehicle_movement_step: 0.5
+  vehicle_movement_look_speed: 200
+  vehicle_movement_look_axis: {x: 1, y: 0, z: 0}
+  vehicle_fly_rotate_axis: {x: 1, y: 0, z: 0}
+  vehicle_fly_rotate_clamp: 70
+  vehicle_fly_cofactor: 1.3
+  vehicle_landing_angle: 30
+  vehicle_landing_adjust_duration: 0.45
+  vehicle_target_offset: {x: 0, y: 0, z: 5}
+  vehicle_target_spawn_offset: {x: 0, y: 10, z: 10}
+  vehicle_target_spawn_duration: 1.35
+  camera_follow_speed: 5
+  camera_follow_offset_position: {x: 2, y: 10, z: -10}
+  camera_follow_offset_rotation: {x: 30, y: -10, z: 0}
+  ui_vehicle_progress_distance: 64
+  ui_vehicle_progress_travel_duration: 0.35
+  ui_vehicle_progress_travel_ease: 1
+  game_forward: {x: 0, y: 0, z: 1}
+  maxLevelCount: 13
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
