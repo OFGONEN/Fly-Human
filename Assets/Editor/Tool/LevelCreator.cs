@@ -40,6 +40,7 @@ public class LevelCreator : ScriptableObject
 			var stickmanObject = PrefabUtility.InstantiatePrefab( level_object_stickman ) as GameObject;
 			PlaceTransformOnPlatform( stickmanObject.transform, forward );
 			stickmanObject.transform.SetSiblingIndex( index + 1 );
+			stickmanObject.transform.eulerAngles = Vector3.up * 180f;
 
 			level_stickman_cache.Add( stickmanObject );
 
