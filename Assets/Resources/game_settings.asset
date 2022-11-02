@@ -39,7 +39,7 @@ MonoBehaviour:
   ui_vehicle_progress_travel_duration: 0.35
   ui_vehicle_progress_travel_ease: 1
   game_forward: {x: 0, y: 0, z: 1}
-  maxLevelCount: 1
+  maxLevelCount: 2
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5

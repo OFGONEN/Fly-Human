@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level_peak_height: {x: 5, y: 8}
   level_peak_count: 2
-  level_peak_distance: {x: 15, y: 30}
+  level_peak_distance: {x: 45, y: 90}
   level_drop_height: {x: 0, y: 1.5}
   level_drop_placement: {x: 0.4, y: 0.6}
   level_eject_placement_ratio: 0.95
   level_object_eject: {fileID: 385095978481805785, guid: e765391ce54236c4db7dfc8461f10dbf, type: 3}
   level_object_stickman: {fileID: 5389050320175352662, guid: ced097972026349c3805da90dccb34a5, type: 3}
-  level_stickmen_count: 1
-  level_stickman_step: 1.5
+  level_stickmen_count: 12
+  level_stickman_step: 4
