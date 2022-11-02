@@ -119,6 +119,36 @@ public class LevelCreator : ScriptableObject
 	}
 
 	[ Button() ]
+	void CollectSplinePoints()
+	{
+		level_point_peak_list.Clear();
+		level_point_drop_list.Clear();
+
+		var spline = GameObject.Find( "spline" ).GetComponent< SplineComputer >();
+		var points = spline.GetPoints();
+
+
+		float sumOfPoints = 0;
+
+		for( var i = 0; i < points.Length; i++ )
+		{
+			sumOfPoints += points[ i ].position.y;
+		}
+
+		float middleHeight = sumOfPoints / points.Length;
+
+		for( var i = 0; i < points.Length; i++ )
+		{
+			var point = points[ i ].position;
+
+			if( point.y >= middleHeight )
+				level_point_peak_list.Add( point );
+			else
+				level_point_drop_list.Add( point );
+		}
+	}
+
+	[ Button() ]
 	void PlaceEjectPoints()
 	{
 		EditorSceneManager.MarkAllScenesDirty();
