@@ -122,7 +122,7 @@ public class VehicleMovement : MonoBehaviour
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
     {
-		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ];
+		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ].vehicle_data;
 		vehicle_movement = vehicle_data.VehicleMovementData;
 	}
 
