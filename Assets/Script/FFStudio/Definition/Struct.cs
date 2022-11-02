@@ -217,4 +217,11 @@ namespace FFStudio
 		public Vector3 position;
 		public float size;
 	}
+
+	[ Serializable ]
+	public struct EvolveData
+	{
+		public VehicleData vehicle_data;
+		public bool vehicle_can_evolve;
+	}
 }
