@@ -28,6 +28,7 @@ public class VehicleMovement : MonoBehaviour
     UnityMessage onFixedUpdateMethod;
     UnityMessage onUpdateMethod;
     UnityMessage onVehicleCollide;
+    IntUnityMessage onVehicleChange;
 
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_target;
@@ -57,7 +58,11 @@ public class VehicleMovement : MonoBehaviour
 	private void Awake()
     {
 		EmptyOutDelegates();
+
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+
+		onVehicleChange = VehicleInited;
+
 		PlaceVehicleOnPlatform();
 	}
 
@@ -122,8 +127,7 @@ public class VehicleMovement : MonoBehaviour
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
     {
-		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ].vehicle_data;
-		vehicle_movement = vehicle_data.VehicleMovementData;
+		onVehicleChange( gameEvent.eventValue );
 	}
 
 	public void OnVehicleCollidePlatform()
@@ -158,6 +162,25 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+	void VehicleInited( int index )
+	{
+		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ index ].vehicle_data;
+		vehicle_movement = vehicle_data.VehicleMovementData;
+
+		onVehicleChange = VehicleChanged;
+	}
+
+	void VehicleChanged( int index )
+	{
+		var currentSpeedRatio = Mathf.InverseLerp( vehicle_movement.movement_ground_speed_default, vehicle_movement.movement_ground_speed_max, vehicle_movement_speed );
+
+		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ index ].vehicle_data;
+		vehicle_movement = vehicle_data.VehicleMovementData;
+
+		vehicle_movement_speed        = Mathf.Lerp( vehicle_movement.movement_ground_speed_default, vehicle_movement.movement_ground_speed_max, currentSpeedRatio );
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
+	}
+
 	void OnVehicleAlignComplete()
 	{
 		vehicle.SendStickmenToTargetVehicle( vehicle_target );
