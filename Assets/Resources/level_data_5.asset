@@ -23,8 +23,8 @@ MonoBehaviour:
   - vehicle_data: {fileID: 11400000, guid: 88e14c1bad7b33e41aa4943c8650da06, type: 2}
     vehicle_can_evolve: 0
   vehicle_target: {fileID: 11400000, guid: cb21a7b1d1f8f8e4083242e4232a1477, type: 2}
-  vehicle_level_last: 0
-  vehicle_level_replay: 0000000001000000
+  vehicle_level_last: 1
+  vehicle_level_replay: 0400000005000000
   vehicle_level_next: 1
   vehicle_start_index: 0
   vehicle_start_count: 2
