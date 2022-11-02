@@ -13,6 +13,7 @@ public class TargetVehicle : MonoBehaviour
     [ SerializeField ] TargetVehicleData vehicle_data;
     [ SerializeField ] GameEvent event_vehicle_unlocked;
     [ SerializeField ] GameEvent event_vehicle_progressed;
+    [ SerializeField ] GameEvent event_level_complete;
 
 	public Vector3 TargetVehiclePosition => transform.TransformPoint( vehicle_data.VehiclePosition );
 	public Vector3 TargetPosition => vehicle_data.VehiclePosition;
@@ -63,6 +64,8 @@ public class TargetVehicle : MonoBehaviour
 			PlayerPrefsUtility.Instance.SetInt( ExtensionMethods.Key_Plane_Count, vehicle_stickman_count );
 			event_vehicle_progressed.Raise();
 		}
+
+		event_level_complete.Raise();
 	}
 
     void SpawnStickmans()
