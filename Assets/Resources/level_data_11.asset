@@ -14,19 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene_index: 11
   scene_overrideAsActiveScene: 0
-  stickman_currency: 10
+  stickman_currency: 15
   vehicle_data_array:
   - vehicle_data: {fileID: 11400000, guid: ea7ff680ccaa93549aa5112eabb85f84, type: 2}
     vehicle_can_evolve: 1
   - vehicle_data: {fileID: 11400000, guid: b7bc38c5eadb7e943a4c89eb88adc0e7, type: 2}
     vehicle_can_evolve: 1
   - vehicle_data: {fileID: 11400000, guid: 88e14c1bad7b33e41aa4943c8650da06, type: 2}
-    vehicle_can_evolve: 0
+    vehicle_can_evolve: 1
   - vehicle_data: {fileID: 11400000, guid: 98f41f1daafa30a47a0e7375ea4c5250, type: 2}
+    vehicle_can_evolve: 1
+  - vehicle_data: {fileID: 11400000, guid: 7c4734d05e3877b40a8b0524fd25ba81, type: 2}
     vehicle_can_evolve: 0
-  vehicle_target: {fileID: 11400000, guid: 0a9f706021cd9164390ebe3a71847254, type: 2}
+  - vehicle_data: {fileID: 11400000, guid: 6a8061f5e9fd6ee45971ed661dc591b5, type: 2}
+    vehicle_can_evolve: 0
+  vehicle_target: {fileID: 11400000, guid: 2327bd29dd3f89340a1b8c83a684f758, type: 2}
   vehicle_level_last: 1
   vehicle_level_replay: 0a0000000b000000
   vehicle_level_next: 1
   vehicle_start_index: 0
-  vehicle_start_count: 2
+  vehicle_start_count: 4

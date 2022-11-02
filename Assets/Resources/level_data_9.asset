@@ -21,12 +21,14 @@ MonoBehaviour:
   - vehicle_data: {fileID: 11400000, guid: b7bc38c5eadb7e943a4c89eb88adc0e7, type: 2}
     vehicle_can_evolve: 1
   - vehicle_data: {fileID: 11400000, guid: 88e14c1bad7b33e41aa4943c8650da06, type: 2}
-    vehicle_can_evolve: 0
+    vehicle_can_evolve: 1
   - vehicle_data: {fileID: 11400000, guid: 98f41f1daafa30a47a0e7375ea4c5250, type: 2}
     vehicle_can_evolve: 0
-  vehicle_target: {fileID: 11400000, guid: 0a9f706021cd9164390ebe3a71847254, type: 2}
+  - vehicle_data: {fileID: 11400000, guid: 7c4734d05e3877b40a8b0524fd25ba81, type: 2}
+    vehicle_can_evolve: 0
+  vehicle_target: {fileID: 11400000, guid: f84b2a8f2c7fc2c4f90d6035fb6b2181, type: 2}
   vehicle_level_last: 1
   vehicle_level_replay: 0800000009000000
   vehicle_level_next: 1
   vehicle_start_index: 0
-  vehicle_start_count: 2
+  vehicle_start_count: 4
