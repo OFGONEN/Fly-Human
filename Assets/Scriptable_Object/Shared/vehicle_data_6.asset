@@ -206,30 +206,30 @@ MonoBehaviour:
     rotation: {x: 0.00016420982, y: 0.00032841729, z: 89.99967}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244971
   - position: {x: -0.089, y: 1.593, z: 1.97}
     rotation: {x: 0.00016421085, y: 180.00066, z: 89.999664}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244973
   - position: {x: -0.102, y: 1.611, z: 1.97}
     rotation: {x: -0, y: -0, z: 65}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244974
   - position: {x: -0.089, y: 1.611, z: 1.97}
     rotation: {x: -0, y: 180.00099, z: 65}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244975
   - position: {x: 0.47, y: 0.251, z: -0.696}
     rotation: {x: -0, y: 180.00034, z: 0}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
@@ -335,17 +335,101 @@ MonoBehaviour:
     tweener: 0
     tween_data:
       rid: -2
-  vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
-  vehicle_name: plane_6
+  vehicle_movement: {fileID: 11400000, guid: 33a1277436580438a8e5fc8890e313b0, type: 2}
+  vehicle_name: JET
   vehicle_icon: {fileID: 21300000, guid: 01dbff25b29007b4bb5e5dc42f939606, type: 3}
   vehicle_count_min: 35
-  vehicle_position: {x: 0, y: 0.4, z: 1.1}
+  vehicle_position: {x: 0, y: 0.4, z: 0}
   vehicle_raycast_landing_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
-    position: {x: 0, y: 1.2, z: 3.5}
+    position: {x: 0, y: 0.6, z: 2}
     size: 0.5
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 9014386796773244971
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: -90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}
+    - rid: 9014386796773244973
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: 90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}
+    - rid: 9014386796773244974
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: -90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}
+    - rid: 9014386796773244975
+      type: {class: RotationTweenData, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 2
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        useDelta: 1
+        speedBased: 1
+        endValue: 90
+        duration: 360
+        rotationMode: 0
+        rotationAxisMaskVector: {x: 0, y: 0, z: 1}

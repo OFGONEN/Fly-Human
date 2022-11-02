@@ -65,6 +65,7 @@ public class Stickman : MonoBehaviour
     {
 		vehicle_part_data = vehiclePartData;
 
+		_tweenChain.ClearAndKill();
 		_animator.SetTrigger( vehiclePartData.pose );
 
 		var colorTween = _colorSetter.LerpColor( vehiclePartData.color, GameSettings.Instance.stickman_pose_duration );

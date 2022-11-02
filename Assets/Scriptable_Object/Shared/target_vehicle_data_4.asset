@@ -181,7 +181,7 @@ MonoBehaviour:
     color_end: {r: 0.11447935, g: 0.41509432, b: 0, a: 1}
     count: 1
     pose: pose_straight_curved
-  vehicle_name: plane_4
+  vehicle_name: PLANE
   vehicle_is_unlocked: 0
   vehicle_position: {x: 0, y: 1.5, z: 2}
   vehicle_stickman_count: 28

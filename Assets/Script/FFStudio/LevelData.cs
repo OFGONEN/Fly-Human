@@ -20,10 +20,10 @@ namespace FFStudio
 		[ LabelText( "Stickman Currency Amount" ) ] public int stickman_currency;
 
 	[ Title( "Data Setup" ) ]
-		[ LabelText( "Vehicle Evolve List" ) ] public VehicleData[] vehicle_data_array; 
+		[ LabelText( "Vehicle Evolve List" ) ] public EvolveData[] vehicle_data_array; 
 		[ LabelText( "Target Vehicle Data" ) ] public TargetVehicleData vehicle_target;
 		[ LabelText( "Vehicle's Last Level" ) ] public bool vehicle_level_last;
-		[ LabelText( "Replay Scene Indexes " ), ShowIf( "vehicle_level_last" ) ] public int[] vehicle_level_replay;
+		[ LabelText( "Replay Scene Numbers " ), ShowIf( "vehicle_level_last" ) ] public int[] vehicle_level_replay;
 		[ LabelText( "Next Level of Vehicle" ), HideIf( "vehicle_level_last" ) ] public int vehicle_level_next;
 		[ LabelText( "Start Vehicle Index" ) ] public int vehicle_start_index;
 		[ LabelText( "Start Vehicle Part Count" ) ] public int vehicle_start_count;
@@ -56,7 +56,7 @@ namespace FFStudio
 			}
 
 			vehicle_start_index = Mathf.Clamp( vehicle_start_index, 0, vehicle_data_array.Length - 1 );
-			var vehicleData = vehicle_data_array[ vehicle_start_index ];
+			var vehicleData = vehicle_data_array[ vehicle_start_index ].vehicle_data;
 			vehicle_start_count = Mathf.Clamp( vehicle_start_count, vehicleData.VehicleCountMin, vehicleData.VehicleCountMax );
 		}
 #endif

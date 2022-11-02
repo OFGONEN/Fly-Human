@@ -28,6 +28,7 @@ public class VehicleMovement : MonoBehaviour
     UnityMessage onFixedUpdateMethod;
     UnityMessage onUpdateMethod;
     UnityMessage onVehicleCollide;
+    IntUnityMessage onVehicleChange;
 
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_origin;
     [ ShowInInspector, ReadOnly ] Vector3 vehicle_point_target;
@@ -57,7 +58,11 @@ public class VehicleMovement : MonoBehaviour
 	private void Awake()
     {
 		EmptyOutDelegates();
+
 		layerMask = LayerMask.GetMask( ExtensionMethods.Layer_Platform );
+
+		onVehicleChange = VehicleInited;
+
 		PlaceVehicleOnPlatform();
 	}
 
@@ -103,13 +108,15 @@ public class VehicleMovement : MonoBehaviour
 	
 	public void OnVehicleEject()
 	{
+		if( vehicle_movement_speed < vehicle_movement.movement_ground_speed_eject_min ) return;
+
 		FFLogger.PopUpText( transform.position, "Ejected" );
 		onFixedUpdateMethod = MoveOnAir;
 		onFingerDown        = FingerDown_Air;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
 		onVehicleCollide    = VehicleCollidedPlatform;
 
-		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
 
 		if( vehicle_movement_speed >= vehicle_movement.movement_ground_speed_eject_perfect )
 		{
@@ -120,8 +127,7 @@ public class VehicleMovement : MonoBehaviour
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
     {
-		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ];
-		vehicle_movement = vehicle_data.VehicleMovementData;
+		onVehicleChange( gameEvent.eventValue );
 	}
 
 	public void OnVehicleCollidePlatform()
@@ -156,6 +162,25 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Implementation
+	void VehicleInited( int index )
+	{
+		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ index ].vehicle_data;
+		vehicle_movement = vehicle_data.VehicleMovementData;
+
+		onVehicleChange = VehicleChanged;
+	}
+
+	void VehicleChanged( int index )
+	{
+		var currentSpeedRatio = Mathf.InverseLerp( vehicle_movement.movement_ground_speed_default, vehicle_movement.movement_ground_speed_max, vehicle_movement_speed );
+
+		vehicle_data     = CurrentLevelData.Instance.levelData.vehicle_data_array[ index ].vehicle_data;
+		vehicle_movement = vehicle_data.VehicleMovementData;
+
+		vehicle_movement_speed        = Mathf.Lerp( vehicle_movement.movement_ground_speed_default, vehicle_movement.movement_ground_speed_max, currentSpeedRatio );
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
+	}
+
 	void OnVehicleAlignComplete()
 	{
 		vehicle.SendStickmenToTargetVehicle( vehicle_target );
@@ -164,7 +189,7 @@ public class VehicleMovement : MonoBehaviour
 	void MoveForwardOnAir()
 	{
 		var position = transform.position;
-		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
+		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step * GameSettings.Instance.vehicle_fly_cofactor, Time.fixedDeltaTime * vehicle_movement_speed );
 	}
 
 	void InitTargetVehicle() 
@@ -172,6 +197,7 @@ public class VehicleMovement : MonoBehaviour
 		vehicle_target = ( notif_vehicle_target_reference.sharedValue as TargetVehicle );
 		vehicle_target.transform.SetParent( transform );
 		vehicle_target.transform.localPosition = GameSettings.Instance.vehicle_target_spawn_offset;
+		vehicle_target.transform.localRotation = Quaternion.identity;
 	}
 
 	void UpdateLevelProgress()
@@ -198,7 +224,7 @@ public class VehicleMovement : MonoBehaviour
 		onFingerDown = ExtensionMethods.EmptyMethod;
 		onFingerUp   = FingerUp_Air;
 
-		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed_max;
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed_max;
 	}
 
 	void FingerUp_Platform()
@@ -216,7 +242,7 @@ public class VehicleMovement : MonoBehaviour
 		onFingerDown = FingerDown_Air;
 		onFingerUp   = ExtensionMethods.EmptyMethod;
 
-		vehicle_movement_rotate_speed = GameSettings.Instance.vehicle_fly_rotate_speed;
+		vehicle_movement_rotate_speed = vehicle_movement.movement_air_rotate_speed;
 	}
 
     void MoveOnPlatform()
@@ -224,7 +250,8 @@ public class VehicleMovement : MonoBehaviour
 		var position = transform.position;
 		position = Vector3.Lerp( transform.position, vehicle_point_target, Time.fixedDeltaTime * vehicle_movement_speed );
 
-		transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+		// transform.LookAtOverTimeAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis, Time.fixedDeltaTime * GameSettings.Instance.vehicle_movement_look_speed );
+		transform.LookAtAxis( vehicle_point_target, GameSettings.Instance.vehicle_movement_look_axis );
 		transform.position = position;
 
 		RaycastOntoPlatform( position );
@@ -234,8 +261,8 @@ public class VehicleMovement : MonoBehaviour
 	{
 		//Move the vehicle
 		var position = transform.position;
-		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step, Time.fixedDeltaTime * vehicle_movement_speed );
-
+		transform.position = Vector3.Lerp( position, position + transform.forward * GameSettings.Instance.vehicle_movement_step * GameSettings.Instance.vehicle_fly_cofactor, Time.fixedDeltaTime * vehicle_movement_speed );
+     
 		transform.Rotate( GameSettings.Instance.vehicle_fly_rotate_axis * vehicle_movement_rotate_speed * Time.fixedDeltaTime, Space.World );
 		//Rotate the vehicle
 		var eulerAngle = transform.eulerAngles.x;

@@ -289,7 +289,7 @@ MonoBehaviour:
     color_end: {r: 0.4339623, g: 0.08745744, b: 0.084219076, a: 1}
     count: 1
     pose: pose_straight_2
-  vehicle_name: plane_6
+  vehicle_name: JET
   vehicle_is_unlocked: 0
   vehicle_position: {x: 0, y: 2, z: -0.5}
   vehicle_stickman_count: 46

@@ -38,16 +38,16 @@ MonoBehaviour:
     rotation: {x: 0.00005019934, y: 180, z: 76.68481}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244950
   - position: {x: 1.617, y: 1.271, z: 3.566}
     rotation: {x: -0.000051444043, y: -0.000004485169, z: 103.31519}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_2
-    tweener: 0
+    tweener: 1
     tween_data:
-      rid: -2
+      rid: 9014386796773244951
   - position: {x: 0.408, y: -0.019, z: 1.616}
     rotation: {x: 14.999667, y: 270.00018, z: 270.0002}
     color: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
@@ -110,14 +110,14 @@ MonoBehaviour:
     pose: pose_straight_1
     tweener: 0
     tween_data:
-      rid: -2
+      rid: 9014386796773244948
   - position: {x: -0.793, y: -0.167, z: 1.203}
     rotation: {x: 90, y: 90.001175, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     pose: pose_straight_1
     tweener: 0
     tween_data:
-      rid: -2
+      rid: 9014386796773244949
   - position: {x: -0.788, y: -0.167, z: 1.54}
     rotation: {x: 90, y: 90.001175, z: 0}
     color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
@@ -209,17 +209,93 @@ MonoBehaviour:
     tweener: 0
     tween_data:
       rid: -2
-  vehicle_movement: {fileID: 11400000, guid: 77626c553c3fa46f4a4d15878668e981, type: 2}
-  vehicle_name: plane_4
+  vehicle_movement: {fileID: 11400000, guid: 0bea3cbfb4b8541e6b920ad71fe609fa, type: 2}
+  vehicle_name: PLANE
   vehicle_icon: {fileID: 21300000, guid: 8acfd5c25d5828540ad9eb6093c5245d, type: 3}
   vehicle_count_min: 20
-  vehicle_position: {x: 0, y: 1.1, z: -0.7}
+  vehicle_position: {x: 0, y: 1.1, z: -2.55}
   vehicle_raycast_landing_position: {x: 0, y: 0, z: 0}
   vehicle_collider:
-    position: {x: 0, y: 1.4, z: 3.4}
+    position: {x: 0, y: 1.2, z: 1.6}
     size: 0.5
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 9014386796773244948
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: 0.107, y: 0.933, z: 3.566}
+        rotationAxisVector: 0
+    - rid: 9014386796773244949
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: 0.107, y: 0.933, z: 3.566}
+        rotationAxisVector: 0
+    - rid: 9014386796773244950
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: 180
+        duration: 0.5
+        originAsOffset: {x: 0.107, y: 0.933, z: 3.566}
+        rotationAxisVector: 1
+    - rid: 9014386796773244951
+      type: {class: RotationTweenData_Axis, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        description: 
+        chain: 0
+        index_nextUp: 0
+        hasDelay: 0
+        delayAmount: 0
+        tweenEventDatas: []
+        loop: 1
+        loopType: 0
+        easing: 1
+        onCompleteEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        endValue: -180
+        duration: 0.5
+        originAsOffset: {x: 0.107, y: 0.933, z: 3.566}
+        rotationAxisVector: 1

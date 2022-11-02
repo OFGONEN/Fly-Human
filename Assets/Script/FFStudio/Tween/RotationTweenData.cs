@@ -55,10 +55,10 @@ namespace FFStudio
         protected override void CreateAndStartTween( UnityMessage onComplete, bool isReversed = false )
         {
 			if( rotationMode == RotationMode.Local )
-				recycledTween.Recycle( transform.DOLocalRotate( rotationAxisMaskVector * endValue, duration, useDelta ? RotateMode.LocalAxisAdd : RotateMode.Fast ),
+				recycledTween.Recycle( transform.DOLocalRotate( rotationAxisMaskVector * endValue, duration, /* useDelta ? RotateMode.LocalAxisAdd : */ RotateMode.Fast ),
                                        onComplete );
 			else
-				recycledTween.Recycle( transform.DORotate( rotationAxisMaskVector * endValue, duration, useDelta ? RotateMode.WorldAxisAdd : RotateMode.Fast ),
+				recycledTween.Recycle( transform.DORotate( rotationAxisMaskVector * endValue, duration, /* useDelta ? RotateMode.WorldAxisAdd : */ RotateMode.Fast ),
                                        onComplete );
 
 			recycledTween.Tween // Don't need to set SetRelative() as RotateMode.XXXAxisAdd automatically means relative end value.

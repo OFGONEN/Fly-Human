@@ -41,7 +41,7 @@ public class Vehicle : MonoBehaviour
 
 		if( stickman_count + 1 > vehicle_data.VehicleCountMax )
 		{
-			if( vehicle_index < CurrentLevelData.Instance.levelData.vehicle_data_array.Length - 1 )
+			if( vehicle_index < CurrentLevelData.Instance.levelData.vehicle_data_array.Length - 1 && CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ].vehicle_can_evolve )
 				Evolve( stickman );
 			else
 				stickman.TurnIntoCurrency();
@@ -157,7 +157,7 @@ public class Vehicle : MonoBehaviour
 	void ChangeVehicleData( int index )
 	{
 		vehicle_index = index;
-		vehicle_data  = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ];
+		vehicle_data  = CurrentLevelData.Instance.levelData.vehicle_data_array[ vehicle_index ].vehicle_data;
 
 		CacheStickmanPositions();
 		vehicle_gfx.localPosition = vehicle_data.VehiclePosition;

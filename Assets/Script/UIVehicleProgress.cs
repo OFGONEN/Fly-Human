@@ -36,14 +36,14 @@ public class UIVehicleProgress : MonoBehaviour
     {
 		var levelData = CurrentLevelData.Instance.levelData;
 
-		vehicle_name.text = levelData.vehicle_data_array[ levelData.vehicle_start_index ].VehicleName;
+		vehicle_name.text = levelData.vehicle_data_array[ levelData.vehicle_start_index ].vehicle_data.VehicleName;
 
-		vehicle_stickman_count_start = levelData.vehicle_data_array[ 0 ].VehicleCountMin;
+		vehicle_stickman_count_start = levelData.vehicle_data_array[ 0 ].vehicle_data.VehicleCountMin;
 		float position = 0;
 
 		for( var i = 0; i < levelData.vehicle_data_array.Length; i++ )
         {
-			var vehicleData = levelData.vehicle_data_array[ i ];
+			var vehicleData = levelData.vehicle_data_array[ i ].vehicle_data;
 			vehicle_icon_list.Add( vehicle_icon_array[ i ] );
 			vehicle_icon_array[ i ].sprite = vehicleData.VehicleIcon;
 
@@ -104,7 +104,7 @@ public class UIVehicleProgress : MonoBehaviour
 
     public void OnVehicleChanged( IntGameEvent gameEvent )
     {
-		vehicle_name.text = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ].VehicleName;
+		vehicle_name.text = CurrentLevelData.Instance.levelData.vehicle_data_array[ gameEvent.eventValue ].vehicle_data.VehicleName;
 	}
 
 	public void OnVehicleStickmanCountChanged( int count )

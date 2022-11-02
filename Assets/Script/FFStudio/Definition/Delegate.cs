@@ -13,4 +13,5 @@ namespace FFStudio
 	public delegate void OnCompleteMessage();
 	public delegate void LeanFingerDelegate( LeanFinger finger );
 	public delegate void ParticleEffectStopped( ParticleEffect effect );
+	public delegate void IntUnityMessage( int value );
 }

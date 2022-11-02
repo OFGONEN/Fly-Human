@@ -37,7 +37,7 @@ MonoBehaviour:
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
     pose: pose_straight_curved_feet_1
-  vehicle_name: plane_1
+  vehicle_name: PARACHUTE
   vehicle_is_unlocked: 0
   vehicle_position: {x: 0, y: 0.3, z: 0.5}
   vehicle_stickman_count: 4

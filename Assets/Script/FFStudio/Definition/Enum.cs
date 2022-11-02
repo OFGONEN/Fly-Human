@@ -32,4 +32,9 @@ namespace FFStudio
     }
 
 	public enum MovementMode { Local, World }
+    
+    public enum RotationAxisVector
+    {
+        Right, Forward, Up
+    }
 }
