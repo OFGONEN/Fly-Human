@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea3c0b9fd00fd441b6cebc5941ee13b, type: 3}
+  m_Name: level_data_8
+  m_EditorClassIdentifier: 
+  scene_index: 8
+  scene_overrideAsActiveScene: 0
+  stickman_currency: 10
+  vehicle_data_array:
+  - vehicle_data: {fileID: 11400000, guid: ea7ff680ccaa93549aa5112eabb85f84, type: 2}
+    vehicle_can_evolve: 1
+  - vehicle_data: {fileID: 11400000, guid: b7bc38c5eadb7e943a4c89eb88adc0e7, type: 2}
+    vehicle_can_evolve: 1
+  - vehicle_data: {fileID: 11400000, guid: 88e14c1bad7b33e41aa4943c8650da06, type: 2}
+    vehicle_can_evolve: 0
+  - vehicle_data: {fileID: 11400000, guid: 98f41f1daafa30a47a0e7375ea4c5250, type: 2}
+    vehicle_can_evolve: 0
+  vehicle_target: {fileID: 11400000, guid: 0a9f706021cd9164390ebe3a71847254, type: 2}
+  vehicle_level_last: 1
+  vehicle_level_replay: 0600000007000000
+  vehicle_level_next: 1
+  vehicle_start_index: 0
+  vehicle_start_count: 2
