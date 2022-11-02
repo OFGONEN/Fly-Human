@@ -22,7 +22,7 @@ MonoBehaviour:
   vehicle_rayCast_direction: {x: 0, y: -1, z: 0}
   vehicle_rayCast_distance: 1000
   vehicle_movement_step: 0.5
-  vehicle_movement_look_speed: 25
+  vehicle_movement_look_speed: 200
   vehicle_movement_look_axis: {x: 1, y: 0, z: 0}
   vehicle_fly_rotate_axis: {x: 1, y: 0, z: 0}
   vehicle_fly_rotate_clamp: 70
