@@ -20,5 +20,5 @@ MonoBehaviour:
   level_eject_placement_ratio: 0.95
   level_object_eject: {fileID: 385095978481805785, guid: e765391ce54236c4db7dfc8461f10dbf, type: 3}
   level_object_stickman: {fileID: 5389050320175352662, guid: ced097972026349c3805da90dccb34a5, type: 3}
-  level_stickmen_count: 3
-  level_stickman_step: 1
+  level_stickmen_count: 1
+  level_stickman_step: 1.5

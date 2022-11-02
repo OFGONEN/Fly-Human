@@ -22,7 +22,7 @@ public class LevelCreator : ScriptableObject
   [ Title( "Place Stickmen" ) ]
 	[ SerializeField ] GameObject level_object_stickman;
 	[ SerializeField ] int level_stickmen_count;
-	[ SerializeField ] int level_stickman_step;
+	[ SerializeField ] float level_stickman_step;
 
     [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_peak_list;
     [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_drop_list;
