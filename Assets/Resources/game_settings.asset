@@ -15,7 +15,7 @@ MonoBehaviour:
   stickman_pose_duration: 0.25
   stickman_jump_power: 1
   stickman_jump_duration: 0.5
-  stickman_disableDuration: 1
+  stickman_disableDuration: 2
   stickman_target_jump_power: {x: 0.75, y: 1.5}
   stickman_target_jump_duration: {x: 0.5, y: 1}
   vehicle_rayCast_height: 100
@@ -39,7 +39,7 @@ MonoBehaviour:
   ui_vehicle_progress_travel_duration: 0.35
   ui_vehicle_progress_travel_ease: 1
   game_forward: {x: 0, y: 0, z: 1}
-  maxLevelCount: 3
+  maxLevelCount: 7
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
   ui_Entity_Move_TweenDuration: 0.5
