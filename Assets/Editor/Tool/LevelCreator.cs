@@ -24,8 +24,8 @@ public class LevelCreator : ScriptableObject
 	[ SerializeField ] int level_stickmen_count;
 	[ SerializeField ] float level_stickman_step;
 
-    [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_peak_list;
-    [ ShowInInspector, ReadOnly ] List< Vector3 > level_point_drop_list;
+    [ SerializeField, ReadOnly ] List< Vector3 > level_point_peak_list;
+    [ SerializeField, ReadOnly ] List< Vector3 > level_point_drop_list;
     [ ShowInInspector, ReadOnly ] List< GameObject > level_stickman_cache = new List< GameObject >();
 
 	[ Button() ]
