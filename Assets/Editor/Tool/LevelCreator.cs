@@ -43,7 +43,7 @@ public class LevelCreator : ScriptableObject
 	{
 		EditorSceneManager.MarkAllScenesDirty();
 
-		level_stickman_cache.Clear();
+		DeleteStickmanCache();
 
 		var forward = level_stickman_fill_start.ReturnRandom();
 		var count   = Mathf.FloorToInt( level_stickman_fill_group.ReturnRandom() );
