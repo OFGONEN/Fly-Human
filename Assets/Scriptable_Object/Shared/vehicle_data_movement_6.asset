@@ -18,8 +18,8 @@ MonoBehaviour:
   movement_ground_speed_accelerate_ease: 1
   movement_ground_speed_eject_min: 15
   movement_ground_speed_eject_perfect: 37.5
-  movement_air_rotate_speed: 10
-  movement_air_rotate_speed_max: 30
+  movement_air_rotate_speed: 5
+  movement_air_rotate_speed_max: 60
   landing_adjust_rotation_ease: 1
   landing_adjust_jump_power: 1
   landing_adjust_jump_ease: 1
