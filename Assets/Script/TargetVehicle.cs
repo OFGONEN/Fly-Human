@@ -10,7 +10,6 @@ public class TargetVehicle : MonoBehaviour
   [ Title( "Shared" ) ]
     [ SerializeField ] Pool_TargetStickman pool_stickman;
     [ SerializeField ] Set_TargetStickman set_stickman;
-    [ SerializeField ] TargetVehicleData vehicle_data;
     [ SerializeField ] GameEvent event_vehicle_unlocked;
     [ SerializeField ] GameEvent event_vehicle_progressed;
     [ SerializeField ] GameEvent event_level_complete;
@@ -18,12 +17,15 @@ public class TargetVehicle : MonoBehaviour
 	public Vector3 TargetVehiclePosition => transform.TransformPoint( vehicle_data.VehiclePosition );
 	public Vector3 TargetPosition => vehicle_data.VehiclePosition;
 
+    TargetVehicleData vehicle_data;
 	int vehicle_stickman_count;
 
 // Private
 
     void Awake()
     {
+		vehicle_data = CurrentLevelData.Instance.levelData.vehicle_target;
+
 		set_stickman.ClearSet();
 
 		SpawnStickmans();
@@ -81,6 +83,8 @@ public class TargetVehicle : MonoBehaviour
 #if UNITY_EDITOR
 	void OnDrawGizmos()
 	{
+		if( !Application.isPlaying ) return;
+
 		var localPosition = transform.TransformPoint( vehicle_data.VehiclePosition );
 		Handles.DrawWireCube( localPosition, Vector3.one / 2f );
 		Handles.Label( localPosition, vehicle_data.VehicleName + " Position" );
