@@ -104,6 +104,6 @@ namespace FFStudio
 			foreach( var item in itemDictionary.Values )
 				Debug.Log( item.ToString() );
 		}
-    }
 #endif
+    }
 }
