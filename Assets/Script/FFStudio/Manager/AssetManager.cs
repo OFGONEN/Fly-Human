@@ -1,6 +1,7 @@
 /* Created by and for usage of FF Studios (2021). */
 
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
@@ -40,6 +41,8 @@ namespace FFStudio
 		void Awake()
 		{
 			Vibration.Init();
+
+			DOTween.SetTweensCapacity( 500, 250 );
 
 			pool_UIPopUpText.InitPool( transform, false );
 			pool_stickman_target.InitPool( transform, false );
