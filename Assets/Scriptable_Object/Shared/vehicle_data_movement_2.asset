@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: vehicle_data_movement_2
   m_EditorClassIdentifier: 
   movement_ground_speed_default: 1
-  movement_ground_speed_max: 26
-  movement_ground_speed_accelerate_duration: 2.8
+  movement_ground_speed_max: 38
+  movement_ground_speed_accelerate_duration: 1.4
   movement_ground_speed_accelerate_ease: 1
-  movement_ground_speed_eject_min: 7.8
-  movement_ground_speed_eject_perfect: 19.5
-  movement_air_rotate_speed: 10
-  movement_air_rotate_speed_max: 30
+  movement_ground_speed_eject_min: 11.4
+  movement_ground_speed_eject_perfect: 26.6
+  movement_air_rotate_speed: 6
+  movement_air_rotate_speed_max: 50
   landing_adjust_rotation_ease: 1
   landing_adjust_jump_power: 1
   landing_adjust_jump_ease: 1
