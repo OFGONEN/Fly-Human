@@ -182,7 +182,7 @@ MonoBehaviour:
         onCompleteEvent:
           m_PersistentCalls:
             m_Calls: []
-        endValue: 180
+        endValue: 720
         duration: 0.5
         originAsOffset: {x: 0.105, y: -0.052, z: 3.021}
         rotationAxisVector: 1
@@ -201,7 +201,7 @@ MonoBehaviour:
         onCompleteEvent:
           m_PersistentCalls:
             m_Calls: []
-        endValue: -180
+        endValue: -720
         duration: 0.5
         originAsOffset: {x: 0.105, y: -0.052, z: 3.021}
         rotationAxisVector: 1

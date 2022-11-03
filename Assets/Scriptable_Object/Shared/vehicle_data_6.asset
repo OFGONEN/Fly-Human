@@ -367,7 +367,7 @@ MonoBehaviour:
         useDelta: 1
         speedBased: 1
         endValue: -90
-        duration: 360
+        duration: 1440
         rotationMode: 0
         rotationAxisMaskVector: {x: 0, y: 0, z: 1}
     - rid: 9014386796773244973
@@ -388,7 +388,7 @@ MonoBehaviour:
         useDelta: 1
         speedBased: 1
         endValue: 90
-        duration: 360
+        duration: 1440
         rotationMode: 0
         rotationAxisMaskVector: {x: 0, y: 0, z: 1}
     - rid: 9014386796773244974
@@ -409,7 +409,7 @@ MonoBehaviour:
         useDelta: 1
         speedBased: 1
         endValue: -90
-        duration: 360
+        duration: 1440
         rotationMode: 0
         rotationAxisMaskVector: {x: 0, y: 0, z: 1}
     - rid: 9014386796773244975
@@ -430,6 +430,6 @@ MonoBehaviour:
         useDelta: 1
         speedBased: 1
         endValue: 90
-        duration: 360
+        duration: 1440
         rotationMode: 0
         rotationAxisMaskVector: {x: 0, y: 0, z: 1}
