@@ -17,6 +17,7 @@ public class Vehicle : MonoBehaviour
     [ SerializeField ] Transform vehicle_gfx;
     [ SerializeField ] SphereCollider vehicle_collider;
     [ SerializeField ] VehicleMovement vehicle_movement;
+    [ SerializeField ] ParticleSystem particle_finishLine;
 
 // Private
     [ ShowInInspector, ReadOnly ] List< Stickman > vehicle_stickman = new List< Stickman >( 64 );
@@ -94,8 +95,14 @@ public class Vehicle : MonoBehaviour
 		notif_vehicle_stickman_count.SharedValue = vehicle_stickman.Count;
 	}
 
+	public void OnFinishLine()
+	{
+		particle_finishLine.Play();
+	}
+
 	public void OnLevelFinished()
 	{
+		// Level Finished
 	}
 
 	public void SendStickmenToTargetVehicle( TargetVehicle targetVehicle )
