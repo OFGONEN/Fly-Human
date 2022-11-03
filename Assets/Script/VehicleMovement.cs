@@ -154,7 +154,7 @@ public class VehicleMovement : MonoBehaviour
 	{
 		if( vehicle_movement_speed < vehicle_movement.movement_ground_speed_eject_min ) return;
 
-		FFLogger.PopUpText( transform.position, "Ejected" );
+		// FFLogger.PopUpText( transform.position, "Ejected" );
 		onFixedUpdateMethod = MoveOnAir;
 		onFingerDown        = FingerDown_Air;
 		onFingerUp          = ExtensionMethods.EmptyMethod;
@@ -215,7 +215,7 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerDown_Platform()
 	{
-		FFLogger.PopUpText( transform.position, "Finger DOWN Platform" );
+		// FFLogger.PopUpText( transform.position, "Finger DOWN Platform" );
 		onFingerDown = ExtensionMethods.EmptyMethod;
 		onFingerUp   = FingerUp_Platform;
 
@@ -228,7 +228,7 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerDown_Air()
 	{
-		FFLogger.PopUpText( transform.position, "Finger DOWN Air" );
+		// FFLogger.PopUpText( transform.position, "Finger DOWN Air" );
 		onFingerDown = ExtensionMethods.EmptyMethod;
 		onFingerUp   = FingerUp_Air;
 
@@ -237,7 +237,7 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerUp_Platform()
 	{
-		FFLogger.PopUpText( transform.position, "Finger UP Platform" );
+		// FFLogger.PopUpText( transform.position, "Finger UP Platform" );
 		onFingerDown = FingerDown_Platform;
 		onFingerUp   = ExtensionMethods.EmptyMethod;
 
@@ -246,7 +246,7 @@ public class VehicleMovement : MonoBehaviour
 
 	void FingerUp_Air()
 	{
-		FFLogger.PopUpText( transform.position, "Finger UP Air" );
+		// FFLogger.PopUpText( transform.position, "Finger UP Air" );
 		onFingerDown = FingerDown_Air;
 		onFingerUp   = ExtensionMethods.EmptyMethod;
 
@@ -299,7 +299,7 @@ public class VehicleMovement : MonoBehaviour
 		var vehicleDirection = transform.forward;
 
 		var angle = Mathf.Acos( Vector3.Dot( vehicleDirection, SlopeDirection ) ) * Mathf.Rad2Deg;
-		FFLogger.PopUpText( transform.position, "Slope Enter Angle: " + angle );
+		// FFLogger.PopUpText( transform.position, "Slope Enter Angle: " + angle );
 
 		_particleSystem.Stop( true, ParticleSystemStopBehavior.StopEmitting );
 
