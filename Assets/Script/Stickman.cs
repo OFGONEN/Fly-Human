@@ -35,6 +35,7 @@ public class Stickman : MonoBehaviour
     void OnDisable()
     {
 		recycledSequence.Kill();
+		OnDelayedDisableComplete();
 	}
 
     void Awake()
