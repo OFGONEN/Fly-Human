@@ -32,17 +32,26 @@ public class Stickman : MonoBehaviour
 	RecycledSequence recycledSequence = new RecycledSequence();
 	RecycledTween    recycledTween    = new RecycledTween();
 
-    void OnDisable()
+	UnityMessage onLevelFinished;
+
+	void OnDisable()
     {
 		recycledSequence.Kill();
-		OnDelayedDisableComplete();
+		onLevelFinished = ExtensionMethods.EmptyMethod;
 	}
 
     void Awake()
     {
+		onLevelFinished = ExtensionMethods.EmptyMethod;
+
 		_toggleRagdoll.SwitchRagdoll( false );
 		_toggleRagdoll.ToggleCollider( true );
     }
+
+	public void OnLevelFinished()
+	{
+		onLevelFinished();
+	}
 
     public void AttachToVehicle( Transform parent, VehiclePartData vehiclePartData )
     {
@@ -193,6 +202,8 @@ public class Stickman : MonoBehaviour
 
 	void DelayedDisable()
 	{
+		onLevelFinished = OnDelayedDisableComplete;
+
 		recycledTween.Recycle( DOVirtual.DelayedCall( GameSettings.Instance.stickman_disableDuration,
 			OnDelayedDisableComplete
         ) );
@@ -200,6 +211,9 @@ public class Stickman : MonoBehaviour
 
 	void OnDelayedDisableComplete()
 	{
+		recycledSequence.Kill();
+		onLevelFinished = ExtensionMethods.EmptyMethod;
+
 		if( is_pooled )
 		{
 			is_pooled = false;
