@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 511978037061145147}
   - component: {fileID: 1039466716586298357}
   - component: {fileID: 3351576168005493149}
+  - component: {fileID: 2304687750620818164}
   m_Layer: 30
   m_Name: stickman
   m_TagString: Untagged
@@ -96,6 +97,38 @@ MonoBehaviour:
     parent: 0
     offset: {x: 0, y: 1.4, z: 0}
     size: 1
+--- !u!114 &2304687750620818164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5389050320175352662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245dc21cc9428744fa28ad2d6ce7d327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventPairs:
+  - eventListener:
+      gameEvents:
+      - {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
+      - {fileID: 11400000, guid: ec850936269bc2e47b26cfebd8bdad97, type: 2}
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 511978037061145147}
+          m_TargetAssemblyTypeName: Stickman, Assembly-CSharp
+          m_MethodName: OnLevelFinished
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7960501705774725083
 GameObject:
   m_ObjectHideFlags: 0

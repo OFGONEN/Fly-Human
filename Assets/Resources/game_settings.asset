@@ -29,6 +29,7 @@ MonoBehaviour:
   vehicle_fly_cofactor: 1.3
   vehicle_landing_angle: 60
   vehicle_landing_adjust_duration: 0.45
+  vehicle_landing_eject_delay: 0.1
   vehicle_target_offset: {x: 0, y: 0, z: 5}
   vehicle_target_spawn_offset: {x: 0, y: 10, z: 10}
   vehicle_target_spawn_duration: 1.35

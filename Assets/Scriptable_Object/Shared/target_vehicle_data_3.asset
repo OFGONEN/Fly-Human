@@ -19,12 +19,6 @@ MonoBehaviour:
     color_end: {r: 1, g: 0.2477299, b: 0, a: 1}
     count: 1
     pose: pose_sitting
-  - position: {x: 0.48, y: -0.029218882, z: -0.954}
-    rotation: {x: -0.0000136603785, y: 81.62766, z: 90.00013}
-    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
-    color_end: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
-    count: 1
-    pose: pose_straight_1
   - position: {x: -0.166, y: -0.019, z: 0.195}
     rotation: {x: 14.999667, y: 270.00018, z: 270.0002}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
@@ -44,30 +38,6 @@ MonoBehaviour:
     count: 1
     pose: pose_straight_1
   - position: {x: -1.755, y: -0.12, z: 1.894}
-    rotation: {x: 90, y: 90.00051, z: 0}
-    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
-    color_end: {r: 1, g: 0.40648973, b: 0, a: 1}
-    count: 1
-    pose: pose_straight_1
-  - position: {x: 0.927, y: -0.076, z: 1.8276409}
-    rotation: {x: 51.76401, y: 90, z: 0}
-    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
-    color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
-    count: 1
-    pose: pose_straight_curved
-  - position: {x: -0.656, y: -0.084, z: 1.811}
-    rotation: {x: 51.764046, y: 270, z: 0}
-    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
-    color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
-    count: 1
-    pose: pose_straight_curved
-  - position: {x: 1.909, y: 1.38, z: 1.8996174}
-    rotation: {x: 90, y: 270.00018, z: 0}
-    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
-    color_end: {r: 1, g: 0.40648973, b: 0, a: 1}
-    count: 1
-    pose: pose_straight_1
-  - position: {x: -1.752, y: 1.38, z: 1.894}
     rotation: {x: 90, y: 90.00051, z: 0}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
     color_end: {r: 1, g: 0.40648973, b: 0, a: 1}
@@ -103,6 +73,36 @@ MonoBehaviour:
     color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     count: 1
     pose: pose_straight_2
+  - position: {x: 0.927, y: -0.076, z: 1.8276409}
+    rotation: {x: 51.76401, y: 90, z: 0}
+    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
+    color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    count: 1
+    pose: pose_straight_curved
+  - position: {x: -0.656, y: -0.084, z: 1.811}
+    rotation: {x: 51.764046, y: 270, z: 0}
+    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
+    color_end: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    count: 1
+    pose: pose_straight_curved
+  - position: {x: 1.909, y: 1.38, z: 1.8996174}
+    rotation: {x: 90, y: 270.00018, z: 0}
+    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
+    color_end: {r: 1, g: 0.40648973, b: 0, a: 1}
+    count: 1
+    pose: pose_straight_1
+  - position: {x: -1.752, y: 1.38, z: 1.894}
+    rotation: {x: 90, y: 90.00051, z: 0}
+    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
+    color_end: {r: 1, g: 0.40648973, b: 0, a: 1}
+    count: 1
+    pose: pose_straight_1
+  - position: {x: 0.48, y: -0.029218882, z: -0.954}
+    rotation: {x: -0.0000136603785, y: 81.62766, z: 90.00013}
+    color_start: {r: 1, g: 1, b: 1, a: 0.2509804}
+    color_end: {r: 0, g: 0.29377484, b: 0.6603774, a: 1}
+    count: 1
+    pose: pose_straight_1
   - position: {x: 1.666, y: 0.156, z: -0.915}
     rotation: {x: 89.97202, y: 270.0001, z: 0}
     color_start: {r: 1, g: 1, b: 1, a: 0.2509804}

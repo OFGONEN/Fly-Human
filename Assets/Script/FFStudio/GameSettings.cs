@@ -34,6 +34,7 @@ namespace FFStudio
 	[ Title( "Vehicle Landing" ) ]
 		[ LabelText( "Vehicle Landing Collide Angle" ) ] public float vehicle_landing_angle;
 		[ LabelText( "Vehicle Landing Adjust Duration" ) ] public float vehicle_landing_adjust_duration;
+		[ LabelText( "Vehicle Landing Eject Delay" ) ] public float vehicle_landing_eject_delay = 0.1f;
 	
 	[ Title( "Target Vehicle" ) ]
 		[ LabelText( "Target Vehicle Offset" ) ] public Vector3 vehicle_target_offset;
