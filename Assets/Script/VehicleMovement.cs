@@ -44,8 +44,9 @@ public class VehicleMovement : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_speed;
 	[ ShowInInspector, ReadOnly ] float vehicle_movement_rotate_speed;
 
-	RecycledTween    recycledTween    = new RecycledTween();
-	RecycledSequence recycledSequence = new RecycledSequence();
+	RecycledTween    recycledTween       = new RecycledTween();
+	RecycledTween    recycledTween_Delay = new RecycledTween();
+	RecycledSequence recycledSequence    = new RecycledSequence();
 
 	public Vector3 SlopeDirection => ( vehicle_point_target - vehicle_point_origin ).normalized;
 	public float VehicleMovementSpeed => vehicle_movement_speed;
@@ -56,6 +57,11 @@ public class VehicleMovement : MonoBehaviour
 #endregion
 
 #region Unity API
+	void OnDisable()
+	{
+		recycledTween_Delay.Kill();
+	}
+
 	private void Awake()
     {
 		EmptyOutDelegates();
@@ -292,7 +298,6 @@ public class VehicleMovement : MonoBehaviour
 	void VehicleCollidedPlatform()
 	{
 		EmptyOutDelegates();
-		onVehicleEject = VehicleEject;
 
 		RaycastOntoPlatform( transform.TransformPoint( vehicle_data.VehicleLandingRaycastPosition ) );
 
@@ -306,7 +311,11 @@ public class VehicleMovement : MonoBehaviour
 		if( angle >= GameSettings.Instance.vehicle_landing_angle )
 			HandleLanding_Bad();
 		else
+		{
+			recycledTween_Delay.Recycle( DOVirtual.DelayedCall( GameSettings.Instance.vehicle_landing_eject_delay, 
+				OnVehicleEjectDelayComplete ) );
 			HandleLanding_Good();
+		}
 	}
 
 	void HandleLanding_Good()
@@ -333,7 +342,13 @@ public class VehicleMovement : MonoBehaviour
 	void OnVehicleAdjustComplete()
 	{
 		vehicle_movement_speed = vehicle_movement.movement_ground_speed_default;
+		onVehicleEject         = VehicleEject;
 		HandleLanding_Good();
+	}
+
+	void OnVehicleEjectDelayComplete()
+	{
+		onVehicleEject = VehicleEject;
 	}
 
     void RaycastOntoPlatform( Vector3 position )
